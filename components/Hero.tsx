@@ -33,7 +33,7 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
                     <motion.div
                         variants={textVariant(0.1)}
                     >
-                        <h2 className="py-5 text-3xl md:text-5xl font-semibold ">{title}</h2>
+                        <h2 className="text-3xl md:text-5xl font-semibold ">{title}</h2>
                     </motion.div>
                     <motion.div
                         variants={textVariant(0.2)}

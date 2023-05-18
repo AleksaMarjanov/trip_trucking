@@ -114,7 +114,7 @@ const Navbar = () => {
 
             <div className="flex items-center justify-center flex-wrap">
                 <nav className={`lg:flex hidden items-center justify-start ${navbar ? 'text-[17px] transition-all duration-200 ease-in-out' : 'text-lg'} font-medium`}>
-                    < CustomLink href="/" title='Home' className="mr-4" />
+                    <CustomLink href="/" title='Home' className="mr-4" />
                     <CustomLink href="/about" title='About' className="mx-4" />
                     <CustomLink href="/equipment-rentals" title='Equipment & Rentals' className="mx-4" />
                     <CustomLink href="/services" title='Services' className="mx-4" />
@@ -131,8 +131,8 @@ const Navbar = () => {
                     viewport={{ once: true }}
                     className="w-full lg:hidden fixed top-[7%] bottom-30 left-0 h-screen flex flex-col text-black bg-white text-4xl font-semibold">
                     <CustomMobileLink href="/" title='Home' className="mt-48" toggle={handleToggle} />
-                    <CustomMobileLink href="/newPatients" title='New Patients' className="" toggle={handleToggle} />
-                    <CustomMobileLink href="/ourPractice" title='Our Practice' className="" toggle={handleToggle} />
+                    <CustomMobileLink href="/about" title='About' className="" toggle={handleToggle} />
+                    <CustomMobileLink href="/equipment-rentals" title='Equipment & Rentals' className="" toggle={handleToggle} />
                     <CustomMobileLink href="/services" title='Services' className="" toggle={handleToggle} />
                     <CustomMobileLink href="/contact" title='Contact' className="" toggle={handleToggle} />
                 </motion.nav>
