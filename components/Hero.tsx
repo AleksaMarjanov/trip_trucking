@@ -23,7 +23,7 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
         >
             <motion.div
                 variants={zoomIn(0.05, 0.4)}
-                className="relative h-screen flex items-start justify-start bg-fixed bg-cover w-full object-cover object-center" >
+                className="relative h-screen flex flex-col items-start justify-start bg-fixed bg-cover w-full object-cover object-center" >
                 <Image src={src} alt="hero" fill className="w-full fixed object-cover object-center" priority />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/50 z-[2]" />
                 <motion.div
@@ -44,26 +44,26 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
                         variants={textVariant(0.3)}
                     >
                         <p className="py-5 font-medium text-3xl">{message}</p>
+
                     </motion.div>
 
+                    <motion.div
+                        variants={textVariant(0.5)}
+                        className="mt-64 flex items-center justify-center"
+                    >
+                        <a href="tel:">
+                            <motion.button
+                                className="text-white  
+                                font-bold text-sm sm:text-md md:text-lg 
+                                cursor-pointer ">
+                                Scroll Down
+                            </motion.button>
+                        </a>
+
+                    </motion.div>
                 </motion.div>
-                <motion.div
-                    variants={textVariant(0.5)}
-                    className="mt-4 flex flex-col gap-y-6 md:flex-row md:gap-x-6 items-start justify-start "
-                >
-
-                    <a href="tel:">
-                        <motion.button
-                            className="py-2 md:py-6 px-3 md:px-6 bg-[#00626f] text-white  hover:bg-transparent
-                            font-bold text-sm sm:text-md md:text-lg hover:border-2 hover:border-white
-                            transition-all duration-700 ease-in-out cursor-pointer rounded-[2rem]">
-                            Scroll Down
-                        </motion.button>
-                    </a>
-
-                </motion.div>
-
             </motion.div>
+
         </motion.div >
     )
 }
