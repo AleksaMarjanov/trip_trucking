@@ -22,7 +22,7 @@ export const navVariants = {
 export const mobileVariants = {
     hidden: {
         opacity: 0,
-        x: -300,
+        x: 300,
         transition: {
             type: 'spring',
             stiffness: 300,

@@ -47,20 +47,20 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
 
                     </motion.div>
 
-                    <motion.div
-                        variants={textVariant(0.5)}
-                        className="mt-64 flex items-center justify-center"
-                    >
-                        <a href="tel:">
-                            <motion.button
-                                className="text-white  
-                                font-bold text-sm sm:text-md md:text-lg 
-                                cursor-pointer ">
-                                Scroll Down
-                            </motion.button>
-                        </a>
+                </motion.div>
+                <motion.div
+                    variants={textVariant(0.5)}
+                    className="absolute bottom-[10%] left-[40%] z-[30] mt-64 flex items-center justify-center"
+                >
+                    <a href="tel:">
+                        <motion.button
+                            className="text-white  
+                            font-bold text-sm sm:text-md md:text-lg 
+                            cursor-pointer ">
+                            Scroll Down
+                        </motion.button>
+                    </a>
 
-                    </motion.div>
                 </motion.div>
             </motion.div>
 
