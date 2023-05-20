@@ -34,7 +34,7 @@ const Navbar = () => {
         return (
             <Link href={href} className={`${className} relative group`}  >
                 {title}
-                < span className={`h-[2px] inline-block  bg-[#00626f] absolute left-0 -bottom-0.5
+                < span className={`h-[2px] inline-block  bg-white absolute left-0 -bottom-0.5
                 group-hover:w-full transition-[width] ease duration-200
                 ${pathname === href ? 'w-full' : 'w-0'}`}>&nbsp;</span >
             </Link >
@@ -53,10 +53,10 @@ const Navbar = () => {
 
         return (
             // @ts-ignore
-            < button href={href} className={`${className} relative text-[#00626f] group my-2`
+            < button href={href} className={`${className} relative text-black group my-2`
             } onClick={handleClick} >
                 {title}
-                < span className={`h-[1px] inline-block bg-[#00626f] absolute left-[25%] -bottom-0.5
+                < span className={`h-[1px] inline-block bg-black absolute left-[25%] -bottom-0.5
                 group-hover:w-[50%] transition-[width] ease duration-300
                 ${pathname === href ? 'w-[50%]' : 'w-0'}`}>&nbsp;</span >
 
@@ -102,14 +102,12 @@ const Navbar = () => {
     }, [isOpen])
 
     return (
-        <header className={`${navbar ? 'bg-white text-[#00626f] py-2 shadow-xl ' : 'bg-white'} fixed w-full items-center justify-between z-[999] flex lg:px-16 py-8 font-medium `
+        <header className={`${navbar ? 'bg-white text-black py-2 shadow-xl ' : 'text-white bg-transparent'} fixed w-full items-center justify-between z-[999] flex lg:px-16 py-8 font-medium `
         }>
-            {/* <div className={`${navbar ? 'bg-white text-[#00626f] py-2 shadow-xl ' : 'bg-white'} fixed sm:px-16 w-full grid lg:grid-cols-2  items-center justify-between z-[999] `}> */}
-            {/* Hamburger menu */}
             <button className='px-3 flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
-                <span className={`bg-black dark:bg-light block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-                <span className={`bg-black dark:bg-light block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`bg-black dark:bg-light block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+                <span className={`bg-white dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`bg-white dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`bg-white dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
             </button>
 
             <div className="flex items-center justify-center flex-wrap">

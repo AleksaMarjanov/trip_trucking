@@ -27,7 +27,7 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
                 <Image src={src} alt="hero" fill className="w-full fixed object-cover object-center" priority />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/50 z-[2]" />
                 <motion.div
-                    className="py-5 text-white z-[2] absolute top-[50%] left-[30%] "
+                    className="py-5 text-white z-[2] absolute top-[30%] left-[10%] md:left-[30%] "
                 >
 
                     <motion.div
@@ -38,37 +38,28 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
                     <motion.div
                         variants={textVariant(0.2)}
                     >
-                        <h2 className="text-2xl md:text-4xl font-semibold">{heading}</h2>
+                        <h2 className="py-5 text-2xl md:text-4xl font-semibold">{heading}</h2>
                     </motion.div>
                     <motion.div
                         variants={textVariant(0.3)}
                     >
-                        <p className="py-5 mt-4 font-medium text-3xl">{message}</p>
+                        <p className="py-5 font-medium text-3xl">{message}</p>
                     </motion.div>
-                    <motion.div
-                        variants={textVariant(0.5)}
-                        className="mt-4 flex flex-col gap-y-6 md:flex-row md:gap-x-6 items-start justify-start "
-                    >
-                        <Link href="/contact">
-                            <motion.button
-                                className="py-2 md:py-6 px-3 md:px-6 text-white 
-                            bg-white/50 hover:bg-[#00626f] font-bold text-lg 
-                            transition-all duration-700 ease-in-out cursor-pointer rounded-[2rem] ">
-                                Contact
-                            </motion.button>
 
-                        </Link>
+                </motion.div>
+                <motion.div
+                    variants={textVariant(0.5)}
+                    className="mt-4 flex flex-col gap-y-6 md:flex-row md:gap-x-6 items-start justify-start "
+                >
 
-                        <a href="tel:">
-                            <motion.button
-                                className="py-2 md:py-6 px-3 md:px-6 bg-[#00626f] text-white  hover:bg-transparent
-                             font-bold text-sm sm:text-md md:text-lg hover:border-2 hover:border-white
-                             transition-all duration-700 ease-in-out cursor-pointer rounded-[2rem]">
-                                Call
-                            </motion.button>
-                        </a>
-
-                    </motion.div>
+                    <a href="tel:">
+                        <motion.button
+                            className="py-2 md:py-6 px-3 md:px-6 bg-[#00626f] text-white  hover:bg-transparent
+                            font-bold text-sm sm:text-md md:text-lg hover:border-2 hover:border-white
+                            transition-all duration-700 ease-in-out cursor-pointer rounded-[2rem]">
+                            Scroll Down
+                        </motion.button>
+                    </a>
 
                 </motion.div>
 
