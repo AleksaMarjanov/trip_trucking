@@ -50,12 +50,13 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
                 </motion.div>
                 <motion.div
                     variants={textVariant(0.5)}
-                    className="absolute bottom-[10%] left-[40%] z-[30] mt-64 flex items-center justify-center"
+                    className="absolute bottom-[10%] left-[40%] md:left-[50%] z-[30] mt-64 md:mt-[3rem] flex items-center justify-center"
+
                 >
-                    <a href="tel:">
+                    <a href="#">
                         <motion.button
                             className="text-white  
-                            font-bold text-sm sm:text-md md:text-lg 
+                            font-bold uppercase text-sm sm:text-md md:text-lg 
                             cursor-pointer ">
                             Scroll Down
                         </motion.button>
