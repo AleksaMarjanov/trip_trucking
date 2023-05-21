@@ -16,7 +16,7 @@ type HeroTypes = {
     callToActionHref: string,
 }
 
-const Hero = ({ title, heading, message, src, href, callToAction, callToActionHref }: HeroTypes) => {
+const HeroLanding = ({ title, heading, message, src, href, callToAction, callToActionHref }: HeroTypes) => {
     return (
         <motion.div
             variants={staggerContainer}
@@ -27,10 +27,10 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
             <motion.div
                 variants={zoomIn(0.1, 0.6)}
                 className="w-full relative h-screen flex flex-col items-start justify-start object-cover object-center" >
-                <Image src={src} alt="hero" fill className="w-full fixed object-cover object-center" priority />
+                <Image src={src} alt="hero" fill className="w-full fixed object-cover lg:object-contain object-center" priority />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75 z-[2]" />
                 <motion.div
-                    className="text-white z-[2] absolute top-[30%] left-[10%] md:left-[15%] flex flex-col justify-between gap-y-6"
+                    className="text-white z-[2] absolute top-[30%] left-[3%] flex flex-col justify-between gap-y-6"
                 >
                     <div className='flex items-start justify-center flex-col gap-y-6'>
                         <motion.div
@@ -79,4 +79,5 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
     )
 }
 
-export default Hero
+export default HeroLanding
+
