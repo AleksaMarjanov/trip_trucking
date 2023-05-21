@@ -52,25 +52,25 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                         </motion.div>
                     </div>
 
-                    <Link href={`${callToActionHref}`}>
+                    <a href={`${callToActionHref}`}>
                         <motion.button className='bg-white text-black rounded-[5px] px-4 py-4 mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'>
                             {callToAction}
                         </motion.button>
-                    </Link>
+                    </a>
                 </motion.div>
                 <motion.div
                     variants={textVariant(0.5)}
                     className="absolute bottom-[10%] left-[40%] sm:left-[45%] md:left-[45%] z-[30] mt-64 md:mt-[3rem] flex items-center justify-center"
 
                 >
-                    <Link href={`#${href}`}>
+                    <a href={`#${href}`}>
                         <motion.button
                             className="text-white  
                             font-bold uppercase text-sm sm:text-md md:text-lg 
                             cursor-pointer ">
                             Scroll Down
                         </motion.button>
-                    </Link>
+                    </a>
 
                 </motion.div>
             </motion.div>
