@@ -25,9 +25,9 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
                 variants={zoomIn(0.05, 0.4)}
                 className="relative h-screen flex flex-col items-start justify-start bg-fixed bg-cover w-full object-cover object-center" >
                 <Image src={src} alt="hero" fill className="w-full fixed object-cover object-center" priority />
-                <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/80 z-[2]" />
+                <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]" />
                 <motion.div
-                    className="py-5 text-white z-[2] absolute top-[30%] left-[10%] md:left-[30%] "
+                    className="text-white z-[2] absolute top-[30%] left-[10%] md:left-[30%] flex flex-col gap-y-6"
                 >
 
                     <motion.div
@@ -38,12 +38,12 @@ const Hero = ({ title, heading, message, src }: HeroTypes) => {
                     <motion.div
                         variants={textVariant(0.2)}
                     >
-                        <h2 className="py-5 text-2xl md:text-4xl font-semibold">{heading}</h2>
+                        <h2 className="text-2xl md:text-4xl font-medium">{heading}</h2>
                     </motion.div>
                     <motion.div
                         variants={textVariant(0.3)}
                     >
-                        <p className="py-5 font-medium text-3xl">{message}</p>
+                        <p className="font-normal text-3xl">{message}</p>
 
                     </motion.div>
 

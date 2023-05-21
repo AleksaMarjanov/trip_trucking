@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image';
 import { useRouter } from 'next/navigation'
-import { mobileVariants, navVariants } from '@/utils/motion';
+import { fadeIn, mobileVariants, navVariants, staggerContainer } from '@/utils/motion';
 
 type customLinkProps = {
     href: string,
@@ -146,18 +146,30 @@ const Navbar = () => {
 
 
 
-            <Link href='/' className="">
-                <div className={`${navbar ? 'w-[110px] h-[40px] transition-all duration-200 ease-in-out' : 'w-[120px] h-[50px]'} absolute left-[50%] top-0 translate-x-[-50%] md:top-2 lg:left-[70%] xl:left-[50%]`}>
-                    <Image
-                        src="/Logo.png"
-                        alt="logo"
-                        className='mt-4 object-contain object-center '
-                        width={1000}
-                        height={1000}
-                        priority
-                    />
-                </div>
-            </Link>
+            <motion.div
+                initial="hidden"
+                variants={staggerContainer}
+                whileInView="show"
+                viewport={{ once: true }}
+            >
+                <Link href='/' className="">
+                    <motion.div
+                        variants={mobileVariants}
+                        className={`${navbar ? 'w-[110px] h-[40px] transition-all duration-200 ease-in-out' : 'w-[120px] h-[50px]'} 
+                         absolute left-[35%] top-0 md:top-2 md:left-[45%] lg:left-[3%] `}
+
+                    >
+                        <Image
+                            src="/Logo2.png"
+                            alt="logo"
+                            className='mt-4 object-contain object-center '
+                            width={1000}
+                            height={1000}
+                            priority
+                        />
+                    </motion.div>
+                </Link>
+            </motion.div>
 
         </header >
     )
