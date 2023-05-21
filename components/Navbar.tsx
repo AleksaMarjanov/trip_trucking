@@ -145,20 +145,20 @@ const Navbar = () => {
             }
 
 
-            {/*  logo 
+
             <Link href='/' className="">
                 <div className={`${navbar ? 'w-[110px] h-[40px] transition-all duration-200 ease-in-out' : 'w-[120px] h-[50px]'} absolute left-[50%] top-0 translate-x-[-50%] md:top-2 lg:left-[70%] xl:left-[50%]`}>
                     <Image
-                        src="/logoNoBg.png"
+                        src="/Logo.png"
                         alt="logo"
-                        className='object-contain object-center '
+                        className='mt-4 object-contain object-center '
                         width={1000}
                         height={1000}
                         priority
                     />
                 </div>
             </Link>
-            */}
+
         </header >
     )
 }
