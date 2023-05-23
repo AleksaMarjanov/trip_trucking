@@ -18,6 +18,7 @@ const Contact = () => {
                 <Form />
             </section>
         </div>
+
     )
 }
 
