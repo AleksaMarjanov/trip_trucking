@@ -1,6 +1,6 @@
 "use client";
 
-import { client } from '@/lib/sanity.client';
+import { client } from "@/lib/sanity.client";
 import { Services } from '@/typings';
 import { groq } from 'next-sanity';
 import React, { useState, useEffect } from 'react'
@@ -39,48 +39,41 @@ const Footer = () => {
                     }
                 </div>
 
-                <div className="col-span-4 md:col-span-1 flex flex-col gap-2 md:gap-4 text-[#00626f] items-start justify-start">
-                    <h2 className="text-2xl gap-4 mb-2 md:text-4xl">Practice</h2>
-                    <Link href="/">Home</Link>
-                    <Link href="/ourPractice">About</Link>
-                    <Link href="/newPatients">New Patients</Link>
-                    <Link href="/contact">Contact Us</Link>
-                </div>
 
-                <div className="col-span-4 md:col-span-1 gap-y-3 md:gap-y-4 flex flex-col text-[#00626f] items-start justify-start">
-                    <h2 className="text-2xl text-[#00626f] mb-2 md:text-4xl ">Office</h2>
-                    <div className="flex items-start justify-start relative flex-row w-full h-full">
-                        <a href="tel:701.577.1000">
-                            <Image
-                                src="/phone.svg"
-                                alt="phone icon"
-                                width={30}
-                                height={30}
-                                priority
-                            />
-                        </a>
-                        <a href="tel:701.577.1000">Call or Text (701)-577-1000</a>
-                    </div>
-                    <div className='py-2'>
-                        501 Main Street
-                        Williston ND 58801
-                        <div className='flex mt-4 flex-row items-start'>
-                            <Image
-                                src="/mapIcon.svg"
-                                alt="map icon"
-                                width={30}
-                                height={30}
-                                priority
-                            />
-                            <Link className="" href="https://www.google.com/maps/place/Williston+Family+Dentistry/@48.1488416,-103.6250724,17z/data=!3m1!4b1!4m6!3m5!1s0x53215b7154289103:0x8a0ba01f800015e!8m2!3d48.148838!4d-103.6224975!16s%2Fg%2F11fhs3d38v" >
-                                Get Directions
-                            </Link>
-                        </div>
-                    </div>
-
-                    <span>M–TH, 7:30AM–4:00PM<br />
-                        F-SU Closed</span>
-                </div>
+                {/* <div className="col-span-4 md:col-span-1 gap-y-3 md:gap-y-4 flex flex-col text-[#00626f] items-start justify-start"> */}
+                {/*     <h2 className="text-2xl text-[#00626f] mb-2 md:text-4xl ">Office</h2> */}
+                {/*     <div className="flex items-start justify-start relative flex-row w-full h-full"> */}
+                {/*         <a href="tel:701.577.1000"> */}
+                {/*             <Image */}
+                {/*                 src="/phone.svg" */}
+                {/*                 alt="phone icon" */}
+                {/*                 width={30} */}
+                {/*                 height={30} */}
+                {/*                 priority */}
+                {/*             /> */}
+                {/*         </a> */}
+                {/*         <a href="tel:701.577.1000">Call or Text (701)-577-1000</a> */}
+                {/*     </div> */}
+                {/*     <div className='py-2'> */}
+                {/*         501 Main Street */}
+                {/*         Williston ND 58801 */}
+                {/*         <div className='flex mt-4 flex-row items-start'> */}
+                {/*             <Image */}
+                {/*                 src="/mapIcon.svg" */}
+                {/*                 alt="map icon" */}
+                {/*                 width={30} */}
+                {/*                 height={30} */}
+                {/*                 priority */}
+                {/*             /> */}
+                {/*             <Link className="" href="https://www.google.com/maps/place/Williston+Family+Dentistry/@48.1488416,-103.6250724,17z/data=!3m1!4b1!4m6!3m5!1s0x53215b7154289103:0x8a0ba01f800015e!8m2!3d48.148838!4d-103.6224975!16s%2Fg%2F11fhs3d38v" > */}
+                {/*                 Get Directions */}
+                {/*             </Link> */}
+                {/*         </div> */}
+                {/*     </div> */}
+                {/**/}
+                {/*     <span>M–TH, 7:30AM–4:00PM<br /> */}
+                {/*         F-SU Closed</span> */}
+                {/* </div> */}
 
                 <div className='col-span-4 md:col-span-1'>
                     <h2 className=" text-2xl md:text-4xl text-[#00626f] mb-2">Socials</h2>

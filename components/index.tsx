@@ -2,4 +2,5 @@ export { default as Navbar } from './Navbar'
 export { default as Form } from './Form'
 export { default as HeroLanding } from './HeroLanding'
 export { default as Hero } from './Hero'
+export { default as Footer } from './Footer'
 
