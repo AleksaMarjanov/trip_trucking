@@ -30,7 +30,7 @@ const HeroLanding = ({ title, heading, message, src, href, callToAction, callToA
                 <Image src={src} alt="hero" fill className="w-full fixed object-cover object-center" priority />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75 z-[2]" />
                 <motion.div
-                    className="text-white z-[2] absolute top-[30%] left-[3%] flex flex-col justify-between gap-y-6"
+                    className="text-white z-[2] absolute top-[35%] left-[3%] flex flex-col justify-between gap-y-6"
                 >
                     <div className='flex items-start justify-center flex-col gap-y-6'>
                         <motion.div
@@ -52,25 +52,25 @@ const HeroLanding = ({ title, heading, message, src, href, callToAction, callToA
                         </motion.div>
                     </div>
 
-                    <Link href={`${callToActionHref}`}>
-                        <motion.button className='bg-white text-black rounded-[5px] px-4 py-4 mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'>
+                    <a href={`${callToActionHref}`} className='max-w-[200px]'>
+                        <motion.button className=' bg-white text-black rounded-[5px] px-4 py-4 mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'>
                             {callToAction}
                         </motion.button>
-                    </Link>
+                    </a>
                 </motion.div>
                 <motion.div
                     variants={textVariant(0.5)}
                     className="absolute bottom-[10%] left-[40%] sm:left-[45%] md:left-[45%] z-[30] mt-64 md:mt-[3rem] flex items-center justify-center"
 
                 >
-                    <Link href={`#${href}`}>
+                    <a href={`#${href}`}>
                         <motion.button
                             className="text-white  
                             font-bold uppercase text-sm sm:text-md md:text-lg 
                             cursor-pointer ">
                             Scroll Down
                         </motion.button>
-                    </Link>
+                    </a>
 
                 </motion.div>
             </motion.div>

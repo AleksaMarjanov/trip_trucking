@@ -52,7 +52,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                         </motion.div>
                     </div>
 
-                    <a href={`${callToActionHref}`}>
+                    <a href={`${callToActionHref}`} className='max-w-[200px]'>
                         <motion.button className='bg-white text-black rounded-[5px] px-4 py-4 mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'>
                             {callToAction}
                         </motion.button>

@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <main className="min-h-screen ">
             <HeroLanding title="Tripp in Trucking"
-                src="/truck.jpg"
+                src="/tripHero.jpg"
                 message="Unlocking the Hydro Power, Unleashing Your Success!"
                 heading="Revolutionizing Hydro Vac and Trucking Solutions"
                 href="about"
