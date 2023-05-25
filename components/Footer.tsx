@@ -24,6 +24,8 @@ const Footer = () => {
     }, [])
 
 
+    console.log("Our services", { services })
+
     return (<footer className="w-full bg-gray-100 border-t-2 border-[#434f7e] shadow-2xl flex flex-col items-start px-6 md:px-12 justify-between">
         <div className="w-full mt-16 md:flex-row items-start justify-center">
             <div>

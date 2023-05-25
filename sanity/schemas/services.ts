@@ -22,6 +22,14 @@ export default defineType({
             type: 'string',
         }),
         defineField({
+            name: 'heroImage',
+            title: 'Hero Image',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        }),
+        defineField({
             name: 'slug',
             title: 'Slug',
             type: 'slug',

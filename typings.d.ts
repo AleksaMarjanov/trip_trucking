@@ -7,7 +7,7 @@ interface Base {
     _updatedAt: string;
 }
 
-interface Services extends Base {
+export interface Services extends Base {
     author: AuthStoreOptions;
     body: Block[];
     categories: Category[];
@@ -19,21 +19,6 @@ interface Services extends Base {
     description: string;
 }
 
-interface Transactions extends Base {
-    imgurl: Image;
-}
-
-export interface PageInfo extends Base {
-    _type: "pageInfo";
-    address: string,
-    backgroundInformation: string;
-    email: string;
-    role: string;
-    heroImage: Image;
-    name: string;
-    phoneNumber: string;
-    profilePic: Image;
-}
 
 // export interface Testimonials extends Base {
 //     _type: "testimonials";
