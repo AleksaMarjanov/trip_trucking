@@ -52,8 +52,7 @@ async function Service({ params: { slug } }: Props) {
             <HeroLanding
                 message={service?.headingMessage}
                 heading={service?.headingHero}
-                src="/winching.jpg"
-                // src={urlFor(service?.mainImage).url()}
+                src={urlFor(service?.heroImage).url()}
                 title="Service title"
                 href="Service"
                 callToAction="Request Free Quote"

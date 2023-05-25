@@ -16,6 +16,7 @@ export interface Services extends Base {
     title: string;
     headingHero: string;
     headingMessage: string;
+    heroImage: Image;
     description: string;
 }
 
