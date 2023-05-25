@@ -102,7 +102,7 @@ const Navbar = () => {
     }, [isOpen])
 
     return (
-        <header className={`${navbar ? 'bg-white text-black shadow-xl ' : 'text-white bg-transparent'} fixed w-full items-end justify-end z-[999] flex lg:px-16 py-12 lg:py-10 font-normal`}>
+        <header className={`${navbar ? 'bg-white text-black shadow-xl ' : 'text-white bg-transparent'} fixed w-full items-end justify-end z-[999] flex lg:px-16 py-12 font-normal`}>
             <button className='px-3 flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
                 <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
                 <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
@@ -118,7 +118,7 @@ const Navbar = () => {
                     className={`lg:flex hidden items-center justify-start ${navbar ? 'text-[17px] transition-all duration-200 ease-in-out' : 'text-lg'} font-medium`}>
                     <CustomLink href="/" title='Home' className="mr-4" />
                     <CustomLink href="/about" title='About' className="mx-4" />
-                    {/* <CustomLink href="/equipment" title='Equipment' className="mx-4" /> */}
+                    <CustomLink href="/equipment" title='Equipment & Rentals' className="mx-4" />
                     <CustomLink href="/services" title='Services' className="mx-4" />
                     <CustomLink href="/contact" title='Contact' className="mr-4" />
                 </motion.nav>
@@ -132,10 +132,10 @@ const Navbar = () => {
                         variants={mobileVariants}
                         whileInView="show"
                         viewport={{ once: true }}
-                        className={`${navbar ? 'top-[7%]' : 'top-[12%]'} w-full lg:hidden fixed  bottom-30 left-0 py-2 h-screen flex flex-col text-black bg-white text-4xl font-medium`}>
+                        className="w-full lg:hidden fixed top-[15%] bottom-30 left-0 h-screen flex flex-col text-black bg-white text-4xl font-medium">
                         <CustomMobileLink href="/" title='Home' className="mt-48" toggle={handleToggle} />
                         <CustomMobileLink href="/about" title='About' className="" toggle={handleToggle} />
-                        {/* <CustomMobileLink href="/equipment" title='Equipment & Rentals' className="" toggle={handleToggle} /> */}
+                        <CustomMobileLink href="/equipment" title='Equipment & Rentals' className="" toggle={handleToggle} />
                         <CustomMobileLink href="/services" title='Services' className="" toggle={handleToggle} />
                         <CustomMobileLink href="/contact" title='Contact' className="" toggle={handleToggle} />
                     </motion.nav>
@@ -154,8 +154,8 @@ const Navbar = () => {
                     <Link href='/' className="">
                         <motion.div
                             variants={mobileVariants}
-                            className={`${navbar ? 'w-[110px] h-[40px] z-[50] transition-all duration-200 ease-in-out' : 'w-[120px] h-[50px]'}
-                        absolute left-[35 %] top-0 md:top-2 md:left-[45%] lg:left-[3%] `}
+                            className={`${navbar ? 'w-[110px] h-[40px] transition-all duration-200 ease-in-out' : 'w-[120px] h-[50px]'} 
+                         absolute left-[35%] top-0 md:top-2 md:left-[45%] lg:left-[3%] `}
                         >
                             <Image
                                 src="/Logo.png"
@@ -166,7 +166,7 @@ const Navbar = () => {
                                 priority
                             />
                         </motion.div>
-                    </Link >
+                    </Link>
 
                     : (
                         <Link href='/' className="">
@@ -189,7 +189,7 @@ const Navbar = () => {
                 }
 
 
-            </motion.div >
+            </motion.div>
 
         </header >
     )
