@@ -3,4 +3,5 @@ export { default as Form } from './Form'
 export { default as HeroLanding } from './HeroLanding'
 export { default as Hero } from './Hero'
 export { default as Footer } from './Footer'
+export { default as BulletSection } from './BulletSection'
 

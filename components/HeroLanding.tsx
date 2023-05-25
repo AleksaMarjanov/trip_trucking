@@ -36,24 +36,24 @@ const HeroLanding = ({ title, heading, message, src, href, callToAction, callToA
                         <motion.div
                             variants={textVariant(0.2)}
                         >
-                            <h2 className="text-5xl md:text-7xl font-semibold ">{title}</h2>
+                            <h2 className="shadow-2xl text-5xl md:text-7xl font-semibold ">{title}</h2>
                         </motion.div>
                         <motion.div
                             variants={textVariant(0.4)}
                         >
-                            <h2 className="text-2xl md:text-6xl font-medium">{heading}</h2>
+                            <h2 className="shadow-2xl text-2xl md:text-6xl font-medium">{heading}</h2>
                         </motion.div>
                         <div className='absolute z-[33] bg-white opacity-50 top-[50%]' />
                         <motion.div
                             variants={textVariant(0.5)}
                         >
-                            <p className="font-normal text-2xl md:text-4xl">{message}</p>
+                            <p className="shadow-2xl font-normal text-2xl md:text-4xl">{message}</p>
 
                         </motion.div>
                     </div>
 
-                    <a href={`${callToActionHref}`} className='max-w-[200px]'>
-                        <motion.button className=' bg-white text-black rounded-[5px] px-4 py-4 mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'>
+                    <a href={`${callToActionHref}`} className='max-w-[230px]'>
+                        <motion.button className=' bg-white text-black rounded-[5px] px-4 py-4 lg:text-lg mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'>
                             {callToAction}
                         </motion.button>
                     </a>
