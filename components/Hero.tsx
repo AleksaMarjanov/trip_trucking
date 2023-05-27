@@ -26,7 +26,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
         >
             <motion.div
                 variants={zoomIn(0.1, 0.6)}
-                className="w-full relative h-[70vh] md:h-screen flex flex-col items-start justify-start object-cover object-center" >
+                className="w-full relative h-[70vh] md:h-[85vh] flex flex-col items-start justify-start object-cover object-center" >
                 <Image src={src} alt="hero" fill className="w-full fixed object-cover object-center" priority />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75 z-[2]" />
                 <motion.div
