@@ -1,6 +1,7 @@
 import { BulletSection } from "@/components";
 import Hero from "@/components/Hero";
 import HeroLanding from "@/components/HeroLanding";
+import Lorem from "@/components/Lorem";
 import Image from "next/image";
 
 export default function Home() {
@@ -20,7 +21,9 @@ export default function Home() {
             <section className="mb-30">
                 <BulletSection />
             </section>
-
+            <div className="relative">
+                <Lorem />
+            </div>
 
         </main >
     )

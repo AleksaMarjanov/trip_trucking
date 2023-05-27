@@ -12,7 +12,7 @@ const BulletSection = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false }}
-            id="bulletSection" className="xl:absolute z-[20] xl:ml-[10rem] mb-[2rem] top-[95%]"
+            id="bulletSection" className="xl:relative z-[20] xl:ml-[10rem] mb-[2rem] top-[95%]"
         >
             <motion.section className="mr-50 bg-black text-white"
                 variants={fadeIn('up', 'tween', 0.6, 1)}
