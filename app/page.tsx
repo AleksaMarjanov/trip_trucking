@@ -12,12 +12,16 @@ export default function Home() {
                     src="/tripHero.jpg"
                     message="Unlocking the Hydro Power, Unleashing Your Success!"
                     heading="Revolutionizing Hydro Vac and Trucking Solutions"
-                    href="about"
+                    href="bulletSection"
                     callToAction="Request Free Quote"
                     callToActionHref="/contact"
                 />
             </div>
-            <BulletSection />
+            <section className="mb-30">
+                <BulletSection />
+            </section>
+
+
         </main >
     )
 }
