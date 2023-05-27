@@ -12,9 +12,9 @@ const BulletSection = () => {
                             <Image src="/rocket.svg" alt="solutions light bulb image" width={50} height={50} priority className="object-contain object-center" />
                         </div>
                         <ol className="leading-[30px] font-semibold text-lg">
-                            <li>State-of-the-art hydrovac trucks and cutting-edge equipment</li>
-                            <li>Experienced team members with in-depth knowledge of hydrovac excavation tecniques</li>
-                            <li>Ability to tackle complex projects with precision and efficiency</li>
+                            <li>&#x2022; State-of-the-art hydrovac trucks and cutting-edge equipment</li>
+                            <li>&#x2022; Experienced team members with in-depth knowledge of winching, hydrovac operations, and equipment recovery techniques. </li>
+                            <li>&#x2022; Ability to tackle complex projects with precision and efficiency</li>
                         </ol>
                     </div>
                     <div className="flex justify-center flex-col">
@@ -23,9 +23,9 @@ const BulletSection = () => {
                             <Image src="/environment.svg" alt="solutions light bulb image" width={50} height={50} priority className="object-contain object-center" />
                         </div>
                         <ol className="leading-[30px] font-semibold text-lg">
-                            <li>Strict adherence to safety protocols and industry regulations.</li>
-                            <li>Certification and commitment to maintaining a safe working environment.</li>
-                            <li>Environmental responsibility through sustainable practices and minimizing impact.</li>
+                            <li>&#x2022; Strict adherence to safety protocols and industry regulations.</li>
+                            <li>&#x2022; Certification and commitment to maintaining a safe working environment.</li>
+                            <li>&#x2022; Environmental responsibility through sustainable practices and minimizing impact.</li>
                         </ol>
                     </div>
 
@@ -35,9 +35,9 @@ const BulletSection = () => {
                             <Image src="/solutions.svg" alt="solutions light bulb image" width={50} height={50} priority className="object-contain object-center" />
                         </div>
                         <ol className="leading-[30px] font-semibold text-lg">
-                            <li>Tailored solutions based on unique project requirements.</li>
-                            <li>Flexibility to adapt to specific needs and challenges.</li>
-                            <li>Dedication to providing exceptional service and exceeding customer expectations.</li>
+                            <li>&#x2022; Tailored solutions based on unique project requirements.</li>
+                            <li>&#x2022; Flexibility to adapt to specific needs and challenges.</li>
+                            <li>&#x2022; Dedication to providing exceptional service and exceeding customer expectations.</li>
                         </ol>
                     </div>
                 </div>
