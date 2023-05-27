@@ -1,5 +1,4 @@
 import { HeroLanding } from '@/components';
-// import { RichTextComponents } from '@/components/RichTextComponent';
 
 import { client } from '@/lib/sanity.client';
 import { Services } from '@/typings';
@@ -7,7 +6,7 @@ import { urlFor } from '@/lib/urlFor';
 import { PortableText } from '@portabletext/react';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
-import image1 from '@/public/winching.jpg';
+import { RichTextComponents } from '@/components/RichTextComponent';
 
 
 type Props = {
@@ -50,21 +49,46 @@ async function Service({ params: { slug } }: Props) {
     return (
         <>
             <HeroLanding
-                message={service?.headingMessage}
+                message={service?.heroTagline}
                 heading={service?.headingHero}
                 src={urlFor(service?.heroImage).url()}
-                title="Service title"
-                href="Service"
+                title={service?.title}
+                href="paragraph"
                 callToAction="Request Free Quote"
                 callToActionHref="/contact"
             />
-            <article className="min-h-screen py-36 text-center ">
+            <article id="paragraph" className="min-h-screen py-36 text-center ">
                 <div className="p-6 flex flex-col md:flex-row justify-center gap-6 md:gap-12 lg:gap-24">
                     <div className='md:w-1/2 flex flex-col text-xl font-medium items-start justify-start'>
-                        {/* <PortableText value={service?.body} components={RichTextComponents} /> */}
+                        <PortableText value={service?.body} components={RichTextComponents} />
                     </div>
-                    <div className='relative w-[300px] h-[300px] md:w-[600px] md:h-[600px]'>
-                        <Image src={image1} alt="Hero Section Image" width={1000} height={1000} priority className='object-contain object-center' />
+                    <div
+                        className="grid grid-cols-2 grid-rows-2 md:grid-rows-3 md:h-[60vh]"
+                    >
+                        <Image
+                            src={urlFor(service.imageOne).url()}
+                            alt={service.title}
+                            width={400}
+                            className="object-cover w-full h-full p-2 row-span-3 object-center"
+                            height={400}
+                            priority
+                        />
+                        <Image
+                            src={urlFor(service.imageTwo).url()}
+                            alt={service.title}
+                            width={400}
+                            className="object-cover w-full h-full p-2 row-span-2"
+                            height={400}
+                            priority
+                        />
+                        <Image
+                            src={urlFor(service.imageThree).url()}
+                            alt={service.title}
+                            width={400}
+                            className="object-cover w-full h-full p-2 row-span-1"
+                            height={400}
+                            priority
+                        />
                     </div>
                 </div>
             </article>

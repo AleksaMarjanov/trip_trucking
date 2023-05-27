@@ -17,13 +17,45 @@ export default defineType({
             type: 'string',
         }),
         defineField({
-            name: 'headingMessage',
-            title: 'Title',
+            name: 'heroTagline',
+            title: 'Hero Tagline',
             type: 'string',
         }),
         defineField({
             name: 'heroImage',
             title: 'Hero Image',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        }),
+        defineField({
+            name: 'imageOne',
+            title: 'Image One',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        }),
+        defineField({
+            name: 'imageTwo',
+            title: 'Image Two',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        }),
+        defineField({
+            name: 'imageThree',
+            title: 'Image three',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        }),
+        defineField({
+            name: 'imageFour',
+            title: 'Image Four',
             type: 'image',
             options: {
                 hotspot: true,
