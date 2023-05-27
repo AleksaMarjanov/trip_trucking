@@ -36,7 +36,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                         <motion.div
                             variants={textVariant(0.2)}
                         >
-                            <h2 className="text-5xl md:text-7xl font-semibold ">{title}</h2>
+                            <h2 className="text-5xl md:text-7xl font-bold">{title}</h2>
                         </motion.div>
                         <motion.div
                             variants={textVariant(0.4)}

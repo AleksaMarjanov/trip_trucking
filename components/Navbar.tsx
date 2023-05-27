@@ -102,7 +102,7 @@ const Navbar = () => {
     }, [isOpen])
 
     return (
-        <header className={`${navbar ? 'bg-white text-black 2 shadow-xl ' : 'text-white bg-transparent'} fixed w-full items-end justify-end z-[999] flex lg:px-16 py-12 font-normal`}>
+        <header className={`${navbar ? 'bg-white text-black 2 shadow-xl ' : 'text-white bg-black'} fixed w-full items-end justify-end z-[999] flex lg:px-16 py-12 font-normal`}>
             <button className='px-3 flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
                 <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
                 <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>

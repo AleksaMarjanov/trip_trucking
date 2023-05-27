@@ -57,20 +57,20 @@ async function Service({ params: { slug } }: Props) {
                 callToAction="Request Free Quote"
                 callToActionHref="/contact"
             />
-            <article id="paragraph" className="min-h-screen py-16 lg:py-36 ">
+            <article id="paragraph" className="min-h-screen py-36">
                 <h1 className='text-4xl lg:text-6xl font-semibold text-center mb-6 md:mb-16'>{service.title}</h1>
-                <div className="p-3 md:p-6 flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-24">
-                    <div className='px-6 lg:w-1/2 lg:px-16 flex flex-col text-xl font-medium items-start justify-start'>
+                <div className="p-6 md:px-16 flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-24">
+                    <div className='md:w-1/2 flex flex-col text-xl font-medium items-start justify-start'>
                         <PortableText value={service?.body} components={RichTextComponents} />
                     </div>
                     <div
-                        className="grid grid-cols-2 grid-rows-2 md:grid-rows-6"
+                        className="grid grid-cols-2 grid-rows-2 md:grid-rows-6 md:h-[60vh]"
                     >
                         <Image
                             src={urlFor(service.imageOne).url()}
                             alt={service.title}
                             width={400}
-                            className="object-cover w-full h-full p-2 row-span-3"
+                            className="object-cover w-full h-full p-2 row-span-6 object-center"
                             height={400}
                             priority
                         />

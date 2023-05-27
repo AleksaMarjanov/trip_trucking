@@ -7,7 +7,7 @@ export default function Home() {
 
     return (
         <main className="min-h-screen relative">
-            <div className="relative z-[0]">
+            <div className="">
                 <HeroLanding
                     // title="Tripp in Trucking and Services"
                     title=""
