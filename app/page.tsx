@@ -1,4 +1,4 @@
-import { BulletSection } from "@/components";
+import { BulletSection, Services } from "@/components";
 import Hero from "@/components/Hero";
 import HeroLanding from "@/components/HeroLanding";
 import Lorem from "@/components/Lorem";
@@ -21,12 +21,15 @@ export default function Home() {
                     callToActionHref="/contact"
                 />
             </div>
-            <section className="mb-30">
-                <BulletSection />
+            <section>
+                <Services />
             </section>
-            <div className="relative">
-                <Lorem />
-            </div>
+            {/* <section className="mb-30 "> */}
+            {/*     <BulletSection /> */}
+            {/* </section> */}
+            {/* <div className="relative"> */}
+            {/*     <Lorem /> */}
+            {/* </div> */}
 
         </main >
     )

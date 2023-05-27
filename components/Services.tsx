@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { fadeIn, staggerContainer, textVariant } from '@/utils/motion'
 
-const BulletSection = () => {
+const Services = () => {
     return (
         <motion.div
             variants={staggerContainer}
@@ -75,4 +75,4 @@ const BulletSection = () => {
     )
 }
 
-export default BulletSection
+export default Services;

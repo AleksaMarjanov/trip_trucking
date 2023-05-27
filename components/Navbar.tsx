@@ -106,7 +106,7 @@ const Navbar = () => {
             <button className='px-3 flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
                 <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
                 <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+                {/* <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span> */}
             </button>
 
             <div className="flex items-center justify-center flex-wrap">
