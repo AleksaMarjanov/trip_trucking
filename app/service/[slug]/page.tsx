@@ -1,4 +1,4 @@
-import { HeroLanding } from '@/components';
+import { Hero } from '@/components';
 
 import { client } from '@/lib/sanity.client';
 import { Services } from '@/typings';
@@ -48,7 +48,7 @@ async function Service({ params: { slug } }: Props) {
 
     return (
         <>
-            <HeroLanding
+            <Hero
                 message={service?.heroTagline}
                 heading={service?.headingHero}
                 src={urlFor(service?.heroImage).url()}
@@ -57,19 +57,20 @@ async function Service({ params: { slug } }: Props) {
                 callToAction="Request Free Quote"
                 callToActionHref="/contact"
             />
-            <article id="paragraph" className="min-h-screen py-36 text-center ">
-                <div className="p-6 flex flex-col md:flex-row justify-center gap-6 md:gap-12 lg:gap-24">
-                    <div className='md:w-1/2 flex flex-col text-xl font-medium items-start justify-start'>
+            <article id="paragraph" className="min-h-screen py-36">
+                <h1 className='text-4xl lg:text-6xl font-semibold text-center mb-6 md:mb-16'>{service.title}</h1>
+                <div className="p-6 flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-24">
+                    <div className='px-16 md:w-1/2 flex flex-col text-xl font-medium items-start justify-start'>
                         <PortableText value={service?.body} components={RichTextComponents} />
                     </div>
                     <div
-                        className="grid grid-cols-2 grid-rows-2 md:grid-rows-3 md:h-[60vh]"
+                        className="grid grid-cols-2 grid-rows-2 md:grid-rows-6 md:h-[60vh]"
                     >
                         <Image
                             src={urlFor(service.imageOne).url()}
                             alt={service.title}
                             width={400}
-                            className="object-cover w-full h-full p-2 row-span-3 object-center"
+                            className="object-cover w-full h-full p-2 row-span-3"
                             height={400}
                             priority
                         />
@@ -77,7 +78,7 @@ async function Service({ params: { slug } }: Props) {
                             src={urlFor(service.imageTwo).url()}
                             alt={service.title}
                             width={400}
-                            className="object-cover w-full h-full p-2 row-span-2"
+                            className="object-cover w-full h-full p-2 row-span-3"
                             height={400}
                             priority
                         />
@@ -85,10 +86,18 @@ async function Service({ params: { slug } }: Props) {
                             src={urlFor(service.imageThree).url()}
                             alt={service.title}
                             width={400}
-                            className="object-cover w-full h-full p-2 row-span-1"
+                            className="object-cover w-full h-full p-2 row-span-3"
                             height={400}
                             priority
                         />
+                        {/* <Image */}
+                        {/*     src={urlFor(service.imageFour).url()} */}
+                        {/*     alt={service.title} */}
+                        {/*     width={400} */}
+                        {/*     className="object-cover w-full h-full p-2 row-span-3" */}
+                        {/*     height={400} */}
+                        {/*     priority */}
+                        {/* /> */}
                     </div>
                 </div>
             </article>
