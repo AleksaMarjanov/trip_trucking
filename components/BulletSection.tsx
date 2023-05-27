@@ -11,10 +11,10 @@ const BulletSection = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             id="bulletSection" className="xl:relative z-[20] xl:ml-[10rem] mb-[2rem] top-[95%]"
         >
-            <motion.section className="mr-50 bg-black text-white"
+            <motion.section className="mr-50 bg-white text-black"
                 variants={fadeIn('up', 'tween', 0.6, 1)}
             >
                 <motion.div

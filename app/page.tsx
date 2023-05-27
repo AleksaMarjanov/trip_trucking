@@ -9,10 +9,13 @@ export default function Home() {
     return (
         <main className="min-h-screen relative">
             <div className="relative z-[0]">
-                <HeroLanding title="Tripp in Trucking and Services"
+                <Hero
+                    // title="Tripp in Trucking and Services"
+                    title=""
                     src="/tripHero.jpg"
-                    message="Unlocking the Hydro Power, Unleashing Your Success!"
-                    heading="Revolutionizing Hydro Vac and Trucking Solutions"
+                    // message="Unlocking the Hydro Power, Unleashing Your Success!"
+                    message=""
+                    heading="Revolutionizing hydro vac and trucking solutions."
                     href="bulletSection"
                     callToAction="Request Free Quote"
                     callToActionHref="/contact"
