@@ -64,13 +64,13 @@ async function Service({ params: { slug } }: Props) {
                         <PortableText value={service?.body} components={RichTextComponents} />
                     </div>
                     <div
-                        className="grid grid-cols-2 grid-rows-2 md:grid-rows-6 md:h-[60vh]"
+                        className="grid grid-cols-2 grid-rows-2 md:grid-rows-6 md:h-[50vh]"
                     >
                         <Image
                             src={urlFor(service.imageOne).url()}
                             alt={service.title}
                             width={400}
-                            className="object-cover w-full h-full p-2 row-span-6 object-center"
+                            className="object-cover w-full h-full p-2 row-span-6 "
                             height={400}
                             priority
                         />
@@ -100,7 +100,7 @@ async function Service({ params: { slug } }: Props) {
                         {/* /> */}
                     </div>
                 </div>
-            </article>
+            </article >
         </>
     )
 

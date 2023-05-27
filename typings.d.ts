@@ -15,7 +15,9 @@ export interface Services extends Base {
     slug: Slug;
     title: string;
     headingHero: string;
-    heroTagline: string; heroImage: Image;
+    heroTagline: string;
+    heroImage: Image;
+    description: string;
     imageOne: Image;
     imageTwo: Image;
     imageThree: Image;
