@@ -35,7 +35,7 @@ const Navbar = () => {
         return (
             <Link href={href} className={`${className} relative group`}  >
                 {title}
-                < span className={`h-[2px] inline-block  bg-white absolute right-0 -bottom-0.5
+                < span className={`${navbar ? 'bg-black' : 'bg-white'} h-[2px] inline-block  absolute right-0 -bottom-0.5
                 group-hover:w-full transition-[width] ease duration-200
                 ${pathname === href ? 'w-full' : 'w-0'}`}>&nbsp;</span >
             </Link >
