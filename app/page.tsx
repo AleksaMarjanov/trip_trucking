@@ -1,4 +1,4 @@
-import { BulletSection, Footer, Services } from "@/components";
+import { BulletSection, Footer, Services, TrustedBy } from "@/components";
 import HeroLanding from "@/components/HeroLanding";
 import Lorem from "@/components/Lorem";
 import Image from "next/image";
@@ -20,15 +20,15 @@ export default function Home() {
                     callToActionHref="/contact"
                 />
             </div>
-            <section className=" ">
+            <section className="z-[20] ">
                 <Services />
             </section>
             <section className="mb-30 ">
                 <BulletSection />
             </section>
-            {/* <div className="relative"> */}
-            {/*     <Lorem /> */}
-            {/* </div> */}
+            <div className="">
+                <TrustedBy />
+            </div>
 
         </main >
     )
