@@ -118,7 +118,7 @@ const Form = () => {
                                 >
                                     <Container maxW="850px" mt={12} className="text-black">
                                         {error && (
-                                            <Text color="#F7AB0A" my={4} fontSize="xl">
+                                            <Text color="red.300" my={4} fontSize="xl">
                                                 {error}
                                             </Text>
                                         )}
@@ -129,11 +129,11 @@ const Form = () => {
                                             isInvalid={touched.name && !values.name}
                                             mb={5}
                                         >
-                                            <FormLabel>Name</FormLabel>
                                             <Input
                                                 type="text"
                                                 name="name"
                                                 errorBorderColor="red.300"
+                                                placeholder="Name"
                                                 value={values.name}
                                                 onChange={handleChange}
                                                 onBlur={onBlur}
@@ -147,11 +147,11 @@ const Form = () => {
                                             isInvalid={touched.email && !values.email}
                                             mb={5}
                                         >
-                                            <FormLabel>Email</FormLabel>
                                             <Input
                                                 type="email"
                                                 name="email"
                                                 errorBorderColor="red.300"
+                                                placeholder="Email"
                                                 value={values.email}
                                                 onChange={handleChange}
                                                 onBlur={onBlur}
@@ -159,23 +159,23 @@ const Form = () => {
                                             <FormErrorMessage>Required</FormErrorMessage>
                                         </FormControl>
 
-                                        <FormControl
-                                            mb={5}
-                                            isRequired
-                                            // @ts-ignore
-                                            isInvalid={touched.subject && !values.subject}
-                                        >
-                                            <FormLabel>Subject</FormLabel>
-                                            <Input
-                                                type="text"
-                                                name="subject"
-                                                errorBorderColor="red.300"
-                                                value={values.subject}
-                                                onChange={handleChange}
-                                                onBlur={onBlur}
-                                            />
-                                            <FormErrorMessage>Required</FormErrorMessage>
-                                        </FormControl>
+                                        {/* <FormControl */}
+                                        {/*     mb={5} */}
+                                        {/*     isRequired */}
+                                        {/*     // @ts-ignore */}
+                                        {/*     isInvalid={touched.subject && !values.subject} */}
+                                        {/* > */}
+                                        {/* <FormLabel>Subject</FormLabel> */}
+                                        {/* <Input */}
+                                        {/*     type="text" */}
+                                        {/*     name="subject" */}
+                                        {/*     errorBorderColor="red.300" */}
+                                        {/*     value={values.subject} */}
+                                        {/*     onChange={handleChange} */}
+                                        {/*     onBlur={onBlur} */}
+                                        {/* /> */}
+                                        {/* <FormErrorMessage>Required</FormErrorMessage> */}
+                                        {/* </FormControl> */}
 
                                         <FormControl
                                             isRequired
@@ -183,11 +183,11 @@ const Form = () => {
                                             isInvalid={touched.message && !values.message}
                                             mb={5}
                                         >
-                                            <FormLabel>Message</FormLabel>
                                             <Textarea
                                                 type="text"
                                                 name="message"
                                                 rows={4}
+                                                placeholder="Your Message"
                                                 errorBorderColor="red.300"
                                                 value={values.message}
                                                 // @ts-ignore
@@ -199,14 +199,14 @@ const Form = () => {
                                         </FormControl>
 
                                         <Button
-                                            className="hover:bg-slate-700"
+                                            className=" hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
                                             variant="outline"
                                             colorScheme="white"
                                             isLoading={isLoading}
                                             disabled={
                                                 !values.name ||
                                                 !values.email ||
-                                                !values.subject ||
+                                                // !values.subject ||
                                                 !values.message
                                             }
                                             onClick={sendEmail}
@@ -233,7 +233,7 @@ const Form = () => {
                     )}
                 </motion.div>
             </motion.div>
-        </ChakraProvider>
+        </ChakraProvider >
     );
 };
 
