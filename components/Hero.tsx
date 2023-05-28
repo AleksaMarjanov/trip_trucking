@@ -26,17 +26,17 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
         >
             <motion.div
                 variants={zoomIn(0.1, 0.6)}
-                className="w-full relative h-[70vh] md:h-[85vh] flex flex-col items-start justify-start object-cover object-center" >
+                className="w-full relative h-[80vh] md:h-[95vh] lg:h-[85vh] flex flex-col items-start justify-start object-cover object-center" >
                 <Image src={src} alt="hero" fill className="w-full fixed object-cover object-center" priority />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75 z-[2]" />
                 <motion.div
-                    className="text-white z-[2] absolute top-[30%] left-[10%] md:left-[15%] flex flex-col justify-between gap-y-6"
+                    className="text-white z-[2] absolute max-[375px]:top-[20%] top-[25%] lg:top-[30%] left-[10%] md:left-[15%] flex flex-col justify-between gap-y-6"
                 >
                     <div className='flex items-start justify-center flex-col gap-y-6'>
                         <motion.div
                             variants={textVariant(0.2)}
                         >
-                            <h2 className="text-5xl md:text-7xl font-semibold ">{title}</h2>
+                            <h2 className="max-[375px]:text-4xl text-5xl md:text-7xl font-semibold ">{title}</h2>
                         </motion.div>
                         <motion.div
                             variants={textVariant(0.4)}
@@ -60,7 +60,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                 </motion.div>
                 <motion.div
                     variants={textVariant(0.5)}
-                    className="absolute bottom-[10%] left-[40%] sm:left-[45%] md:left-[45%] z-[30] mt-64 md:mt-[3rem] flex items-center justify-center"
+                    className="absolute bottom-[3%] md:bottom-[10%] left-[40%] sm:left-[45%] md:left-[45%] z-[30] mt-64 md:mt-[3rem] flex items-center justify-center"
 
                 >
                     <a href={`#${href}`}>

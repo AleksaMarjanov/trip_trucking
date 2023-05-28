@@ -57,7 +57,7 @@ async function Service({ params: { slug } }: Props) {
                 callToAction="Request Free Quote"
                 callToActionHref="/contact"
             />
-            <article id="paragraph" className="min-h-screen py-36">
+            <article id="paragraph" className="min-h-screen py-6 lg:py-12 xl:py-36">
                 <h1 className='text-4xl lg:text-6xl font-semibold text-center mb-6 md:mb-16'>{service.title}</h1>
                 <div className="p-6 md:px-16 flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-24">
                     <div className='w-full lg:w-1/2 flex flex-col text-xl font-medium items-start justify-start'>
