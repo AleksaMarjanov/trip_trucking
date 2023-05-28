@@ -114,9 +114,9 @@ const Form = () => {
                                 <form
                                     ref={form}
                                     onSubmit={sendEmail}
-                                    className="flex flex-1 max-[1024px]:flex-[0.75]"
+                                    className=""
                                 >
-                                    <Container maxW="850px" mt={12} className="text-black">
+                                    <Container maxW="750px" mt={12} className="text-black">
                                         {error && (
                                             <Text color="red.300" my={4} fontSize="xl">
                                                 {error}
@@ -174,7 +174,7 @@ const Form = () => {
                                         {/*     onChange={handleChange} */}
                                         {/*     onBlur={onBlur} */}
                                         {/* /> */}
-                                        {/* <FormErrorMessage>Required</FormErrorMessage> */}
+                                        {/* <FormErtrorMessage>Required</FormErrorMessage> */}
                                         {/* </FormControl> */}
 
                                         <FormControl
