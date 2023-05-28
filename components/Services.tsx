@@ -34,7 +34,7 @@ const Services = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            id="services" className="min-h-screen md:px-16 absolute z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem] top-[75%]"
+            id="services" className="min-h-screen md:px-16 z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]"
         >
             <motion.section className="mr-50 bg-white text-black"
                 variants={fadeIn('up', 'tween', 0.6, 1)}
