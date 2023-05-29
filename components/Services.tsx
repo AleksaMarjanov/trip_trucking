@@ -10,6 +10,7 @@ import { groq } from 'next-sanity'
 import { client } from '@/lib/sanity.client'
 import { Services } from '@/typings'
 import ClientSideRoute from './ClientSideRoute'
+import ServiceImage from './ServiceImage'
 
 const Services = () => {
     const [services, setServices] = useState([])
@@ -58,10 +59,18 @@ const Services = () => {
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <Image src={urlFor(service.heroImage).url()} alt={service.title} width={1000} height={1000} className="w-full object-cover rounded-[5px]" priority />
+                                    <ServiceImage service={service} />
                                 </motion.div>
-                                <motion.h3 variants={textVariant(0.5)} className='font-semibold text-2xl mt-3'>{service.title}</motion.h3>
-                                <motion.span variants={textVariant(0.7)} className='font-normal text-black/75 text-lg'>{service.description}</motion.span>
+                                <motion.h3
+                                    variants={textVariant(0.5)}
+                                    className='font-semibold text-2xl mt-3'>
+                                    {service.title}
+                                </motion.h3>
+                                <motion.span
+                                    variants={textVariant(0.7)}
+                                    className='font-normal text-black/75 text-lg line-clamp-2'>
+                                    {service.description}
+                                </motion.span>
                             </div>
                         </ClientSideRoute>
                     )).slice(0, 3)}

@@ -6,4 +6,5 @@ export { default as Footer } from './Footer'
 export { default as BulletSection } from './BulletSection'
 export { default as Services } from './Services'
 export { default as TrustedBy } from './TrustedBy'
+export { default as ServiceImage } from './ServiceImage'
 
