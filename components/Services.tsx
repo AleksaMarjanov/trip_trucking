@@ -58,6 +58,7 @@ const Services = () => {
                                     variants={textVariant(0.3)}
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.3 }}
+                                    className='group transiton-transform duration-200 ease-out'
                                 >
                                     <ServiceImage service={service} />
                                 </motion.div>

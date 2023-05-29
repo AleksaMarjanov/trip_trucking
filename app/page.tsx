@@ -1,11 +1,13 @@
 import { BulletSection, Footer, Services, TrustedBy } from "@/components";
 import HeroLanding from "@/components/HeroLanding";
 import Lorem from "@/components/Lorem";
+import { groq } from "next-sanity";
 import Image from "next/image";
 
-export default function Home() {
+const Home = () => {
 
     return (
+
         <main className="min-h-screen relative">
             <div className="">
                 <HeroLanding
@@ -33,3 +35,5 @@ export default function Home() {
         </main >
     )
 }
+
+export default Home;

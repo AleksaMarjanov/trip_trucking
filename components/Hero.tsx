@@ -1,10 +1,11 @@
 "use client"
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { staggerContainer, textVariant, zoomIn } from '@/utils/motion'
 import Link from 'next/link'
+import ServiceImage from './ServiceImage'
 
 type HeroTypes = {
     heading: string,
@@ -17,6 +18,8 @@ type HeroTypes = {
 }
 
 const Hero = ({ title, heading, message, src, href, callToAction, callToActionHref }: HeroTypes) => {
+    const [loading, setLoading] = useState(true)
+
     return (
         <motion.div
             variants={staggerContainer}
@@ -27,7 +30,17 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
             <motion.div
                 variants={zoomIn(0.1, 0.6)}
                 className="w-full relative h-[80vh] md:h-[95vh] flex flex-col items-start justify-start object-cover object-center" >
-                <Image src={src} alt="hero" fill className="w-full fixed object-cover object-center" priority />
+                <Image
+                    src={src}
+                    alt="hero"
+                    fill
+                    className={`w-full fixed object-cover duration-700 ease-in-out transition-all  
+                            ${loading
+                            ? "scale-110 blur-2xl grayscale"
+                            : "scale-100 blur-0 grayscale-0"
+                        }`}
+                    onLoadingComplete={() => setLoading(false)}
+                    priority />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75 z-[2]" />
                 <motion.div
                     className="text-white z-[2] absolute max-[375px]:top-[20%] top-[25%] lg:top-[30%] left-[3%] md:left-[10%] lg:left-[15%] flex flex-col justify-between gap-y-6"
@@ -73,7 +86,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                     </a>
 
                 </motion.div>
-            </motion.div>
+            </motion.div >
 
         </motion.div >
     )

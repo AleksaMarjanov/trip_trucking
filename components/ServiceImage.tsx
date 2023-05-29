@@ -22,13 +22,13 @@ const ServiceImage = ({ service, fill }: Service) => {
                 alt={service.title}
                 width={1000}
                 height={1000}
-                className={`object-contain rounded-[5px] duration-500 ease-in-out group-hover:opacity-75
+                className={`object-cover rounded-[5px] duration-500 ease-in-out group-hover:opacity-75
                     ${loading
                         ? "scale-110 blur-2xl grayscale"
                         : "scale-100 blur-0 grayscale-0"
                     }`}
                 onLoadingComplete={() => setLoading(false)}
-            // priority
+                priority
             />
         )}
 
