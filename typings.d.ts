@@ -26,14 +26,14 @@ export interface Services extends Base {
 }
 
 
-// export interface Testimonials extends Base {
-//     _type: "testimonials";
-//     feedback: string;
-//     imgUrl: Image;
-//     date: string;
-//     company: string;
-//     name: string;
-// }
+export interface Testimonials extends Base {
+    _type: "testimonials";
+    feedback: string;
+    Image: Image;
+    position: string;
+    company: string;
+
+}
 
 // export interface Social extends Base {
 //     _type: "social";
