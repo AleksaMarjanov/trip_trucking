@@ -63,14 +63,15 @@ async function Service({ params: { slug } }: Props) {
                     <div className='w-full lg:w-1/2 flex flex-col text-xl font-medium items-start justify-start'>
                         <PortableText value={service?.body} components={RichTextComponents} />
                     </div>
+
                     <div
-                        className="grid grid-cols-2 grid-rows-2 md:grid-rows-6 md:h-[50vh]"
+                        className="grid grid-cols-2  grid-rows-2 md:grid-rows-3 sm:h-[60vh]"
                     >
                         <Image
                             src={urlFor(service.imageOne).url()}
                             alt={service.title}
                             width={400}
-                            className="object-cover w-full h-full p-2 row-span-6 "
+                            className="object-cover w-full h-full p-2 row-span-3 "
                             height={400}
                             priority
                         />
@@ -78,7 +79,7 @@ async function Service({ params: { slug } }: Props) {
                             src={urlFor(service.imageTwo).url()}
                             alt={service.title}
                             width={400}
-                            className="object-cover w-full h-full p-2 row-span-3"
+                            className="object-cover w-full h-full p-2 row-span-1"
                             height={400}
                             priority
                         />
@@ -86,7 +87,7 @@ async function Service({ params: { slug } }: Props) {
                             src={urlFor(service.imageThree).url()}
                             alt={service.title}
                             width={400}
-                            className="object-cover w-full h-full p-2 row-span-3"
+                            className="object-cover w-full h-full p-2 row-span-2"
                             height={400}
                             priority
                         />

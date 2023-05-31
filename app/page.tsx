@@ -25,9 +25,9 @@ const Home = () => {
             <section className="z-[20] ">
                 <Services />
             </section>
-            <section className="mb-30 ">
-                <BulletSection />
-            </section>
+            {/* <section className="mb-30 "> */}
+            {/*     <BulletSection /> */}
+            {/* </section> */}
             <div className="">
                 <TrustedBy />
             </div>
