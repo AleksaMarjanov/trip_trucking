@@ -1,3 +1,4 @@
+import { TrustedBy } from '@/components'
 import Hero from '@/components/Hero'
 import React from 'react'
 
@@ -13,6 +14,11 @@ const About = () => {
                 callToAction="Contact"
                 callToActionHref="/contact"
             />
+
+            <div className="">
+                <TrustedBy />
+            </div>
+
         </div>
     )
 }
