@@ -15,10 +15,6 @@ const About = () => {
                 callToActionHref="/contact"
             />
 
-            <div className="">
-                <TrustedBy />
-            </div>
-
         </div>
     )
 }
