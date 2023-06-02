@@ -14,11 +14,11 @@ const Lorem = () => {
         >
             <motion.div
                 variants={fadeIn('up', 'tween', 0.6, 1)}
-                className='lg:absolute min-h-[50vh] bg-white h-[200px] top-[35%] md:px-16 z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]'>
+                className='lg:absolute md:min-h-[50vh] bg-white md:h-[200px] top-[35%] md:px-16 z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]'>
                 <motion.div
                     variants={fadeIn('up', 'tween', 0.6, 1)}
-                    className="w-full  mt-6 md:mt-12 px-6 md:px-16 flex items-center justify-center">
-                    <h2 className="font-semibold text-6xl">Discover our comprehensive range of services designed to meet all your needs efficiently and effectively.</h2>
+                    className="w-full  mt-6 md:mt-12 px-12 md:px-16 flex items-center justify-center">
+                    <h2 className="font-semibold text-xl sm:text-3xl md:text-5xl lg:text-6xl">Discover our comprehensive range of services designed to meet all your needs efficiently and effectively.</h2>
                 </motion.div>
             </motion.div >
         </motion.div>

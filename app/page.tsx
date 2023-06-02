@@ -11,14 +11,13 @@ const Home = () => {
         <main className="min-h-screen relative">
             <div className="">
                 <HeroLanding
-                    // title="Tripp in Trucking and Services"
                     title=""
                     src="/tripHero.jpg"
                     // message="Unlocking the Hydro Power, Unleashing Your Success!"
                     message=""
                     heading="Revolutionizing hydro vac and trucking solutions."
                     href="services"
-                    callToAction="Request Free Quote"
+                    // callToAction="Request Free Quote"
                     callToActionHref="/contact"
                 />
             </div>
