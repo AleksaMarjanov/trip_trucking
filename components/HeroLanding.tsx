@@ -43,7 +43,7 @@ const Hero = ({ title, heading, message, src, href, callToActionHref }: HeroType
                 />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75 z-[2]" />
                 <motion.div
-                    className="text-white z-[2] absolute max-md:top-[45%] top-[30%] left-[10%] md:left-[15%] flex flex-col justify-between gap-y-6"
+                    className="text-white z-[2] absolute max-md:top-[45%] top-[30%] left-[10%] md:left-[10%] flex flex-col justify-between gap-y-6"
                 >
                     <div className='flex items-start justify-center flex-col gap-y-6'>
                         <motion.div

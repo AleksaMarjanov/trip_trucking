@@ -22,7 +22,7 @@ const Home = () => {
                 />
             </div>
             <Lorem />
-            <section className="z-[20] ">
+            <section>
                 <Services />
             </section>
             {/* <section className="mb-30 "> */}
