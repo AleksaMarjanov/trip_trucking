@@ -89,7 +89,7 @@ const TrustedBy = () => {
                                             </div>
 
                                             <div className="white-space flex items-center font-bold justify-center text-2xl md:text-3xl ">
-                                                "{testimonial?.feedback}"
+                                                &quot;{testimonial?.feedback}&quot;
                                             </div>
                                             <div className="">
                                                 <div className="flex-col flex items-center justify-center">
