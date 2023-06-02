@@ -48,16 +48,17 @@ const TrustedBy = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
+            className='w-full bg-gray-100 md:h-[60vh] mb-6'
         >
             <motion.div
                 variants={fadeIn("up", "tween", 0.35, 0.85)}
-                className="relative flex w-full flex-col items-center justify-center md:min-h-[70vh] "
+                className="flex items-center flex-col justify-center"
             >
-                <h2 className="py-6 px-12 text-2xl font-semibold md:text-4xl text-white ">
-                    Trusted by our customers
+                <h2 className="py-6 md:py-12 px-12 text-4xl text-center font-semibold md:text-5xl text-black">
+                    Trusted By Our Customers
                 </h2>
                 <div className="flex w-full flex-row items-center justify-center md:items-start md:justify-center lg:mx-12">
-                    <div className="w-full object-contain sm:w-full lg:w-[540px]">
+                    <div className="w-full sm:w-full lg:w-[540px]">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
                             slidesPerView={1}
@@ -75,59 +76,46 @@ const TrustedBy = () => {
                             {testimonials?.map((testimonial: Testimonials, index: number) => (
                                 <SwiperSlide key={testimonial._id + index}>
                                     <div className="swiper-slide" key={testimonial._id + index}>
-                                        <div className="">
-                                            <motion.div
-                                                variants={fadeIn("left", "tween", 0.2, 1)}
-                                                initial="hidden"
-                                                whileInView="show" className="object-contain p-4" >
+                                        <motion.div
+                                            variants={fadeIn("left", "tween", 0.2, 1)}
+                                            initial="hidden"
+                                            whileInView="show" className="object-contain p-4 flex flex-col gap-y-6" >
+                                            <div className='relative w-full h-[80px]'>
                                                 <Image src={`${urlFor(testimonial?.Image).url()}`}
                                                     alt={testimonial.company}
-                                                    width={50}
-                                                    height={50}
+                                                    fill
                                                     priority
-                                                    className="rounded-full object-contain" />
+                                                    className="object-contain object-center" />
+                                            </div>
 
-                                                <div className="top-0 items-start justify-center py-8 lg:flex lg:flex-col lg:py-4">
-                                                    <div className="white-space relative overflow-hidden text-lg text-gray-800">
-                                                        {/* <Image */}
-                                                        {/*     src="/quotes.svg" */}
-                                                        {/*     alt="quotes" */}
-                                                        {/*     width={30} */}
-                                                        {/*     height={30} */}
-                                                        {/*     priority */}
-                                                        {/* /> */}
-                                                        {testimonial?.feedback}
-                                                    </div>
+                                            <div className="white-space flex items-center font-bold justify-center text-2xl md:text-3xl ">
+                                                "{testimonial?.feedback}"
+                                            </div>
+                                            <div className="">
+                                                <div className="flex-col flex items-center justify-center">
+                                                    <p className="font-semibold text-2xl items-center justify-center md:px-6 text-black">{testimonial?.company}</p>
+                                                    <p className='text-black/75 text-xl'>{testimonial?.position}</p>
                                                 </div>
-                                                <div className="relative bottom-0 flex flex-row">
-                                                    <div className="flex-col flex">
-                                                        <h2 className="text-extrabold mx-6 flex items-center justify-center text-xl">
-                                                            {testimonial?.company}
-                                                        </h2>
-                                                        <p className="flex items-center justify-center px-6 text-black">{testimonial?.company}</p>
-                                                    </div>
-                                                    <p>{testimonial?.position}</p>
-                                                </div>
-                                            </motion.div>
-                                        </div>
+                                            </div>
+                                        </motion.div>
                                     </div>
                                 </SwiperSlide>
                             ))}
-                            <div className="absolute  bottom-0 right-10 mt-32 flex select-none flex-row  items-start justify-start gap-1 text-white lg:right-0">
+                            <div className="bottom-0 flex select-none flex-row  items-center justify-between gap-1 text-white mx-6 my-6">
                                 <BiLeftArrowAlt
                                     size={20}
-                                    className="image-swiper-button-prev z-[2] h-[40px] w-[40px] cursor-pointer bg-black p-1 transition-all duration-500 ease-in-out hover:bg-white hover:text-[#F7AB0A]"
+                                    className="image-swiper-button-prev z-[2] h-[40px] w-[40px] cursor-pointer rounded-full bg-black p-1 transition-all duration-500 ease-in-out hover:bg-white hover:text-black"
                                 />
                                 <BiRightArrowAlt
                                     size={20}
-                                    className="image-swiper-button-next z-[2] h-[40px] w-[40px] cursor-pointer bg-black p-1  transition-all duration-500 ease-in-out hover:bg-white hover:text-[#F7AB0A]"
+                                    className="image-swiper-button-next z-[2] h-[40px] w-[40px] cursor-pointer bg-black p-1 rounded-full  transition-all duration-500 ease-in-out hover:bg-white hover:text-black"
                                 />
                             </div>
                         </Swiper>
                     </div>
-                </div>
-            </motion.div>
-        </motion.div>
+                </div >
+            </motion.div >
+        </motion.div >
     )
 }
 

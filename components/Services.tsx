@@ -50,7 +50,7 @@ const Services = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className='mt-6 grid grid-cols-1 md:grid-cols-3 gap-12 p-6 text-center '>
+                    className='mt-6 grid grid-cols-1 md:grid-cols-3 gap-12 px-12 text-center '>
                     {services?.map((service: Services) => (
                         <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id}>
                             <div className='flex flex-col gap-y-3 md:gap-y-6'>
