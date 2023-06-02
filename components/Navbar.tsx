@@ -130,7 +130,7 @@ const Navbar = () => {
                     <CustomLink href="/about" title='About' className="mx-4" />
                     <CustomLink href="/equipment" title='Equipment & Rentals' className="mx-4" />
                     <CustomLink href="/services" title='Services' className="mx-4" />
-                    <CustomLink href="/contact" title='Contact' className="mr-4" />
+                    {/* <CustomLink href="/contact" title='Contact' className="mr-4" /> */}
                 </motion.nav>
             </div>
             {/* </div> */}

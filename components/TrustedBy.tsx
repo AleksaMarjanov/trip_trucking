@@ -71,7 +71,7 @@ const TrustedBy = () => {
                             observer={true}
                             observeParents={true}
                             parallax={true}
-                            autoplay={{ delay: 6000 }}
+                            autoplay={{ delay: 1000 }}
                         >
                             {testimonials?.map((testimonial: Testimonials, index: number) => (
                                 <SwiperSlide key={testimonial._id + index}>

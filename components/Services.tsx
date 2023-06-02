@@ -35,15 +35,14 @@ const Services = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            id="services" className="min-h-screen md:px-16 z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]"
+            id="services" className="mt-64 relative z-90 md:px-16 z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]"
         >
             <motion.section className="mr-50 bg-white text-black"
                 variants={fadeIn('up', 'tween', 0.6, 1)}
             >
-                <motion.div
-                    className="w-full h-[300px] px-6 md:px-16 flex items-center justify-center">
-                    <h2 className="font-medium text-4xl">Discover our comprehensive range of services designed to meet all your needs efficiently and effectively.</h2>
-                </motion.div>
+                {/* <motion.div className="w-full h-[300px] px-6 md:px-16 flex items-center justify-center"> */}
+                {/*     <h2 className="font-medium text-4xl">Discover our comprehensive range of services designed to meet all your needs efficiently and effectively.</h2> */}
+                {/* </motion.div> */}
 
                 <motion.div
                     variants={staggerContainer}

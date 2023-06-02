@@ -22,6 +22,7 @@ const Home = () => {
                     callToActionHref="/contact"
                 />
             </div>
+            <Lorem />
             <section className="z-[20] ">
                 <Services />
             </section>

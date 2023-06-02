@@ -30,7 +30,7 @@ const Contact = () => {
                     <div className='relative h-[50vh] w-[90%] md:w-[50%] z-[0] lg:pl-20'>
                         <MapWithNOSSR />
                     </div>
-                    <div className='w-full lg:w-1/2'>
+                    <div id="contact" className='w-full lg:w-1/2'>
                         <Form />
                     </div>
                 </div>
