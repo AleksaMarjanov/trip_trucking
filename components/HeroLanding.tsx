@@ -41,7 +41,7 @@ const Hero = ({ title, heading, message, src, href, callToActionHref }: HeroType
                     onLoadingComplete={() => setLoading(false)}
                     priority
                 />
-                <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75 z-[2]" />
+                <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/50 z-[2]" />
                 <motion.div
                     className="text-white z-[2] absolute max-md:top-[45%] top-[30%] left-[10%] md:left-[10%] flex flex-col justify-between gap-y-6"
                 >
@@ -53,8 +53,9 @@ const Hero = ({ title, heading, message, src, href, callToActionHref }: HeroType
                         </motion.div>
                         <motion.div
                             variants={textVariant(0.4)}
+                            className='max-[475px]:px-6'
                         >
-                            <h2 className="text-3xl md:text-7xl lg:text-8xl font-semibold">{heading}</h2>
+                            <h2 className="max-[325px]:text-2xl text-4xl md:text-7xl lg:text-8xl font-semibold">{heading}</h2>
                         </motion.div>
                         <div className='absolute z-[33] bg-white opacity-50 top-[50%]' />
                         <motion.div

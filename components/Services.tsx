@@ -35,7 +35,7 @@ const Services = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            id="services" className="mt-64 lg:py-12 relative z-90 md:px-16 z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]"
+            id="services" className="lg:mt-48 lg:py-12 relative z-90 md:px-16 z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]"
         >
             <motion.section className="mr-50 bg-white text-black"
                 variants={fadeIn('up', 'tween', 0.6, 1)}
@@ -49,7 +49,7 @@ const Services = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className='mt-6 grid grid-cols-1 md:grid-cols-3 gap-12 px-12 text-center '>
+                    className='mt-6 sm:mt-24 lg:mt-6 grid grid-cols-1 md:grid-cols-3 gap-12 px-12 text-center '>
                     {services?.map((service: Services) => (
                         <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id}>
                             <div className='flex flex-col gap-y-3 md:gap-y-6'>
