@@ -1,6 +1,5 @@
-import { BulletSection, Footer, Services, TrustedBy } from "@/components";
+import { BulletSection, Footer, Services, TrustedBy, IntroText } from "@/components";
 import HeroLanding from "@/components/HeroLanding";
-import Lorem from "@/components/Lorem";
 import { groq } from "next-sanity";
 import Image from "next/image";
 
@@ -21,7 +20,7 @@ const Home = () => {
                     callToActionHref="/contact"
                 />
             </div>
-            <Lorem />
+            <IntroText />
             <section>
                 <Services />
             </section>

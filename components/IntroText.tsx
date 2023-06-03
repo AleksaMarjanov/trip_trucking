@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/utils/motion'
 
-const Lorem = () => {
+const IntroText = () => {
     return (
         <motion.div
             variants={staggerContainer}
@@ -25,4 +25,4 @@ const Lorem = () => {
     )
 }
 
-export default Lorem
+export default IntroText 

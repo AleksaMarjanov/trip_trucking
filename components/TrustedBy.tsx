@@ -67,10 +67,10 @@ const TrustedBy = () => {
                     Trusted By Our Customers
                 </h2>
                 <div className="flex w-full flex-row items-center justify-center lg:mx-12">
-                    <div className="w-full sm:w-full lg:w-[740px]">
+                    <div className="w-full sm:w-full lg:w-[540px]">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
-                            slidesPerView={1}
+                            slidesPerView={1.}
                             navigation={{
                                 nextEl: ".image-swiper-button-next",
                                 prevEl: ".image-swiper-button-prev",
@@ -155,6 +155,7 @@ const TrustedBy = () => {
                         }}
                         loop={true}
                         speed={2500}
+                        pagination={true}
                         autoplay={{
                             delay: 1000,
                             disableOnInteraction: false,
