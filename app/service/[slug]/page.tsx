@@ -65,7 +65,7 @@ async function Service({ params: { slug } }: Props) {
                     </div>
 
                     <div
-                        className="grid grid-cols-2  grid-rows-2 md:grid-rows-3 sm:h-[60vh]"
+                        className="grid grid-cols-2  lg:w-1/2 grid-rows-2 md:grid-rows-3 sm:h-[60vh]"
                     >
                         <Image
                             src={urlFor(service.imageOne).url()}

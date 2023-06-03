@@ -26,14 +26,14 @@ const Footer = () => {
 
 
     return (
-        <footer className="w-full bg-gray-100 border-t-2 border-[#434f7e] shadow-2xl flex flex-col items-start px-6 md:px-12 justify-between">
+        <footer className="w-full bg-gray-100 border-t-2 border-black shadow-2xl flex flex-col items-start px-6 md:px-12 justify-between">
             <div className="w-full mt-16 flex flex-row items-start justify-between">
                 <div className="p-4">
-                    <h2 className="col-span-4 md:col-span-1 text-2xl md:text-4xl text-[#434f7e] mb-2">Services</h2>
+                    <h2 className="col-span-4 md:col-span-1 text-2xl md:text-4xl text-black mb-2">Services</h2>
                     {services.map((service: Services) => (
                         <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id} >
                             <ol>
-                                <li className="text-lg text-[#434f7e]" >{service.title}</li>
+                                <li className="text-lg text-black" >{service.title}</li>
                             </ol>
                         </ClientSideRoute >
                     ))
@@ -41,9 +41,9 @@ const Footer = () => {
                 </div>
 
                 <div className='col-span-4 md:col-span-1'>
-                    <h2 className=" text-2xl md:text-4xl text-[#00626f] mb-2">Socials</h2>
+                    <h2 className=" text-2xl md:text-4xl text-black mb-2">Socials</h2>
                 </div>
-                <div className="mt-6 font-semibold text-[#00626f]">
+                <div className="mt-6 font-semibold text-black">
                     <p>@ Copyright {new Date().getFullYear()}</p>
                     <Link href="https://marjanovdesignsolutions.com" target='_blank'>
                         <span className='hover:text-opacity-50'>Developed by Marjanov Design Solutions</span>

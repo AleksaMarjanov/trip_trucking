@@ -1,4 +1,4 @@
-import { Hero, Services } from '@/components'
+import { Hero, ServicesList } from '@/components'
 import React from 'react'
 
 const ServicesPage = () => {
@@ -16,7 +16,7 @@ const ServicesPage = () => {
 
 
             <section id="services">
-                <Services />
+                <ServicesList />
             </section>
 
         </>

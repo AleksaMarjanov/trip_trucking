@@ -57,9 +57,9 @@ const Navbar = () => {
             < button href={href} className={`${className} relative text-black group my-2`
             } onClick={handleClick} >
                 {title}
-                < span className={`h-[1px] inline-block bg-black absolute left-[25%] -bottom-0.5
+                <div className={`h-[1px] inline-block bg-black absolute left-[25%] -bottom-0.5
                 group-hover:w-[50%] transition-[width] ease duration-300
-                ${pathname === href ? 'w-[50%]' : 'w-0'}`}>&nbsp;</span >
+                ${pathname === href ? 'w-[50%]' : 'w-0'}`}>&nbsp;</div>
 
             </button >
         )
@@ -130,7 +130,7 @@ const Navbar = () => {
                     <CustomLink href="/about" title='About' className="mx-4" />
                     <CustomLink href="/equipment" title='Equipment & Rentals' className="mx-4" />
                     <CustomLink href="/services" title='Services' className="mx-4" />
-                    {/* <CustomLink href="/contact" title='Contact' className="mr-4" /> */}
+                    <CustomLink href="/contact" title='Contact' className="ml-32 border px-4 py-3" />
                 </motion.nav>
             </div>
             {/* </div> */}
@@ -142,7 +142,7 @@ const Navbar = () => {
                         variants={mobileVariants}
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="w-full lg:hidden fixed top-[15%] bottom-30 left-0 h-screen flex flex-col text-black bg-white text-4xl font-medium">
+                        className="w-full lg:hidden fixed top-[11%] bottom-30 left-0 h-screen flex flex-col text-black bg-white text-4xl font-medium">
                         <CustomMobileLink href="/" title='Home' className="mt-48" toggle={handleToggle} />
                         <CustomMobileLink href="/about" title='About' className="" toggle={handleToggle} />
                         <CustomMobileLink href="/equipment" title='Equipment & Rentals' className="" toggle={handleToggle} />
