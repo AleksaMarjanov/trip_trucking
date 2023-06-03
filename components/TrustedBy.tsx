@@ -16,6 +16,7 @@ import { fadeIn, slideIn, staggerContainer } from '@/utils/motion';
 import { Testimonials } from '@/typings';
 import { urlFor } from '@/lib/urlFor';
 import Image from 'next/image';
+import { SliderData } from './SliderData';
 
 
 const TrustedBy = () => {
@@ -58,7 +59,7 @@ const TrustedBy = () => {
                     Trusted By Our Customers
                 </h2>
                 <div className="flex w-full flex-row items-center justify-center md:items-start md:justify-center lg:mx-12">
-                    <div className="w-full sm:w-full lg:w-[540px]">
+                    <div className="w-full sm:w-full lg:w-[740px]">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
                             slidesPerView={1}
@@ -71,17 +72,17 @@ const TrustedBy = () => {
                             observer={true}
                             observeParents={true}
                             parallax={true}
-                            autoplay={{ delay: 1000 }}
+                            autoplay={{ delay: 6000 }}
                         >
-                            {testimonials?.map((testimonial: Testimonials, index: number) => (
-                                <SwiperSlide key={testimonial._id + index}>
-                                    <div className="swiper-slide" key={testimonial._id + index}>
+                            {testimonials.map((testimonial: Testimonials) => (
+                                <SwiperSlide key={testimonial._id} >
+                                    <div className='swiper-slide' key={testimonial._id}>
                                         <motion.div
                                             variants={fadeIn("left", "tween", 0.2, 1)}
                                             initial="hidden"
                                             whileInView="show" className="object-contain p-4 flex flex-col gap-y-6" >
                                             <div className='relative w-full h-[80px]'>
-                                                <Image src={`${urlFor(testimonial?.Image).url()}`}
+                                                <Image src={urlFor(testimonial.Image).url()}
                                                     alt={testimonial.company}
                                                     fill
                                                     priority
