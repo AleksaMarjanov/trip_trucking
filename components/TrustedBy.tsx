@@ -138,7 +138,7 @@ const TrustedBy = () => {
                         breakpoints={{
                             299: {
                                 slidesPerView: 3,
-                                spaceBetween: 50,
+                                spaceBetween: 5,
                             },
                             499: {
                                 slidesPerView: 4,
@@ -168,10 +168,11 @@ const TrustedBy = () => {
                                             className="object-contain "
                                             src={urlFor(slide.mainImage).url()}
                                             alt={slide.name}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw,
-                                        (max-width: 1200px) 50vw,
-                                        33vw"
+                                            width={1000}
+                                            height={1000}
+                                            //     sizes="(max-width: 768px) 100vw,
+                                            // (max-width: 1200px) 50vw,
+                                            // 33vw"
                                             priority
                                         />
                                     </div>
