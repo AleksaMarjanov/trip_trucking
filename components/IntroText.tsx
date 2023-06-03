@@ -14,7 +14,7 @@ const IntroText = () => {
         >
             <motion.div
                 variants={fadeIn('up', 'tween', 0.6, 1)}
-                className='lg:absolute mt-6 md:mt-0 lg:min-h-[50vh] bg-white md:h-[200px] lg:top-[30%]  z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]'>
+                className='lg:absolute mt-6 md:mt-0 lg:min-h-[50vh] bg-white md:h-[150px] lg:top-[30%]  z-[20] xl:ml-[20rem] xl:mr-[20rem]  mb-[2rem]'>
                 <motion.div
                     variants={fadeIn('up', 'tween', 0.6, 1)}
                     className="w-full  mt-6 px-12 md:px-16 flex items-center justify-center">
