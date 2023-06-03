@@ -17,7 +17,7 @@ import { Testimonials, TrustedBy } from '@/typings';
 import { urlFor } from '@/lib/urlFor';
 import Image from 'next/image';
 
-const revalidate = 60;
+export const revalidate = 60;
 
 
 const TrustedBy = () => {
@@ -28,6 +28,9 @@ const TrustedBy = () => {
     const query = groq`
 *[_type == "testimonials"]
     `
+    const trustedQuery = groq`
+*[_type == "trustedBy"]
+    `
     // fetch client testimonials from sanity
     const fetchTestimonials = async () => {
         const data = await client.fetch(query)
@@ -36,7 +39,7 @@ const TrustedBy = () => {
 
     // fetch logos from sanityh 
     const fetchTrusted = async () => {
-        const data = await client.fetch(query)
+        const data = await client.fetch(trustedQuery)
         setTrusted(data)
     }
 
@@ -45,13 +48,8 @@ const TrustedBy = () => {
         fetchTrusted()
     }, [])
 
-    const handleClick = (index: any) => {
-        setCurrentTestimonials(index)
-    }
 
-    const test = testimonials[currentTestimonials]
-
-    console.log({ testimonials })
+    console.log({ trusted })
 
     return (
         <motion.div
@@ -59,7 +57,7 @@ const TrustedBy = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
-            className='w-full bg-gray-100 md:h-[60vh] mb-6'
+            className='w-full bg-gray-100 md:h-[60vh] mb-32'
         >
             <motion.div
                 variants={fadeIn("up", "tween", 0.35, 0.85)}
@@ -68,7 +66,7 @@ const TrustedBy = () => {
                 <h2 className="py-6 md:py-12 px-12 text-4xl text-center font-semibold md:text-5xl text-black">
                     Trusted By Our Customers
                 </h2>
-                <div className="flex w-full flex-row items-center justify-center md:items-start md:justify-center lg:mx-12">
+                <div className="flex w-full flex-row items-center justify-center lg:mx-12">
                     <div className="w-full sm:w-full lg:w-[740px]">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
@@ -126,7 +124,7 @@ const TrustedBy = () => {
                     </div>
 
                 </div >
-                <div className='relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-black'>
+                <div className='relative items-center justify-center flex w-full h-[250px] max-[425px]:h-[100px] bg-black'>
                     <Swiper
                         className="swiper-wrapper flex items-center justify-center"
                         observer={true}
@@ -165,11 +163,11 @@ const TrustedBy = () => {
                         {trusted.map((slide: TrustedBy, index: number) => (
                             <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
                                 <SwiperSlide key={slide._id + index} >
-                                    <div className="relative flex items-center justify-center p-3  w-[130px] h-[130px] md:w-[150px] md:h-[150px] ">
+                                    <div className="relative flex items-center justify-center px-6  w-[130px] h-[130px] md:w-[250px] md:h-[250px] ">
                                         <Image
-                                            className="object-contain object-center items-center justify-center"
+                                            className="object-contain "
                                             src={urlFor(slide.mainImage).url()}
-                                            alt="trusted by"
+                                            alt={slide.name}
                                             fill
                                             sizes="(max-width: 768px) 100vw,
                                         (max-width: 1200px) 50vw,
