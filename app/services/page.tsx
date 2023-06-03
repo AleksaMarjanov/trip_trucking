@@ -1,9 +1,27 @@
+import { Hero, Services } from '@/components'
 import React from 'react'
 
-const Services = () => {
+const ServicesPage = () => {
     return (
-        <div className='min-h-screen'>Services</div>
+        <>
+            <Hero
+                title="Services"
+                src="/hero.jpg"
+                heading="Power of Innovative Solutions"
+                message="Leading the Way in Revolutionary Services"
+                callToActionHref='/contact'
+                href="services"
+                callToAction='Request Free Quote'
+            />
+
+
+            <section id="services">
+                <Services />
+            </section>
+
+        </>
+
     )
 }
 
-export default Services
+export default ServicesPage
