@@ -35,6 +35,10 @@ export interface Testimonials extends Base {
 
 }
 
+interface TrustedBy extends Base {
+    mainImage: Image;
+    name: string;
+}
 // export interface Social extends Base {
 //     _type: "social";
 //     title: string;
@@ -86,12 +90,6 @@ interface Span {
 
 }
 
-// interface Geopoint extends Base {
-//     _type: geopoint;
-//     lat: number;
-//     lng: number;
-//     alt: number;
-// }
 
 interface Category extends Base {
     description: string;

@@ -13,26 +13,36 @@ import "swiper/css/scrollbar";
 import { client } from '@/lib/sanity.client';
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn, staggerContainer } from '@/utils/motion';
-import { Testimonials } from '@/typings';
+import { Testimonials, TrustedBy } from '@/typings';
 import { urlFor } from '@/lib/urlFor';
 import Image from 'next/image';
-import { SliderData } from './SliderData';
+
+const revalidate = 60;
 
 
 const TrustedBy = () => {
     const [testimonials, setTestimonials] = useState([])
+    const [trusted, setTrusted] = useState([])
     const [currentTestimonials, setCurrentTestimonials] = useState(0)
 
     const query = groq`
 *[_type == "testimonials"]
     `
+    // fetch client testimonials from sanity
     const fetchTestimonials = async () => {
         const data = await client.fetch(query)
         setTestimonials(data)
     }
 
+    // fetch logos from sanityh 
+    const fetchTrusted = async () => {
+        const data = await client.fetch(query)
+        setTrusted(data)
+    }
+
     useEffect(() => {
         fetchTestimonials()
+        fetchTrusted()
     }, [])
 
     const handleClick = (index: any) => {
@@ -114,7 +124,64 @@ const TrustedBy = () => {
                             </div>
                         </Swiper>
                     </div>
+
                 </div >
+                <div className='relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-black'>
+                    <Swiper
+                        className="swiper-wrapper flex items-center justify-center"
+                        observer={true}
+                        slidesPerView={2}
+                        modules={[Navigation, Pagination, Autoplay]}
+                        onSwiper={swiper => {
+                            setTimeout(() => {
+                                swiper.update(); // ------> this solution
+                            }, 3000);
+                        }}
+                        breakpoints={{
+                            299: {
+                                slidesPerView: 3,
+                                spaceBetween: 50,
+                            },
+                            499: {
+                                slidesPerView: 4,
+                                spaceBetween: 10
+                            },
+                            999: {
+                                slidesPerView: 5,
+                                spaceBetween: 10
+                            },
+                            1440: {
+                                slidesPerView: 8,
+                                spaceBetween: 10
+                            }
+                        }}
+                        loop={true}
+                        speed={2500}
+                        autoplay={{
+                            delay: 1000,
+                            disableOnInteraction: false,
+                        }}
+                    >
+                        {trusted.map((slide: TrustedBy, index: number) => (
+                            <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
+                                <SwiperSlide key={slide._id + index} >
+                                    <div className="relative flex items-center justify-center p-3  w-[130px] h-[130px] md:w-[150px] md:h-[150px] ">
+                                        <Image
+                                            className="object-contain object-center items-center justify-center"
+                                            src={urlFor(slide.mainImage).url()}
+                                            alt="trusted by"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw,
+                                        (max-width: 1200px) 50vw,
+                                        33vw"
+                                            priority
+                                        />
+                                    </div>
+                                </SwiperSlide>
+                            </div>
+                        ))}
+                    </Swiper>
+                </div>
             </motion.div >
         </motion.div >
     )
