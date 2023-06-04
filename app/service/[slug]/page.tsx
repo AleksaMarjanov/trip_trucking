@@ -52,7 +52,7 @@ async function Service({ params: { slug } }: Props) {
                 message={service?.heroTagline}
                 heading={service?.headingHero}
                 src={urlFor(service?.heroImage).url()}
-                title=""
+                title={service.title}
                 // href={(service.title).toLowerCase()}
                 href={service.slug.current}
                 callToAction="Request Free Quote"
