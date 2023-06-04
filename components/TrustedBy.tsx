@@ -57,7 +57,7 @@ const TrustedBy = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
-            className='w-full bg-gray-100 md:h-[60vh] mb-32'
+            className='w-full bg-gray-100 '
         >
             <motion.div
                 variants={fadeIn("up", "tween", 0.35, 0.85)}
@@ -67,7 +67,7 @@ const TrustedBy = () => {
                     Trusted By Our Customers
                 </h2>
                 <div className="flex w-full flex-row items-center justify-center lg:mx-12">
-                    <div className="w-full sm:w-full lg:w-[540px]">
+                    <div className="w-full ">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
                             slidesPerView={1.}
