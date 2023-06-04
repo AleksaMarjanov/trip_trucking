@@ -27,13 +27,13 @@ const Footer = () => {
 
     return (
         <footer className="w-full bg-gray-100 border-t-2 border-black shadow-2xl flex flex-col items-start px-6 md:px-12 justify-between">
-            <div className="w-full mt-16 flex flex-row items-start justify-between">
-                <div className="p-4">
-                    <h2 className="col-span-4 md:col-span-1 text-2xl md:text-4xl text-black mb-2">Services</h2>
+            <div className="w-full mt-16 grid grid-rows-3 gap-y-12 md:flex md:flex-row md:items-start md:justify-between">
+                <div className="">
+                    <h2 className="col-span-4 md:col-span-2 text-2xl md:text-4xl text-black mb-2">Services</h2>
                     {services.map((service: Services) => (
                         <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id} >
                             <ol>
-                                <li className="text-lg text-black" >{service.title}</li>
+                                <li className="text-lg font-bold text-black" >{service.title}</li>
                             </ol>
                         </ClientSideRoute >
                     ))
