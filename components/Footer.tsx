@@ -26,7 +26,7 @@ const Footer = () => {
 
 
     return (
-        <footer className="w-full bg-gray-100 border-t-2 border-black shadow-2xl flex flex-col items-start px-6 md:px-12 justify-between">
+        <footer className="w-full bg-gray-100 border-t-2 border-black shadow-2xl flex flex-col items-start py-6 md:py-12 px-6 md:px-12 justify-between">
             <div className="w-full mt-16 grid grid-rows-3 gap-y-12 md:flex md:flex-row md:items-start md:justify-between">
                 <div className="">
                     <h2 className="col-span-4 md:col-span-2 text-2xl md:text-4xl text-black mb-2">Services</h2>
@@ -42,11 +42,14 @@ const Footer = () => {
 
                 <div className='col-span-4 md:col-span-1'>
                     <h2 className=" text-2xl md:text-4xl text-black mb-2">Socials</h2>
+
                 </div>
                 <div className="mt-6 font-semibold text-black">
                     <p>@ Copyright {new Date().getFullYear()}</p>
                     <Link href="https://marjanovdesignsolutions.com" target='_blank'>
-                        <span className='hover:text-opacity-50'>Developed by Marjanov Design Solutions</span>
+                        <span className='hover:text-black/75 transition-colors ease-out duration-300'>
+                            Developed by Marjanov Design Solutions
+                        </span>
                     </Link>
                 </div>
             </div >
