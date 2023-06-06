@@ -67,7 +67,7 @@ const TrustedBy = () => {
                     Trusted By Our Customers
                 </h2>
                 <div className="flex w-full flex-row items-center justify-center lg:mx-12">
-                    <div className="w-full ">
+                    <div className="w-full xl:w-[1440px]">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
                             slidesPerView={1.}
