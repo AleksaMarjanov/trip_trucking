@@ -128,7 +128,7 @@ const Navbar = () => {
                     className={`lg:flex hidden items-center justify-start ${navbar ? 'text-[15px] transition-all duration-200 ease-out' : 'text-lg'} font-medium`}>
                     <CustomLink href="/" title='Home' className="mr-4" />
                     <CustomLink href="/about" title='About' className="mx-4" />
-                    <CustomLink href="/equipment" title='Equipment & Rentals' className="mx-4" />
+                    <CustomLink href="/careers" title='Careers' className="mx-4" />
                     <CustomLink href="/services" title='Services' className="mx-4" />
                     <CustomLink href="/contact" title='Contact' className="ml-32 border px-4 py-3" />
                 </motion.nav>
@@ -145,7 +145,7 @@ const Navbar = () => {
                         className="w-full lg:hidden fixed top-[11%] bottom-30 left-0 h-screen flex flex-col text-black bg-white text-4xl font-medium">
                         <CustomMobileLink href="/" title='Home' className="mt-48" toggle={handleToggle} />
                         <CustomMobileLink href="/about" title='About' className="" toggle={handleToggle} />
-                        <CustomMobileLink href="/equipment" title='Equipment & Rentals' className="" toggle={handleToggle} />
+                        <CustomMobileLink href="/careers" title='Careers' className="" toggle={handleToggle} />
                         <CustomMobileLink href="/services" title='Services' className="" toggle={handleToggle} />
                         <CustomMobileLink href="/contact" title='Contact' className="" toggle={handleToggle} />
                     </motion.nav>

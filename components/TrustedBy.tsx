@@ -82,7 +82,7 @@ const TrustedBy = () => {
                             }}
                             observer={true}
                             observeParents={true}
-                            speed={2000}
+                            speed={1000}
                             parallax={true}
                             autoplay={{
                                 delay: 4000,
