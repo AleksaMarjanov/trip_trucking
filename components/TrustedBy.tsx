@@ -70,21 +70,28 @@ const TrustedBy = () => {
                     <div className="w-full xl:w-[1440px]">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
-                            slidesPerView={1.}
+                            slidesPerView={1}
                             navigation={{
                                 nextEl: ".image-swiper-button-next",
                                 prevEl: ".image-swiper-button-prev",
                                 disabledClass: "swiper-button-disabled",
                             }}
                             loop={true}
+                            pagination={{
+                                clickable: true
+                            }}
                             observer={true}
                             observeParents={true}
+                            speed={2000}
                             parallax={true}
-                            autoplay={{ delay: 6000 }}
+                            autoplay={{
+                                delay: 4000,
+                                disableOnInteraction: false,
+                            }}
                         >
-                            {testimonials.map((testimonial: Testimonials) => (
-                                <SwiperSlide key={testimonial._id} >
-                                    <div className='swiper-slide' key={testimonial._id}>
+                            {testimonials.map((testimonial: Testimonials, index: number) => (
+                                <SwiperSlide key={testimonial._id + index} >
+                                    <div className='swiper-slide' key={testimonial._id + index}>
                                         <motion.div
                                             variants={fadeIn("left", "tween", 0.2, 1)}
                                             initial="hidden"

@@ -7,7 +7,7 @@ const About = () => {
         <div>
             <Hero
                 title="Get to know us"
-                src="/Hydrovac-NG-removebg-preview.png"
+                src="/HydroVacOnField.jpg"
                 message="Our Story"
                 heading="About"
                 href="paragraph"

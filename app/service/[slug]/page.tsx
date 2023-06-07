@@ -1,4 +1,4 @@
-import { Hero } from '@/components';
+import { Hero, TrustedBy } from '@/components';
 
 import { client } from '@/lib/sanity.client';
 import { Services } from '@/typings';
@@ -7,6 +7,7 @@ import { PortableText } from '@portabletext/react';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
 import { RichTextComponents } from '@/components/RichTextComponent';
+import Trusted from '@/sanity/schemas/trusted';
 
 
 type Props = {
@@ -104,6 +105,8 @@ async function Service({ params: { slug } }: Props) {
                     </div>
                 </div>
             </article >
+
+            <TrustedBy />
         </>
     )
 
