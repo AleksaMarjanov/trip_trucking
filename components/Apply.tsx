@@ -62,7 +62,6 @@ const Apply = (e: any) => {
             ...prev,
             isLoading: true,
         }));
-        console.log({ values })
         try {
             emailjs.sendForm(
                 // TODO: getting an error here with emailjs

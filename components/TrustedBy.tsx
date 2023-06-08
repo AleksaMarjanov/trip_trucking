@@ -162,7 +162,6 @@ const TrustedBy = () => {
                         }}
                         loop={true}
                         speed={2500}
-                        pagination={true}
                         autoplay={{
                             delay: 1000,
                             disableOnInteraction: false,
