@@ -16,13 +16,12 @@ import {
     useToast,
 } from "@chakra-ui/react";
 import React, { useRef, useState, useEffect } from "react";
-import Dropzone from "dropzone"
 import { ChakraProvider } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 import emailjs from "@emailjs/browser";
 
-const initValues = { name: "", email: "", subject: "", message: "" };
+const initValues = { name: "", email: "", subject: "", message: "", file: [] };
 
 const initState = { isLoading: false, error: "", values: initValues };
 
@@ -31,15 +30,17 @@ type Props = {
     email?: string;
     subject?: string;
     message?: string;
+
 }
 
-const Apply = () => {
+const Apply = (e: any) => {
     const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
     const [isSSR, setIsSSR] = useState<boolean>(true)
     const form = useRef<HTMLFormElement>(null)
     const toast = useToast();
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState<Props>({});
+    // const selectedFile = e.target.file[0]
 
     const { isLoading, error, values } = state;
 
@@ -61,6 +62,7 @@ const Apply = () => {
             ...prev,
             isLoading: true,
         }));
+        console.log({ values })
         try {
             emailjs.sendForm(
                 // TODO: getting an error here with emailjs
@@ -93,12 +95,14 @@ const Apply = () => {
     };
 
 
+
     // * Added SSR to be false, client component gives hydration errors!!
     useEffect(() => {
         setIsSSR(false)
     }, [])
 
     if (isSSR) return null;
+    console.log({ values })
 
     return (
         <ChakraProvider>
@@ -183,6 +187,33 @@ const Apply = () => {
                                             <FormErrorMessage>Required</FormErrorMessage>
                                         </FormControl>
 
+                                        <input
+                                            className="py-3 px-4"
+                                            type="file"
+                                            value={values.file}
+                                            onChange={handleChange}
+                                        />
+                                        {/* <FormControl */}
+                                        {/*     isRequired */}
+                                        {/*     // @ts-ignore */}
+                                        {/*     isInvalid={touched.file && !values.file} */}
+                                        {/*     mb={5} */}
+                                        {/* > */}
+                                        {/*     <Textarea */}
+                                        {/*         type="file" */}
+                                        {/*         name="upload-file" */}
+                                        {/*         rows={4} */}
+                                        {/*         placeholder="" */}
+                                        {/*         errorBorderColor="red.300" */}
+                                        {/*         value={values.file} */}
+                                        {/*         // @ts-ignore */}
+                                        {/*         onChange={handleChange} */}
+                                        {/*         // @ts-ignore */}
+                                        {/*         onBlur={onBlur} */}
+                                        {/*     /> */}
+                                        {/*     <FormErrorMessage>Required</FormErrorMessage> */}
+                                        {/* </FormControl> */}
+
 
                                         <Button
                                             className=" hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
@@ -211,8 +242,8 @@ const Apply = () => {
                                 Thank you for getting in touch with us!
                                 <br />
                                 Someone will be reaching out to you
-                                <br />
                                 as soon as possible from our team
+                                <br />
                                 <br />
                             </h2>
                         </motion.div>
