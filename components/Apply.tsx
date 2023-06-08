@@ -189,6 +189,7 @@ const Apply = (e: any) => {
                                         <input
                                             className="py-3 px-4"
                                             type="file"
+                                            name="file"
                                             value={values.file}
                                             onChange={handleChange}
                                         />
@@ -222,6 +223,7 @@ const Apply = (e: any) => {
                                             disabled={
                                                 !values.name ||
                                                 !values.email ||
+                                                !values.file ||
                                                 // !values.subject ||
                                                 !values.message
                                             }
