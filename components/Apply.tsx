@@ -22,6 +22,7 @@ import { motion } from 'framer-motion';
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 import emailjs from "@emailjs/browser";
 import { useRouter } from "next/navigation";
+import { document } from "postcss";
 
 const initValues = { name: "", email: "", subject: "", message: "", file: [] };
 
@@ -64,72 +65,41 @@ const Apply = (e: any) => {
             },
         }));
 
+
     const sendEmail = () => {
         setState((prev) => ({
             ...prev,
             isLoading: true,
         }));
-
         try {
-            // Access the selected file
-            const file = form.current.file.files[0];
+            emailjs.sendForm(
+                // TODO: getting an error here with emailjs
+                process.env.emailJs_service!,
+                process.env.emailJs_template!,
+                form.current!,
+                process.env.emailJs_API
+            );
+            setTouched({});
+            setState(initState);
+            toast({
+                title: "Message sent.",
+                status: "success",
+                duration: 2000,
+                position: "top",
+            });
+            setTimeout(() => {
+                setIsFormSubmitted(true);
+            }, 1500);
+            setTimeout(() => {
+                router.push('/')
+            }, 5500);
 
-
-            // Create a FileReader to read the file
-            const reader = new FileReader();
-
-            // Define the onload event handler for the reader
-            reader.onload = function() {
-                const fileData = reader.result;
-
-                // Use EmailJS to send the email
-                const templateParams = {
-                    file: {
-                        content_type: file.type,
-                        data: fileData.split(',')[1],
-                    },
-                };
-
-                emailjs.sendForm(
-                    //@ts-ignore
-                    process.env.emailJs_service,
-                    process.env.emailJs_template,
-                    form.current,
-                    process.env.emailJs_API
-                )
-                    .then(function(response) {
-                        console.log('Email sent successfully!', response.status, response.text);
-                        setTouched({});
-                        setState(initState);
-                        toast({
-                            title: "Message sent.",
-                            status: "success",
-                            duration: 2000,
-                            position: "top",
-                        });
-                        setTimeout(() => {
-                            setIsFormSubmitted(true);
-                        }, 1500);
-                        setTimeout(() => {
-                            router.push('/');
-                        }, 5500);
-                    })
-                    .catch(function(error) {
-                        console.log('Error sending email:', error);
-                        setState((prev) => ({
-                            ...prev,
-                            isLoading: false,
-                            error: error.message,
-                        }));
-                    });
-            };
-
-            // Read the file as text
-            reader.readAsDataURL(file);
         } catch (error) {
             setState((prev) => ({
                 ...prev,
                 isLoading: false,
+                // TODO: Getting error type of unknown
+                // @ts-ignore
                 error: error.message,
             }));
         }
@@ -145,14 +115,6 @@ const Apply = (e: any) => {
     if (isSSR) return null;
     console.log({ values })
 
-    // mammoth.extractRawText({ arrayBuffer: file })
-    //     .then((result) => {
-    //         const html = result.value;
-    //         document.getElementById("fileUpload").innerHTML = html;
-    //     })
-    //     .catch((error) => {
-    //         console.error("Error converting word to HTML:", error)
-    //     })
 
     return (
         <ChakraProvider>
