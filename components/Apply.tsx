@@ -16,6 +16,7 @@ import {
     useToast,
 } from "@chakra-ui/react";
 import React, { useRef, useState, useEffect } from "react";
+import mammoth from "mammoth";
 import { ChakraProvider } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
@@ -42,6 +43,10 @@ const Apply = (e: any) => {
     const toast = useToast();
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState<Props>({});
+    // const fileInput = document.getElementById("fileUpload");
+    // const file = fileInput.files[0]
+    // const formData = new FormData();
+    // formData.append("fileUpload", file, file.name)
     // const selectedFile = e.target.file[0]
 
     const { isLoading, error, values } = state;
@@ -64,36 +69,67 @@ const Apply = (e: any) => {
             ...prev,
             isLoading: true,
         }));
-        try {
-            emailjs.sendForm(
-                // TODO: getting an error here with emailjs
-                // @ts-ignore
-                process.env.emailJs_service,
-                process.env.emailJs_template,
-                form.current,
-                process.env.emailJs_API
-            );
-            setTouched({});
-            setState(initState);
-            toast({
-                title: "Message sent.",
-                status: "success",
-                duration: 2000,
-                position: "top",
-            });
-            setTimeout(() => {
-                setIsFormSubmitted(true);
-            }, 1500);
-            setTimeout(() => {
-                router.push('/')
-            }, 5500);
 
+        try {
+            // Access the selected file
+            const file = form.current.file.files[0];
+
+
+            // Create a FileReader to read the file
+            const reader = new FileReader();
+
+            // Define the onload event handler for the reader
+            reader.onload = function() {
+                const fileData = reader.result;
+
+                // Use EmailJS to send the email
+                const templateParams = {
+                    file: {
+                        content_type: file.type,
+                        data: fileData.split(',')[1],
+                    },
+                };
+
+                emailjs.sendForm(
+                    //@ts-ignore
+                    process.env.emailJs_service,
+                    process.env.emailJs_template,
+                    form.current,
+                    process.env.emailJs_API
+                )
+                    .then(function(response) {
+                        console.log('Email sent successfully!', response.status, response.text);
+                        setTouched({});
+                        setState(initState);
+                        toast({
+                            title: "Message sent.",
+                            status: "success",
+                            duration: 2000,
+                            position: "top",
+                        });
+                        setTimeout(() => {
+                            setIsFormSubmitted(true);
+                        }, 1500);
+                        setTimeout(() => {
+                            router.push('/');
+                        }, 5500);
+                    })
+                    .catch(function(error) {
+                        console.log('Error sending email:', error);
+                        setState((prev) => ({
+                            ...prev,
+                            isLoading: false,
+                            error: error.message,
+                        }));
+                    });
+            };
+
+            // Read the file as text
+            reader.readAsDataURL(file);
         } catch (error) {
             setState((prev) => ({
                 ...prev,
                 isLoading: false,
-                // TODO: Getting error type of unknown
-                // @ts-ignore
                 error: error.message,
             }));
         }
@@ -108,6 +144,15 @@ const Apply = (e: any) => {
 
     if (isSSR) return null;
     console.log({ values })
+
+    // mammoth.extractRawText({ arrayBuffer: file })
+    //     .then((result) => {
+    //         const html = result.value;
+    //         document.getElementById("fileUpload").innerHTML = html;
+    //     })
+    //     .catch((error) => {
+    //         console.error("Error converting word to HTML:", error)
+    //     })
 
     return (
         <ChakraProvider>
@@ -124,6 +169,8 @@ const Apply = (e: any) => {
                             className="flex flex-col items-center justify-center">
                             <div className="w-full">
                                 <form
+                                    encType="multipart/form-data"
+                                    method="post"
                                     ref={form}
                                     onSubmit={sendEmail}
                                     className=""
@@ -201,6 +248,7 @@ const Apply = (e: any) => {
                                         >
                                             <Input
                                                 type="file"
+                                                id="fileUpload"
                                                 name="file"
                                                 className=""
                                                 value={values.file}

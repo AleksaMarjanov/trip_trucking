@@ -26,6 +26,7 @@
         "eslint-config-next": "^13.4.3",
         "framer-motion": "^10.12.12",
         "leaflet-defaulticon-compatibility": "^0.1.1",
+        "mammoth": "^1.6.0",
         "next": "^13.4.3",
         "next-sanity": "^4.3.2",
         "popmotion": "^11.0.5",
