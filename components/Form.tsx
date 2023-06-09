@@ -206,7 +206,6 @@ const Form = () => {
                                             disabled={
                                                 !values.name ||
                                                 !values.email ||
-                                                // !values.subject ||
                                                 !values.message
                                             }
                                             onClick={sendEmail}
@@ -219,12 +218,11 @@ const Form = () => {
                         </motion.div>
                     ) : (
                         <motion.div
-                            variants={textVariant(1.2)}
+                            variants={textVariant(0.4)}
                             className="flex flex-col items-center justify-center text-black h-screen">
-                            <h2 className="font-poppins text-[32px] max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
+                            <h2 className="font-poppins text-[22px] max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
                                 Thank you for getting in touch with us!
                                 <br />
-                                Someone will be reaching out to you
                                 <br />
                                 as soon as possible from our team
                                 <br />

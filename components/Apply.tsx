@@ -20,6 +20,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 import emailjs from "@emailjs/browser";
+import { useRouter } from "next/navigation";
 
 const initValues = { name: "", email: "", subject: "", message: "", file: [] };
 
@@ -37,6 +38,7 @@ const Apply = (e: any) => {
     const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
     const [isSSR, setIsSSR] = useState<boolean>(true)
     const form = useRef<HTMLFormElement>(null)
+    const router = useRouter()
     const toast = useToast();
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState<Props>({});
@@ -82,6 +84,10 @@ const Apply = (e: any) => {
             setTimeout(() => {
                 setIsFormSubmitted(true);
             }, 1500);
+            setTimeout(() => {
+                router.push('/')
+            }, 5500);
+
         } catch (error) {
             setState((prev) => ({
                 ...prev,
@@ -121,6 +127,7 @@ const Apply = (e: any) => {
                                     ref={form}
                                     onSubmit={sendEmail}
                                     className=""
+                                    id="apply"
                                 >
                                     <Container maxW="750px" mt={12} className="text-black">
                                         {error && (
@@ -186,34 +193,20 @@ const Apply = (e: any) => {
                                             <FormErrorMessage>Required</FormErrorMessage>
                                         </FormControl>
 
-                                        <input
-                                            className="py-3 px-4"
-                                            type="file"
-                                            name="file"
-                                            value={values.file}
-                                            onChange={handleChange}
-                                        />
-                                        {/* <FormControl */}
-                                        {/*     isRequired */}
-                                        {/*     // @ts-ignore */}
-                                        {/*     isInvalid={touched.file && !values.file} */}
-                                        {/*     mb={5} */}
-                                        {/* > */}
-                                        {/*     <Textarea */}
-                                        {/*         type="file" */}
-                                        {/*         name="upload-file" */}
-                                        {/*         rows={4} */}
-                                        {/*         placeholder="" */}
-                                        {/*         errorBorderColor="red.300" */}
-                                        {/*         value={values.file} */}
-                                        {/*         // @ts-ignore */}
-                                        {/*         onChange={handleChange} */}
-                                        {/*         // @ts-ignore */}
-                                        {/*         onBlur={onBlur} */}
-                                        {/*     /> */}
-                                        {/*     <FormErrorMessage>Required</FormErrorMessage> */}
-                                        {/* </FormControl> */}
-
+                                        <FormControl
+                                            isRequired
+                                            // @ts-ignore
+                                            isInvalid={touched.file && !values.file}
+                                            mb={5}
+                                        >
+                                            <Input
+                                                type="file"
+                                                name="file"
+                                                className=""
+                                                value={values.file}
+                                                onChange={handleChange}
+                                            />
+                                        </FormControl>
 
                                         <Button
                                             className=" hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
@@ -224,7 +217,6 @@ const Apply = (e: any) => {
                                                 !values.name ||
                                                 !values.email ||
                                                 !values.file ||
-                                                // !values.subject ||
                                                 !values.message
                                             }
                                             onClick={sendEmail}
@@ -237,14 +229,15 @@ const Apply = (e: any) => {
                         </motion.div>
                     ) : (
                         <motion.div
-                            variants={textVariant(1.2)}
+                            variants={textVariant(0.5)}
                             className="flex flex-col items-center justify-center text-black h-screen">
-                            <h2 className="font-poppins text-[32px] max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
-                                Thank you for getting in touch with us!
+                            <h2 className="font-poppins text-2xl  max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
+                                Thank you for applying for Tripp in Trucking
                                 <br />
-                                Someone will be reaching out to you
-                                as soon as possible from our team
+                                We will review your application and someone will
+
                                 <br />
+                                reach out in case that your skills match our needs!
                                 <br />
                             </h2>
                         </motion.div>
