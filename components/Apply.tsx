@@ -44,7 +44,7 @@ const Apply = () => {
     const form = useRef<HTMLFormElement>(null)
     const router = useRouter()
     const toast = useToast();
-    const recaptchaRef = React.createRef()
+    const recaptchaRef = useRef<ReCAPTCHA>(null)
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState<Props>({});
     const { isLoading, error, values } = state;
@@ -72,14 +72,12 @@ const Apply = () => {
         // alert
         // Reset the reCAPTCHA so that it can be executed again if user 
         // submits another email.
-        //@ts-ignore
-        recaptchaRef.current.reset();
+        recaptchaRef.current?.reset();
     }
     const sendEmail = (event: HTMLFormElement) => {
         event?.preventDefault()
 
-        //@ts-ignore
-        // recaptchaRef.current.execute();
+        recaptchaRef.current?.execute();
 
         setState((prev) => ({
             ...prev,
@@ -257,7 +255,7 @@ const Apply = () => {
                                         {/* @ts-ignore */}
                                         <ReCAPTCHA
                                             ref={recaptchaRef}
-                                            size="checkbox"
+                                            size="invisible"
                                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                                             onChange={onReCAPTCHAChange}
                                         />
