@@ -254,6 +254,7 @@ const Apply = () => {
 
                                         {/* @ts-ignore */}
                                         <ReCAPTCHA
+                                            className="g-recaptcha-response"
                                             ref={recaptchaRef}
                                             size="invisible"
                                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
