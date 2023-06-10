@@ -77,7 +77,7 @@ const Apply = () => {
     const sendEmail = (event: HTMLFormElement) => {
         event?.preventDefault()
 
-        recaptchaRef.current?.execute();
+        // recaptchaRef.current?.execute();
 
         setState((prev) => ({
             ...prev,
@@ -254,9 +254,8 @@ const Apply = () => {
 
                                         {/* @ts-ignore */}
                                         <ReCAPTCHA
-                                            ref={recaptchaRef}
                                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                            onChange={onReCAPTCHAChange}
+                                            onChange={sendEmail}
                                         />
                                         <Button
                                             className="mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
