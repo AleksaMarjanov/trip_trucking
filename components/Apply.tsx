@@ -22,7 +22,6 @@ import { motion } from 'framer-motion';
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 import emailjs from "@emailjs/browser";
 import { useRouter } from "next/navigation";
-import { document } from "postcss";
 
 const initValues = { name: "", email: "", subject: "", message: "", file: [], cover_letter: [] };
 
@@ -42,11 +41,11 @@ const Apply = () => {
     const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
     const [isSSR, setIsSSR] = useState<boolean>(true)
     const form = useRef<HTMLFormElement>(null)
+    const [state, setState] = useState(initState);
+    const [touched, setTouched] = useState<Props>({});
     const router = useRouter()
     const toast = useToast();
     const recaptchaRef = useRef<ReCAPTCHA>(null)
-    const [state, setState] = useState(initState);
-    const [touched, setTouched] = useState<Props>({});
     const { isLoading, error, values } = state;
 
     const onBlur = (event: { target: HTMLInputElement }) =>
@@ -125,7 +124,6 @@ const Apply = () => {
     }, [])
 
     if (isSSR) return null;
-    console.log({ values })
 
 
     return (
