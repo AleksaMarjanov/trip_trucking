@@ -254,8 +254,15 @@ const Apply = () => {
                                             />
                                         </FormControl>
 
+                                        {/* @ts-ignore */}
+                                        <ReCAPTCHA
+                                            ref={recaptchaRef}
+                                            size="invisible"
+                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                            onChange={onReCAPTCHAChange}
+                                        />
                                         <Button
-                                            className=" hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
+                                            className="mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
                                             variant="outline"
                                             colorScheme="white"
                                             isLoading={isLoading}
@@ -273,12 +280,6 @@ const Apply = () => {
                                         </Button>
                                     </Container>
                                 </form>
-                                <ReCAPTCHA
-                                    ref={recaptchaRef}
-                                    size=""
-                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                    onChange={onReCAPTCHAChange}
-                                />
                             </div>
                         </motion.div>
                     ) : (
