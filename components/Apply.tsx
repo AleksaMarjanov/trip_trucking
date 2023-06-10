@@ -264,14 +264,10 @@ const Apply = () => {
                                             />
                                         </div>
                                         <Button
-                                            className="g-recaptcha g-recaptcha-response mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
-                                            data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                            data-callback="onSubmit"
+                                            className="mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
                                             variant="outline"
                                             colorScheme="white"
                                             isLoading={isLoading}
-                                            type="submit"
                                             disabled={
                                                 !values.name ||
                                                 !values.email ||
