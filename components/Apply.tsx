@@ -24,7 +24,7 @@ import emailjs from "@emailjs/browser";
 import { useRouter } from "next/navigation";
 import { document } from "postcss";
 
-const initValues = { name: "", email: "", subject: "", message: "", file: [] };
+const initValues = { name: "", email: "", subject: "", message: "", file: [], cover_letter: [] };
 
 const initState = { isLoading: false, error: "", values: initValues };
 
@@ -33,10 +33,12 @@ type Props = {
     email?: string;
     subject?: string;
     message?: string;
+    file?: HTMLFormElement | null
+    cover_letter?: HTMLFormElement | null;
 
 }
 
-const Apply = (e: any) => {
+const Apply = () => {
     const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
     const [isSSR, setIsSSR] = useState<boolean>(true)
     const form = useRef<HTMLFormElement>(null)
@@ -44,12 +46,6 @@ const Apply = (e: any) => {
     const toast = useToast();
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState<Props>({});
-    // const fileInput = document.getElementById("fileUpload");
-    // const file = fileInput.files[0]
-    // const formData = new FormData();
-    // formData.append("fileUpload", file, file.name)
-    // const selectedFile = e.target.file[0]
-
     const { isLoading, error, values } = state;
 
     const onBlur = (event: { target: HTMLInputElement }) =>
@@ -204,16 +200,37 @@ const Apply = (e: any) => {
 
                                         <FormControl
                                             isRequired
-                                            // @ts-ignore
-                                            isInvalid={touched.file && !values.file}
+                                            isInvalid={touched.file! && !values.file}
                                             mb={5}
                                         >
+
+                                            <FormLabel>
+                                                Attach your resume:
+                                            </FormLabel>
                                             <Input
                                                 type="file"
                                                 id="fileUpload"
                                                 name="file"
                                                 className=""
                                                 value={values.file}
+                                                onChange={handleChange}
+                                            />
+                                        </FormControl>
+
+                                        <FormControl
+                                            placeholder="optional"
+                                            isInvalid={touched.cover_letter! && !values.cover_letter}
+                                            mb={5}
+                                        >
+
+                                            <FormLabel>
+                                                Cover Letter: (optional)
+                                            </FormLabel>
+                                            <Input
+                                                type="file"
+                                                name="cover_letter"
+                                                className=""
+                                                value={values.cover_letter}
                                                 onChange={handleChange}
                                             />
                                         </FormControl>
@@ -226,12 +243,13 @@ const Apply = (e: any) => {
                                             disabled={
                                                 !values.name ||
                                                 !values.email ||
+                                                !values.cover_letter ||
                                                 !values.file ||
                                                 !values.message
                                             }
                                             onClick={sendEmail}
                                         >
-                                            Submit
+                                            Send
                                         </Button>
                                     </Container>
                                 </form>
