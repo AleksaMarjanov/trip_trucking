@@ -10,7 +10,7 @@ const Careers = () => {
                 heading="Apply Today"
                 message="Fuel Your Career with Exciting Opportunities and Boundless Growth"
                 src="/truck1.jpg"
-                href="#apply"
+                href="apply"
                 callToAction='Apply'
                 callToActionHref='#apply'
             />
