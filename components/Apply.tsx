@@ -257,7 +257,7 @@ const Apply = () => {
                                         {/* @ts-ignore */}
                                         <ReCAPTCHA
                                             ref={recaptchaRef}
-                                            size="invisible"
+                                            size="checkbox"
                                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                                             onChange={onReCAPTCHAChange}
                                         />
