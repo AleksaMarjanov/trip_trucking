@@ -52,7 +52,7 @@ const About = () => {
                             &#x2022;<b>Reliability</b>:We are committed to delivering reliable and consistent transportation services, meeting deadlines, and ensuring the secure and timely delivery of goods. Our clients can rely on us to fulfill their logistics needs efficiently.
                         </li>
                         <li>
-                            &#x2022;<b>Customer Focus</b>: We prioritize our customers' needs and work closely with them to understand their unique requirements. Our customer-centric approach allows us to provide tailored solutions and exceptional service to meet their expectations.
+                            &#x2022;<b>Customer Focus</b>: We prioritize our customers needs and work closely with them to understand their unique requirements. Our customer-centric approach allows us to provide tailored solutions and exceptional service to meet their expectations.
                         </li>
                         <li>
                             &#x2022;<b>Teamwork</b>: We foster a collaborative work culture, valuing the contribution of each team member. By working together, we achieve excellence in our operations, support one another, and continuously improve our services.
@@ -60,7 +60,7 @@ const About = () => {
                         <li>
                             &#x2022;<b>Continuous Improvement</b>:
                             We embrace a culture of continuous improvement and innovation. We actively seek ways to enhance our processes, invest in technology, and adapt to industry advancements to deliver optimal results for our clients.
-                            These elements provide an overview of Tripp in Trucking's company background, purpose, and core values, showcasing the company's commitment to delivering reliable transportation services while upholding ethical standards and maintaining a positive work environment.
+                            These elements provide an overview of Tripp in Truckings company background, purpose, and core values, showcasing the companys commitment to delivering reliable transportation services while upholding ethical standards and maintaining a positive work environment.
                         </li>
                     </ul>
                 </div>
