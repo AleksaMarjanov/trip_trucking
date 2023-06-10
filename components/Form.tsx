@@ -14,6 +14,7 @@ import {
     useToast,
 } from "@chakra-ui/react";
 import React, { useRef, useState, useEffect } from "react";
+import ReCAPTCHA from 'react-google-recaptcha'
 import { ChakraProvider } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
@@ -35,6 +36,7 @@ const Form = () => {
     const [isSSR, setIsSSR] = useState<boolean>(true)
     const form = useRef<HTMLFormElement>(null)
     const toast = useToast();
+    const recaptchaRef = useRef<HTMLFormElement>(null)
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState<Props>({});
 
@@ -53,7 +55,10 @@ const Form = () => {
             },
         }));
 
-    const sendEmail = () => {
+    const sendEmail = (event: HTMLFormElement) => {
+        event?.preventDefault()
+
+
         setState((prev) => ({
             ...prev,
             isLoading: true,
@@ -61,10 +66,9 @@ const Form = () => {
         try {
             emailjs.sendForm(
                 // TODO: getting an error here with emailjs
-                // @ts-ignore
-                process.env.emailJs_service,
-                process.env.emailJs_template,
-                form.current,
+                process.env.emailJs_service!,
+                process.env.emailJs_template!,
+                form.current!,
                 process.env.emailJs_API
             );
             setTouched({});
@@ -112,9 +116,11 @@ const Form = () => {
                             className="flex flex-col items-center justify-center">
                             <div className="w-full">
                                 <form
+                                    encType="multipart/form-data"
+                                    method="post"
                                     ref={form}
+                                    //@ts-ignore
                                     onSubmit={sendEmail}
-                                    className=""
                                 >
                                     <Container maxW="750px" mt={12} className="text-black">
                                         {error && (
@@ -197,9 +203,15 @@ const Form = () => {
                                             />
                                             <FormErrorMessage>Required</FormErrorMessage>
                                         </FormControl>
+                                        {/* @ts-ignore */}
+                                        <ReCAPTCHA
+                                            ref={recaptchaRef}
+                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                            onChange={sendEmail}
+                                        />
 
                                         <Button
-                                            className=" hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
+                                            className="mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
                                             variant="outline"
                                             colorScheme="white"
                                             isLoading={isLoading}
@@ -208,6 +220,7 @@ const Form = () => {
                                                 !values.email ||
                                                 !values.message
                                             }
+                                            // @ts-ignore 
                                             onClick={sendEmail}
                                         >
                                             Submit
