@@ -74,14 +74,14 @@ const Apply = () => {
         // submits another email.
         recaptchaRef.current?.reset();
     }
-    const sendEmail = (event: HTMLFormElement) => {
-        event?.preventDefault()
+    const sendEmail = (captchaValue: any) => {
 
         recaptchaRef.current?.execute();
 
         setState((prev) => ({
             ...prev,
             isLoading: true,
+            'g-recaptcha-response': captchaValue,
         }));
         try {
             emailjs.sendForm(
@@ -257,8 +257,8 @@ const Apply = () => {
                                             ref={recaptchaRef}
                                             className="g-recaptcha-response g-recaptcha"
                                             size="invisible"
-                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                            onChange={onReCAPTCHAChange}
+                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                                            onChange={sendEmail}
                                         />
                                         <Button
                                             className="mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
