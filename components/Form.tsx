@@ -17,6 +17,7 @@ import React, { useRef, useState, useEffect } from "react";
 import ReCAPTCHA from 'react-google-recaptcha'
 import { ChakraProvider } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation'
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 import emailjs from "@emailjs/browser";
 
@@ -36,6 +37,7 @@ const Form = () => {
     const [isSSR, setIsSSR] = useState<boolean>(true)
     const form = useRef<HTMLFormElement>(null)
     const toast = useToast();
+    const router = useRouter()
     const recaptchaRef = useRef<HTMLFormElement>(null)
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState<Props>({});
@@ -82,6 +84,9 @@ const Form = () => {
             setTimeout(() => {
                 setIsFormSubmitted(true);
             }, 1500);
+            setTimeout(() => {
+                router.push('/')
+            }, 4500)
         } catch (error) {
             setState((prev) => ({
                 ...prev,
@@ -236,8 +241,7 @@ const Form = () => {
                             <h2 className="font-poppins text-[22px] max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
                                 Thank you for getting in touch with us!
                                 <br />
-                                <br />
-                                as soon as possible from our team
+                                We will get back to you as soon as possible :)
                                 <br />
                             </h2>
                         </motion.div>
