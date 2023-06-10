@@ -252,17 +252,14 @@ const Apply = () => {
                                             />
                                         </FormControl>
 
-                                        <div
-                                            className="g-recaptcha-response"
-                                        >
-                                            {/* @ts-ignore */}
-                                            <ReCAPTCHA
-                                                ref={recaptchaRef}
-                                                size="invisible"
-                                                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                                onChange={onReCAPTCHAChange}
-                                            />
-                                        </div>
+                                        {/* @ts-ignore */}
+                                        <ReCAPTCHA
+                                            ref={recaptchaRef}
+                                            className="g-recaptcha-response g-recaptcha"
+                                            size="invisible"
+                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                            onChange={onReCAPTCHAChange}
+                                        />
                                         <Button
                                             className="mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
                                             variant="outline"
