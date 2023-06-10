@@ -16,7 +16,7 @@ import {
     useToast,
 } from "@chakra-ui/react";
 import React, { useRef, useState, useEffect } from "react";
-import mammoth from "mammoth";
+import ReCAPTCHA from 'react-google-recaptcha'
 import { ChakraProvider } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
@@ -44,6 +44,7 @@ const Apply = () => {
     const form = useRef<HTMLFormElement>(null)
     const router = useRouter()
     const toast = useToast();
+    const recaptchaRef = React.createRef()
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState<Props>({});
     const { isLoading, error, values } = state;
@@ -61,8 +62,25 @@ const Apply = () => {
             },
         }));
 
+    const onReCAPTCHAChange = (captchaCode: string) => {
+        // If the reCAPTCHA code is null or undefined indicating that
+        // the reCAPTCHA was expired then return early
+        if (!captchaCode) {
+            return;
+        }
+        // Else reCAPTCHA was executed successfully so proceed with the 
+        // alert
+        // Reset the reCAPTCHA so that it can be executed again if user 
+        // submits another email.
+        //@ts-ignore
+        recaptchaRef.current.reset();
+    }
+    const sendEmail = (event: HTMLFormElement) => {
+        event?.preventDefault()
 
-    const sendEmail = () => {
+        //@ts-ignore
+        recaptchaRef.current.execute();
+
         setState((prev) => ({
             ...prev,
             isLoading: true,
@@ -130,6 +148,7 @@ const Apply = () => {
                                     encType="multipart/form-data"
                                     method="post"
                                     ref={form}
+                                    //@ts-ignore
                                     onSubmit={sendEmail}
                                     className=""
                                     id="apply"
@@ -247,12 +266,19 @@ const Apply = () => {
                                                 !values.file ||
                                                 !values.message
                                             }
+                                            //@ts-ignore
                                             onClick={sendEmail}
                                         >
                                             Send
                                         </Button>
                                     </Container>
                                 </form>
+                                <ReCAPTCHA
+                                    ref={recaptchaRef}
+                                    size=""
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                    onChange={onReCAPTCHAChange}
+                                />
                             </div>
                         </motion.div>
                     ) : (
