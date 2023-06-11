@@ -9,19 +9,22 @@ const About = () => {
     return (
 
         <div>
-            <Hero
-                title=""
-                src="/hydroVacOnField.jpg"
-                message=""
-                heading="About"
-                href="about"
-                callToAction=""
-                callToActionHref="/contact"
-            />
+            <div className=''>
+                <Hero
+                    title=""
+                    src="/hydroVacOnField.jpg"
+                    heading="Ignite Your Journey to Success!"
+                    message=""
+                    href="about"
+                    callToAction=""
+                    callToActionHref="/contact"
+                />
+            </div>
+            <div className="absolute left-0 top-[55%] w-[85%] h-full bg-white rounded-tr-[152px]" />
 
-            <article className='relative w-full sm:px-16 px-6 min-h-screen flex flex-col lg:gap-x-12 items-start justify-start md:flex-row mt-6 md:mt-24'>
+            <article className='min-h-screen top-0 left-0 w-full sm:px-16 px-6 flex flex-col-reverse md:gap-x-24 gap-y-12 md:gap-y-0  items-start justify-start md:flex-row '>
 
-                <div className='px-36 flex items-start justify-center flex-col lg:w-1/2 gap-y-6 lg:gap-y-12'>
+                <div className='lg:px-36 flex items-start justify-center flex-col lg:w-1/2 gap-y-6 lg:gap-y-12 '>
                     <h2 className='font-semibold text-3xl md:text-4xl text-black/75'>
                         Tripp in Trucking
                     </h2>
@@ -31,7 +34,7 @@ const About = () => {
                 </div>
 
                 <div className='relative w-full lg:h-[500px] lg:w-1/2 rounded-xl'>
-                    <Image src="/hydroVacOnField.jpg" alt="about" width={700} height={500} className='object-contain object-center rounded-[2rem]' priority />
+                    <Image src="/hydroVacOnField.jpg" alt="about" width={700} height={500} className='object-contain object-center rounded-[2rem] ' priority />
                 </div>
             </article >
             {/* <article id="about" className='w-full sm:px-16 px-6 py-12 grid  lg:grid-cols-3 grid-rows-1 gap-y-12  lg:gap-y-0 lg:gap-x-6 '> */}
