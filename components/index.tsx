@@ -9,4 +9,5 @@ export { default as TrustedBy } from './TrustedBy'
 export { default as ServiceImage } from './ServiceImage'
 export { default as ServicesList } from './ServicesList'
 export { default as IntroText } from './IntroText'
+export { default as HeroAbout } from './HeroAbout'
 

@@ -1,4 +1,4 @@
-import { TrustedBy } from '@/components'
+import { HeroAbout, TrustedBy } from '@/components'
 import Hero from '@/components/Hero'
 import Image from 'next/image'
 import React from 'react'
@@ -10,7 +10,7 @@ const About = () => {
 
         <div>
             <div className=''>
-                <Hero
+                <HeroAbout
                     title=""
                     src="/hydroVacOnField.jpg"
                     heading="Ignite Your Journey to Success!"
@@ -20,23 +20,37 @@ const About = () => {
                     callToActionHref="/contact"
                 />
             </div>
-            <div className="absolute left-0 top-[55%] w-[85%] h-full bg-white rounded-tr-[152px]" />
 
-            <article className='min-h-screen top-0 left-0 w-full sm:px-16 px-6 flex flex-col-reverse md:gap-x-24 gap-y-12 md:gap-y-0  items-start justify-start md:flex-row '>
+            <div className='min-h-screen overflow-hidden' >
+                <div className="absolute z-[10] top-[25%] md:top-[40%] left-0 w-[85%] h-full bg-white rounded-tr-[152px]" >
 
-                <div className='lg:px-36 flex items-start justify-center flex-col lg:w-1/2 gap-y-6 lg:gap-y-12 '>
-                    <h2 className='font-semibold text-3xl md:text-4xl text-black/75'>
-                        Tripp in Trucking
-                    </h2>
-                    <p className='font-medium text-xl md:text-4xl'>
-                        Williston based company
-                    </p>
+                    <article className='relative z-[20] top-[3%] md:top-[7%] left-[7%] md:left-[10%] 
+                w-full flex flex-col-reverse px-6 xl:px-44 md:space-x-24 gap-y-12 md:gap-y-0  
+                items-start justify-start md:flex-row '>
+
+                        <div className='w-full flex items-start justify-center flex-col gap-y-6 lg:gap-y-12 '>
+                            <h2 className='font-semibold text-3xl md:text-4xl text-black/75'>
+                                Tripp in Trucking
+                            </h2>
+                            <p className='font-medium text-xl md:text-4xl'>
+                                Revolutionizing Hydro Vac and Trucking Solutions from Williston, Empowering the Future of Logistics!
+                            </p>
+                        </div>
+
+                        <div className='relative w-full md:max-w-[740px] h-[300px] md:h-[300px] lg:h-[360px]'>
+                            <Image
+                                src="/hydroVacOnField.jpg"
+                                alt="about"
+                                fill
+                                className='object-cover object-center rounded-2xl 
+                        relative inline-block w-full md:translate-x-[15%] md:scale-[1.1] md:translate-y-[10%]'
+                                priority
+                            />
+                        </div>
+                    </article >
                 </div>
+            </div>
 
-                <div className='relative w-full lg:h-[500px] lg:w-1/2 rounded-xl'>
-                    <Image src="/hydroVacOnField.jpg" alt="about" width={700} height={500} className='object-contain object-center rounded-[2rem] ' priority />
-                </div>
-            </article >
             {/* <article id="about" className='w-full sm:px-16 px-6 py-12 grid  lg:grid-cols-3 grid-rows-1 gap-y-12  lg:gap-y-0 lg:gap-x-6 '> */}
             {/*     <div className='flex flex-col items-start justyf-start gap-y-4 '> */}
             {/*         <h2 className='text-2xl md:text-5xl lg:text-6xl font-semibold'> */}
