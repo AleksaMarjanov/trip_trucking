@@ -10,4 +10,5 @@ export { default as ServiceImage } from './ServiceImage'
 export { default as ServicesList } from './ServicesList'
 export { default as IntroText } from './IntroText'
 export { default as HeroAbout } from './HeroAbout'
+export { default as AboutOverlay } from './AboutOverlay'
 
