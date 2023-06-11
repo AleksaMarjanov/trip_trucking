@@ -21,7 +21,7 @@ const AboutOverlay = () => {
 
                 <motion.article
                     variants={fadeIn('up', 'tween', 0.4, 0.6)}
-                    className='relative z-[20] top-[3%] md:top-[7%] left-[7%] md:left-[10%] 
+                    className='relative z-[20] top-[7%] md:top-[7%] max-[325px]:left-[10%] left-[7%] md:left-[10%] 
                 w-full flex flex-col-reverse px-6 xl:px-44 md:space-x-24 gap-y-12 md:gap-y-0  
                 items-start justify-start md:flex-row '>
 
@@ -38,7 +38,7 @@ const AboutOverlay = () => {
                         </motion.p>
 
                     </div>
-                    <div className='relative w-full md:max-w-[740px] h-[300px] md:h-[300px] lg:h-[360px]'>
+                    <div className='relative w-full md:max-w-[740px] h-[250px] md:h-[300px] lg:h-[360px]'>
                         <Image
                             src="/hydroVacOnField.jpg"
                             alt="about"
