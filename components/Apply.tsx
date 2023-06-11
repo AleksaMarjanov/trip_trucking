@@ -280,12 +280,9 @@ const Apply = () => {
                         <motion.div
                             variants={textVariant(0.5)}
                             className="flex flex-col items-center justify-center text-black h-screen">
-                            <h2 className="font-poppins text-2xl  max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
+                            <h2 className="font-poppins text-2xl  px-12 max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
                                 Thank you for applying for Tripp in Trucking
-                                <br />
                                 We will review your application and someone will
-
-                                <br />
                                 reach out in case that your skills match our needs!
                                 <br />
                             </h2>

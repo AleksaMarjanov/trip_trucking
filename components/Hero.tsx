@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { staggerContainer, textVariant, zoomIn } from '@/utils/motion'
 import Link from 'next/link'
 import ServiceImage from './ServiceImage'
+import { usePathname } from 'next/navigation'
 
 type HeroTypes = {
     heading: string,
@@ -19,6 +20,7 @@ type HeroTypes = {
 
 const Hero = ({ title, heading, message, src, href, callToAction, callToActionHref }: HeroTypes) => {
     const [loading, setLoading] = useState(true)
+    const pathname = usePathname()
 
     return (
         <motion.div
@@ -65,11 +67,17 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                         </motion.div>
                     </div>
 
-                    <a href={`${callToActionHref}`} className='max-w-[200px]'>
-                        <motion.button className='bg-white text-black rounded-[5px] px-4 py-4 mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'>
-                            {callToAction}
-                        </motion.button>
-                    </a>
+                    {(pathname === 'about') ?
+                        ""
+                        :
+                        < a href={`${callToActionHref}`} className='max-w-[200px]'>
+                            <motion.button className='bg-white text-black rounded-[5px] px-4 py-4 mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'>
+                                {callToAction}
+                            </motion.button>
+
+                        </a>
+
+                    }
                 </motion.div>
                 <motion.div
                     variants={textVariant(0.5)}
