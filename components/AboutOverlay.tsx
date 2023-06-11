@@ -17,12 +17,12 @@ const AboutOverlay = () => {
             whileInView="show"
             viewport={{ once: true }}
             className='min-h-screen overflow-hidden' >
-            <div className="absolute z-[10] top-[30%] md:top-[45%] lg:top-[40%] left-0 w-[85%] h-full bg-white rounded-tr-[152px]" >
+            <div className="absolute z-[10] top-[30%] md:top-[45%] lg:top-[50%] left-0 w-[85%] h-full bg-white rounded-tr-[152px]" >
 
                 <motion.article
                     variants={fadeIn('up', 'tween', 0.4, 0.6)}
                     className='relative z-[20] top-[7%] md:top-[7%] max-[325px]:left-[10%] left-[7%] md:left-[10%] 
-                w-full flex flex-col-reverse px-6 xl:px-44 md:space-x-24 gap-y-12 md:gap-y-0  
+                w-full flex flex-col-reverse sm:px-6 xl:px-44 md:space-x-24 gap-y-12 md:gap-y-0  
                 items-start justify-start md:flex-row '>
 
                     <div className='w-full flex items-start justify-center flex-col gap-y-6 lg:gap-y-12 '>
@@ -50,7 +50,7 @@ const AboutOverlay = () => {
                                     ? "scale-110 blur-2xl grayscale"
                                     : "scale-100 blur-0 grayscale-0"
                                 }
-w-full md:translate-x-[15%] md:scale-[1.1] md:translate-y-[10%]`}
+w-full md:translate-x-[25%] md:scale-[1.1] md:translate-y-[10%]`}
 
                             onLoadingComplete={() => setLoading(false)}
                             priority
