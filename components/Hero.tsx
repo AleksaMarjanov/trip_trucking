@@ -67,7 +67,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                         </motion.div>
                     </div>
 
-                    {(pathname === 'about') ?
+                    {(pathname === '/about') ?
                         ""
                         :
                         < a href={`${callToActionHref}`} className='max-w-[200px]'>
