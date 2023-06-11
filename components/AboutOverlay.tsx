@@ -50,7 +50,7 @@ const AboutOverlay = () => {
                                     ? "scale-110 blur-2xl grayscale"
                                     : "scale-100 blur-0 grayscale-0"
                                 }
-w-full md:translate-x-[25%] md:scale-[1.1] md:translate-y-[10%]`}
+w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1.1] md:translate-y-[10%]`}
 
                             onLoadingComplete={() => setLoading(false)}
                             priority
