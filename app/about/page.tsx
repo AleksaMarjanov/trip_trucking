@@ -22,7 +22,7 @@ const About = () => {
             </div>
 
             <div className='min-h-screen overflow-hidden' >
-                <div className="absolute z-[10] top-[25%] md:top-[40%] left-0 w-[85%] h-full bg-white rounded-tr-[152px]" >
+                <div className="absolute z-[10] top-[30%] md:top-[40%] left-0 w-[85%] h-full bg-white rounded-tr-[152px]" >
 
                     <article className='relative z-[20] top-[3%] md:top-[7%] left-[7%] md:left-[10%] 
                 w-full flex flex-col-reverse px-6 xl:px-44 md:space-x-24 gap-y-12 md:gap-y-0  
