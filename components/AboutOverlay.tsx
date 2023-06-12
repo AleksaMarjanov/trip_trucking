@@ -61,7 +61,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
 
 
             </motion.div>
-            <div className='px-6 lg:px-40 w-full relative z-[30] top-[100%] flex flex-col-reverse md:flex-row md:space-x-24 items-center justify-center '>
+            <div className='px-6 lg:px-40 w-full relative z-[30] top-[100%] flex flex-col md:flex-row md:space-x-24 items-center justify-center '>
 
                 <div className='relative w-full md:w-1/2 md:max-w-[580px] h-[600px] '>
                     <Image
