@@ -10,15 +10,14 @@ const AboutOverlay = () => {
     const [loading, setLoading] = useState(true)
 
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen flex flex-col items-center'>
             <motion.div
-
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
                 className='h-[35vh] overflow-hidden' >
-                <div className="absolute z-[10] top-[30%] md:top-[45%] lg:top-[50%] left-0 w-[85%] h-full bg-white rounded-tr-[152px]" >
+                <div className="absolute z-[10] top-[30%] md:top-[45%] lg:top-[40%] left-0 w-[85%] h-full bg-white rounded-tr-[152px]" >
 
                     <motion.article
                         variants={fadeIn('up', 'tween', 0.4, 0.6)}
@@ -62,15 +61,30 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
 
 
             </motion.div>
-            <div className='relative z-[30] top-0'>
+            <div className='px-6 lg:px-40 w-full relative z-[30] top-[100%] flex flex-col-reverse md:flex-row md:space-x-24 items-center justify-center '>
 
-                <h3 className=''>
+                <div className='relative w-full md:w-1/2 md:max-w-[580px] h-[600px] '>
+                    <Image
+                        src="/simonson.jpg"
+                        alt="hydro vac"
+                        fill
+                        className={`object-cover w-full object-center rounded-2xl
+                            ${loading
+                                ? 'blur-2xl scale-110 greyscale'
+                                : 'blur-0 scale-100 grayscale-0'
+                            }    relative inline-block
+                                `}
+                        onLoadingComplete={() => setLoading(false)}
+                        priority
+                    />
+                </div>
+                <h3 className='w-full text-4xl text-bold md:flex-[0.5]'>
                     This is some random text
                 </h3>
             </div>
-
         </div>
     )
+
 }
 
 export default AboutOverlay
