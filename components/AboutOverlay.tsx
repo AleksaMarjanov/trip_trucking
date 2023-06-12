@@ -26,14 +26,14 @@ const AboutOverlay = () => {
                 items-start justify-start md:flex-row '>
 
                         <div className='w-full flex items-start justify-center flex-col gap-y-6 lg:gap-y-12 '>
-                            <motion.h2
+                            <motion.h3 className='w-full text-3xl text-bold  text-black/75'
                                 variants={textVariant(0.5)}
-                                className='font-semibold text-3xl md:text-4xl text-black/75'>
+                            >
                                 Tripp in Trucking
-                            </motion.h2>
+                            </motion.h3>
                             <motion.p
                                 variants={textVariant(0.7)}
-                                className='font-medium text-xl md:text-4xl'>
+                                className='leading-[30px] font-medium text-xl md:text-4xl'>
                                 Revolutionizing Hydro Vac and Trucking Solutions from Williston, Empowering the Future of Logistics!
                             </motion.p>
 
@@ -61,9 +61,16 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
 
 
             </motion.div>
-            <div className='mt-12 md:mt-0 md:mb-32 px-6 lg:px-40 w-full relative z-[30] top-[100%] flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center '>
+            <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className='mt-12 md:mt-0 md:mb-32 px-6 lg:px-40 w-full relative z-[30] top-[100%] flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center '>
 
-                <div className='relative w-full md:w-1/2 md:max-w-[580px] h-[600px] '>
+                <motion.div
+                    variants={fadeIn('right', 'tween', 0.5, 0.85)}
+                    className='relative w-full md:w-1/2 md:max-w-[580px] h-[600px] '>
                     <Image
                         src="/simonson.jpg"
                         alt="hydro vac"
@@ -77,17 +84,23 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                         onLoadingComplete={() => setLoading(false)}
                         priority
                     />
-                </div>
-                <div className='w-full lg:px-6 gap-y-6 md:gap-y-12  flex md:flex-[0.5] flex-col items-start justify-center' >
-                    <h3 className='w-full text-3xl text-bold  text-black/75'>
+                </motion.div>
+                <motion.div
+                    variants={fadeIn('left', 'tween', 0.55, 0.9)}
+                    className='w-full lg:px-6 gap-y-6 md:gap-y-12  flex md:flex-[0.5] flex-col items-start justify-center' >
+                    <motion.h3
+                        variants={textVariant(0.4)}
+                        className='w-full text-3xl text-bold  text-black/75'>
                         Our Story
-                    </h3>
-                    <p className='text-xl md:text-4xl font-semibold'>
+                    </motion.h3>
+                    <motion.p
+                        variants={textVariant(0.6)}
+                        className='text-xl md:text-4xl font-semibold leading-[30px]'>
                         With a strong presence in the industry, we have built a solid reputation for delivering exceptional logistics solutions to our clients. Our company operates a large fleet of well-maintained trucks and employs a team of dedicated professionals who are committed to excellence in service.
-                    </p>
-                </div>
-            </div>
-        </div>
+                    </motion.p>
+                </motion.div>
+            </motion.div >
+        </div >
     )
 
 }
