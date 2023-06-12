@@ -61,7 +61,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
 
 
             </motion.div>
-            <div className='mt-12 md:mt-0 md:mb-32 px-6 lg:px-40 w-full relative z-[30] top-[100%] flex flex-col md:flex-row md:space-x-24 items-center justify-center '>
+            <div className='mt-12 md:mt-0 md:mb-32 px-6 lg:px-40 w-full relative z-[30] top-[100%] flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center '>
 
                 <div className='relative w-full md:w-1/2 md:max-w-[580px] h-[600px] '>
                     <Image
@@ -78,9 +78,14 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                         priority
                     />
                 </div>
-                <h3 className='w-full text-4xl text-bold md:flex-[0.5]'>
-                    This is some random text
-                </h3>
+                <div className='w-full lg:px-6 gap-y-6 md:gap-y-12  flex md:flex-[0.5] flex-col items-start justify-center' >
+                    <h3 className='w-full text-3xl text-bold  text-black/75'>
+                        Our Story
+                    </h3>
+                    <p className='text-xl md:text-4xl font-semibold'>
+                        With a strong presence in the industry, we have built a solid reputation for delivering exceptional logistics solutions to our clients. Our company operates a large fleet of well-maintained trucks and employs a team of dedicated professionals who are committed to excellence in service.
+                    </p>
+                </div>
             </div>
         </div>
     )
