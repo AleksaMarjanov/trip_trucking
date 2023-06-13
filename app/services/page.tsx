@@ -1,9 +1,11 @@
 import { Hero, ServicesList } from '@/components'
+import TransitionEffect from '@/components/TransitionEffect'
 import React from 'react'
 
 const ServicesPage = () => {
     return (
         <>
+            <TransitionEffect />
             <Hero
                 title="Services"
                 src="/hero.jpg"

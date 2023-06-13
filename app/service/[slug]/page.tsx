@@ -8,6 +8,7 @@ import { groq } from 'next-sanity';
 import Image from 'next/image';
 import { RichTextComponents } from '@/components/RichTextComponent';
 import Trusted from '@/sanity/schemas/trusted';
+import TransitionEffect from '@/components/TransitionEffect';
 
 
 type Props = {
@@ -49,6 +50,7 @@ async function Service({ params: { slug } }: Props) {
 
     return (
         <>
+            <TransitionEffect />
             <Hero
                 message={service?.heroTagline}
                 heading={service?.headingHero}

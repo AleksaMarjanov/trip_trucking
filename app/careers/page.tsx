@@ -1,10 +1,12 @@
 import { Hero } from '@/components'
 import Apply from '@/components/Apply'
+import TransitionEffect from '@/components/TransitionEffect'
 import React from 'react'
 
 const Careers = () => {
     return (
         <div>
+            <TransitionEffect />
             <Hero
                 title="Join Our Team of Trailblazers"
                 heading="Apply Today"

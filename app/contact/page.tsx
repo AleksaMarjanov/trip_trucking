@@ -1,6 +1,7 @@
 import { Form, Hero } from '@/components'
 import React from 'react'
 import dynamic from 'next/dynamic';
+import TransitionEffect from '@/components/TransitionEffect';
 
 const MapWithNOSSR = dynamic(() => import("../../components/Map"), {
     ssr: false,
@@ -10,6 +11,7 @@ const MapWithNOSSR = dynamic(() => import("../../components/Map"), {
 const Contact = () => {
     return (
         <>
+            <TransitionEffect />
             <Hero
                 title="Contact"
                 src="/contact.jpeg"

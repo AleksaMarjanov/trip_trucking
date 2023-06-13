@@ -17,7 +17,10 @@ const AboutOverlay = () => {
                 whileInView="show"
                 viewport={{ once: true }}
                 className='h-[35vh] overflow-hidden' >
-                <div className="absolute z-[10] top-[30%] md:top-[45%] lg:top-[40%] left-0 w-[85%] h-[50vh] bg-white rounded-tr-[152px]" >
+                <motion.div
+
+                    variants={fadeIn('up', 'tween', 0.3, 0.85)}
+                    className="absolute z-[10] top-[30%] md:top-[45%] lg:top-[40%] left-0 w-[85%] h-[50vh] bg-white rounded-tr-[152px]" >
 
                     <motion.article
                         variants={fadeIn('up', 'tween', 0.4, 0.6)}
@@ -57,7 +60,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                             />
                         </div>
                     </motion.article >
-                </div>
+                </motion.div>
 
 
             </motion.div>
@@ -66,7 +69,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className='mt-12 md:mt-0 md:mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 justify-center'>
+                className='mt-12 md:mt-0 md:mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center'>
 
                 <motion.div
                     variants={fadeIn('right', 'tween', 0.5, 0.85)}
