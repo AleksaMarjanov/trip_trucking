@@ -12,7 +12,7 @@ export default function ClientSideRoute({
 }) {
 
     return (
-        <Link href={route}>
+        <Link href={route} passHref >
             {children}
         </Link >
     )

@@ -21,12 +21,22 @@ export default function RootLayout({
 }) {
     const pathname = usePathname()
 
-    useEffect(() => {
-        setTimeout(() => {
-            document.scrollingElement?.scroll(0, 0)
-        }, 0)
-    }, [pathname])
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         document.scrollingElement?.scroll(0, 0)
+    //     }, 0)
+    // }, [pathname])
 
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            })
+        }
+    }, [pathname])
 
 
     return (
