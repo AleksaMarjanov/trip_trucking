@@ -30,7 +30,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
             viewport={{ once: true, amount: 0.25 }}
         >
             <motion.div
-                variants={zoomIn(0.1, 0.6)}
+                variants={zoomIn(0.6, 0.8)}
                 className="w-full relative h-[80vh] md:h-[95vh] flex flex-col items-start justify-start object-cover object-center" >
                 <Image
                     src={src}
@@ -49,18 +49,18 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                 >
                     <div className='flex items-start justify-center flex-col gap-y-6'>
                         <motion.div
-                            variants={textVariant(0.2)}
+                            variants={textVariant(0.4)}
                         >
                             <h2 className="max-[375px]:text-4xl text-5xl md:text-7xl font-semibold ">{title}</h2>
                         </motion.div>
                         <motion.div
-                            variants={textVariant(0.4)}
+                            variants={textVariant(0.5)}
                         >
                             <h2 className="text-2xl md:text-6xl font-medium">{heading}</h2>
                         </motion.div>
                         {/* <div className='absolute z-[33] bg-white opacity-50 top-[50%]' /> */}
                         <motion.div
-                            variants={textVariant(0.5)}
+                            variants={textVariant(0.6)}
                         >
                             <p className="font-normal text-2xl md:text-4xl">{message}</p>
 

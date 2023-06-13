@@ -19,23 +19,23 @@ const AboutOverlay = () => {
                 className='h-[35vh] overflow-hidden' >
                 <motion.div
 
-                    variants={fadeIn('up', 'tween', 0.3, 0.85)}
+                    variants={fadeIn('up', 'tween', 0.6, 0.85)}
                     className="absolute z-[10] top-[30%] md:top-[45%] lg:top-[40%] left-0 w-[85%] h-[50vh] bg-white rounded-tr-[152px]" >
 
                     <motion.article
-                        variants={fadeIn('up', 'tween', 0.4, 0.6)}
+                        variants={fadeIn('up', 'tween', 0.7, 0.8)}
                         className='relative z-[20] top-[7%] md:top-[12%] max-[325px]:left-[10%] left-[7%] md:left-[10%] 
                 w-full flex flex-col-reverse sm:px-6 xl:px-44 md:space-x-24 gap-y-12 md:gap-y-0  
                 items-start justify-start md:flex-row '>
 
                         <div className='w-full flex items-start justify-center flex-col gap-y-6 lg:gap-y-12 '>
                             <motion.h3 className='w-full text-3xl text-bold  text-black/75'
-                                variants={textVariant(0.5)}
+                                variants={textVariant(0.7)}
                             >
                                 Tripp in Trucking
                             </motion.h3>
                             <motion.p
-                                variants={textVariant(0.7)}
+                                variants={textVariant(0.9)}
                                 className='leading-[55px] font-medium text-2xl lg:text-[38px]'>
                                 Revolutionizing Hydro Vac and Trucking Solutions from Williston, Empowering the Future of Logistics!
                             </motion.p>
@@ -72,7 +72,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                 className='mt-12 md:mt-0 md:mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center'>
 
                 <motion.div
-                    variants={fadeIn('right', 'tween', 0.5, 0.85)}
+                    variants={fadeIn('up', 'tween', 0.9, 0.85)}
                     className='relative w-full sm:w-[350px] sm:h-[400px] lg:w-1/2 md:max-w-[580px] h-[500px] md:h-[700px]'>
                     <Image
                         src="/simonson.jpg"
@@ -89,15 +89,15 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                     />
                 </motion.div>
                 <motion.div
-                    variants={fadeIn('left', 'tween', 0.55, 0.9)}
+                    variants={fadeIn('up', 'tween', 0.55, 0.9)}
                     className='w-full px-6 gap-y-6 md:gap-y-12  flex md:flex-[0.5] flex-col items-start justify-center' >
                     <motion.h3
-                        variants={textVariant(0.4)}
+                        variants={textVariant(0.8)}
                         className='w-full text-3xl text-bold  text-black/75'>
                         Our Story
                     </motion.h3>
                     <motion.p
-                        variants={textVariant(0.6)}
+                        variants={textVariant(1)}
                         className='leading-[55px] font-medium text-2xl lg:text-[38px]'>
                         With a strong presence in the industry, we have built a solid reputation for delivering exceptional logistics solutions to our clients. Our company operates a large fleet of well-maintained trucks and employs a team of dedicated professionals who are committed to excellence in service.
                     </motion.p>
