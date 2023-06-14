@@ -36,7 +36,7 @@ const AboutOverlay = () => {
                             </motion.h3>
                             <motion.p
                                 variants={textVariant(0.9)}
-                                className='leading-[55px] font-medium text-2xl lg:text-[38px]'>
+                                className='sm:leading-[25px] md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
                                 Revolutionizing Hydro Vac and Trucking Solutions from Williston, Empowering the Future of Logistics!
                             </motion.p>
 
@@ -69,7 +69,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className='mt-12 md:mt-0 md:mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center'>
+                className='mt-12 md:mt-0 mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center'>
 
                 <motion.div
                     variants={fadeIn('up', 'tween', 0.9, 0.85)}
@@ -98,7 +98,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                     </motion.h3>
                     <motion.p
                         variants={textVariant(1)}
-                        className='leading-[55px] font-medium text-2xl lg:text-[38px]'>
+                        className='leading-[25px] md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
                         With a strong presence in the industry, we have built a solid reputation for delivering exceptional logistics solutions to our clients. Our company operates a large fleet of well-maintained trucks and employs a team of dedicated professionals who are committed to excellence in service.
                     </motion.p>
                 </motion.div>

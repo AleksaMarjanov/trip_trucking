@@ -45,7 +45,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
                     priority />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75 z-[2]" />
                 <motion.div
-                    className="px-6 sm:px-12 text-white z-[2] absolute max-[375px]:top-[20%] top-[25%] lg:top-[30%] left-[3%] md:left-[10%] lg:left-[15%] flex flex-col justify-between gap-y-6"
+                    className="px-6 sm:px-12 lg:px-24 text-white z-[2] absolute max-[375px]:top-[20%] top-[25%] lg:top-[30%] left-[3%] md:left-[10%] lg:left-[15%] flex flex-col justify-between gap-y-6"
                 >
                     <div className='flex items-start justify-center flex-col gap-y-6'>
                         <motion.div

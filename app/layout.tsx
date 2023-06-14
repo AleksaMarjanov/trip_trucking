@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -42,6 +43,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} bg-white`}>
+                <TransitionEffect />
                 <Navbar />
                 {children}
                 <Footer />
