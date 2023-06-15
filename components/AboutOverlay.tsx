@@ -40,6 +40,12 @@ const AboutOverlay = () => {
                                 Revolutionizing Hydro Vac and Trucking Solutions from Williston, Empowering the Future of Logistics!
                             </motion.p>
 
+                            <motion.button
+                                variants={textVariant(1)}
+                                className='px-4 py-4 bg-black hover:bg-white hover:border-black hover:text-black border-2 transition-colors duration-300 ease-out text-white rounded-lg'
+                            >
+                                Free Quote
+                            </motion.button>
                         </div>
                         <div className='relative w-full  md:max-w-[740px] h-[250px] md:h-[300px] lg:h-[360px]'>
                             <Image
@@ -69,11 +75,13 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className='mt-12 md:mt-0 mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center'>
+                // className='mt-12 md:mt-0 mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center'>
+                className='grid md:grid-cols-2 items-center justify-center px-6 relative z-[30] top-5 md:-top-32  lg:px-16 xl:px-40  mb-32 '
+            >
 
                 <motion.div
                     variants={fadeIn('up', 'tween', 0.9, 0.85)}
-                    className='relative w-full sm:w-[350px] sm:h-[400px] lg:w-1/2 md:max-w-[580px] h-[500px] md:h-[700px]'>
+                    className='relative lg:items-end lg:justify-end lg:flex w-full md:w-[580px] sm:h-[400px] h-[500px] md:h-[700px]'>
                     <Image
                         src="/simonson.jpg"
                         alt="hydro vac"
@@ -90,7 +98,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                 </motion.div>
                 <motion.div
                     variants={fadeIn('up', 'tween', 0.55, 0.9)}
-                    className='w-full px-6 gap-y-6 md:gap-y-12  flex md:flex-[0.5] flex-col items-start justify-center' >
+                    className='w-full gap-y-6 md:flex-[0.25] flex flex-col items-start justify-center' >
                     <motion.h3
                         variants={textVariant(0.8)}
                         className='w-full text-3xl text-bold  text-black/75'>
