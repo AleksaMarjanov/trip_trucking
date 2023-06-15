@@ -1,14 +1,29 @@
 "use client";
 
 import Image from 'next/image'
-import { motion, stagger } from 'framer-motion'
-import React, { useState } from 'react'
+import { motion, stagger, useScroll, useSpring, useTransform, motionValue, MotionValue } from 'framer-motion'
+import React, { useState, useRef } from 'react'
 import { fadeIn, staggerContainer, textVariant } from '@/utils/motion'
 import Link from 'next/link';
 
 
 const AboutOverlay = () => {
     const [loading, setLoading] = useState(true)
+
+    const useParallax = (value: MotionValue<number>, distance: number) => {
+        return useTransform(value, [0, 1], [-distance, distance]);
+    }
+
+    // const ref = useRef(null);
+    // const { scrollYProgress } = useScroll({ target: ref });
+    // const y = useParallax(scrollYProgress, 300);
+
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
 
     return (
         <div className='flex flex-col items-center'>
@@ -114,6 +129,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                     </motion.p>
                 </motion.div>
             </motion.div >
+            <motion.div className='absolute z-[1] w-full h-[200px] top-[85%] bg-slate-200 -skew-x-12' style={{ scaleX }} />
         </div >
     )
 
