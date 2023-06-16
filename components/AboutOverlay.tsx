@@ -146,7 +146,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                     <motion.p
                         variants={textVariant(0.9)}
                         className='md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
-                        At Tripp in Trucking, we are committed to building a diverse and inclusive community that fosters equal opportunities for all individuals. We firmly believe in the value of diversity and recognize that it contributes to a vibrant and innovative workforce. Our commitment to diversity extends across all aspects of our organization, from recruitment and hiring to employee development and advancement.
+                        At Tripp in Trucking, diversity and equal opportunities are our foundation. We embrace diversity to foster innovation and growth across our organization, from recruitment to career development.
                     </motion.p>
 
                     <motion.button
