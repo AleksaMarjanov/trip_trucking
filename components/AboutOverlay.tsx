@@ -19,7 +19,7 @@ const AboutOverlay = () => {
     // const y = useParallax(scrollYProgress, 300);
 
     const { scrollYProgress } = useScroll();
-    const scaleX = useSpring(scrollYProgress, {
+    const scaleY = useSpring(scrollYProgress, {
         stiffness: 100,
         damping: 30,
         restDelta: 0.001
@@ -58,7 +58,7 @@ const AboutOverlay = () => {
 
                             <motion.button
                                 variants={textVariant(1)}
-                                className='px-4 py-4 bg-black hover:bg-white hover:border-black hover:text-black border-2 transition-colors duration-300 ease-out text-white rounded-lg'
+                                className='px-4 py-4 bg-black hover:bg-white hover:border-black hover:text-black border-2 transition-colors duration-300 ease-out text-white rounded-2xl'
                             >
                                 <Link href="/contact">
                                     Free Quote
@@ -129,10 +129,55 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                     </motion.p>
                 </motion.div>
             </motion.div >
-            <motion.div className='absolute z-[1] w-full h-[200px] top-[85%] bg-slate-200 -skew-x-12' style={{ scaleX }} />
+            <motion.div className='absolute z-[1] w-full h-[200px] -bottom-[90%] -translate-x-[-85%]  bg-slate-200 -skew-x-12' style={{ scaleY }} />
+
+
+            <motion.div
+                variants={fadeIn('up', 'tween', 0.5, 0.85)}
+                className='px-6 lg:px-40 mt-16 md:mt-24 md:px-16 gap-y-12 md:gap-y-0 md:gap-x-24 p-12 rounded-tr-[240px] rounded-bl-[240px] bg-slate-200 w-full relative grid md:grid-cols-2'
+            >
+
+                <div className='w-full lg:flex-[0.75] flex items-start justify-center flex-col gap-y-6 lg:gap-y-12 '>
+                    <motion.h3 className='w-full text-3xl text-bold  text-black/75'
+                        variants={textVariant(0.7)}
+                    >
+                        Careers
+                    </motion.h3>
+                    <motion.p
+                        variants={textVariant(0.9)}
+                        className='sm:leading-[25px] md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
+                        At Tripp in Trucking, we are committed to building a diverse and inclusive community that fosters equal opportunities for all individuals. We firmly believe in the value of diversity and recognize that it contributes to a vibrant and innovative workforce. Our commitment to diversity extends across all aspects of our organization, from recruitment and hiring to employee development and advancement.
+                    </motion.p>
+
+                    <motion.button
+                        variants={textVariant(1)}
+                        className='px-4 py-4 bg-black hover:bg-white hover:border-black hover:text-black border-2 transition-colors duration-300 ease-out text-white rounded-2xl'
+                    >
+                        <Link href="/Careers">
+                            Join Our Team
+                        </Link>
+                    </motion.button>
+                </div>
+
+                <div className='relative w-full lg:w-[580px] sm:h-[400px] h-[500px] md:h-[700px]'>
+                    <Image
+                        src="/truck3.jpg"
+                        alt="Careers"
+                        fill
+                        className={`object-cover w-full object-center rounded-2xl
+                            ${loading
+                                ? 'blur-2xl scale-110 greyscale'
+                                : 'blur-0 scale-100 grayscale-0'
+                            }    relative inline-block
+                                `}
+                        onLoadingComplete={() => setLoading(false)}
+                        priority
+                    />
+                </div>
+            </motion.div>
         </div >
     )
 
-}
 
+}
 export default AboutOverlay

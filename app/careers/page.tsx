@@ -16,9 +16,13 @@ const Careers = () => {
                 callToAction='Apply'
                 callToActionHref='#apply'
             />
+            <section className='min-h-screen'>
+                <svg className="absolute right-0 top-[45%] hidden md:block" width="466" height="633" viewBox="0 0 466 633" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M466 74L317.074 74C182.828 74 73.9999 182.571 73.9999 316.5C73.9999 450.429 182.828 559 317.074 559L466 559" stroke="#F1F1F1" stroke-width="147" stroke-miterlimit="10"></path>
+                </svg>
 
-
-            <Apply />
+                <Apply />
+            </section>
 
         </div>
     )

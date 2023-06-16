@@ -4,6 +4,8 @@ const nextConfig = {
     //     scrollRestoration: true
     // },
     images: {
+        // disable so nextjs wouldn't add its own types for SVG
+        disableStaticImages: true,
         domains: [
             'www.instagram.com',
             'www.facebook.com',
