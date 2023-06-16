@@ -43,7 +43,6 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} bg-white`}>
-                <TransitionEffect />
                 <Navbar />
                 {children}
                 <Footer />
