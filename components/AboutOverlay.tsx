@@ -32,7 +32,7 @@ const AboutOverlay = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className='h-[35vh] overflow-hidden' >
+                className='h-[38vh] md:h-[35vh] overflow-hidden' >
                 <motion.div
 
                     variants={fadeIn('up', 'tween', 0.6, 0.85)}
@@ -94,7 +94,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                 whileInView="show"
                 viewport={{ once: true }}
                 // className='mt-12 md:mt-0 mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center'>
-                className='grid mt-24 gap-6  md:gap-24 md:grid-cols-2 items-center justify-center px-6 relative z-[30] top-5 md:-top-32  lg:px-16 xl:px-40  mb-32 '
+                className='grid mt-12 md:mt-24 gap-6  md:gap-24 md:grid-cols-2 items-center justify-center px-6 relative z-[30] top-5 md:-top-32  lg:px-16 xl:px-40  mb-32 '
             >
 
                 <motion.div
@@ -134,7 +134,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
 
             <motion.div
                 variants={fadeIn('up', 'tween', 0.5, 0.85)}
-                className='px-6 lg:px-40 mt-16 md:mt-24 md:px-16 gap-y-12 md:gap-y-0 md:gap-x-24 p-12 rounded-tr-[240px] rounded-bl-[240px] bg-slate-200 w-full relative grid md:grid-cols-2'
+                className='px-6 lg:px-40 mt-16 mb-16 md:mt-24 md:px-16 gap-y-12 md:gap-y-0 md:gap-x-24 p-12 rounded-tr-[240px] rounded-bl-[240px] bg-slate-200 w-full relative grid md:grid-cols-2'
             >
 
                 <div className='w-full lg:flex-[0.75] flex items-start justify-center flex-col gap-y-6 lg:gap-y-12 '>
