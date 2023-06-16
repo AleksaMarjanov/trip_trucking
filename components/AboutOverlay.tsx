@@ -52,7 +52,7 @@ const AboutOverlay = () => {
                             </motion.h3>
                             <motion.p
                                 variants={textVariant(0.9)}
-                                className='sm:leading-[25px] md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
+                                className='md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
                                 Revolutionizing Hydro Vac and Trucking Solutions from Williston, Empowering the Future of Logistics!
                             </motion.p>
 
@@ -94,7 +94,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                 whileInView="show"
                 viewport={{ once: true }}
                 // className='mt-12 md:mt-0 mb-32 px-6 w-full relative z-[30] top-5 md:-top-32 flex flex-col md:flex-row gap-y-12 md:space-x-24 items-center justify-center'>
-                className='grid mt-12 md:mt-24  gap-6  md:gap-24 md:grid-cols-2 items-center justify-center px-6 relative z-[30] top-5 md:-top-32  lg:px-16 xl:px-40  mb-32 '
+                className='grid mt-24 gap-6  md:gap-24 md:grid-cols-2 items-center justify-center px-6 relative z-[30] top-5 md:-top-32  lg:px-16 xl:px-40  mb-32 '
             >
 
                 <motion.div
@@ -124,7 +124,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                     </motion.h3>
                     <motion.p
                         variants={textVariant(1)}
-                        className='leading-[25px] md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
+                        className='md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
                         With a strong presence in the industry, we have built a solid reputation for delivering exceptional logistics solutions to our clients. Our company operates a large fleet of well-maintained trucks and employs a team of dedicated professionals who are committed to excellence in service.
                     </motion.p>
                 </motion.div>
@@ -145,7 +145,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                     </motion.h3>
                     <motion.p
                         variants={textVariant(0.9)}
-                        className='sm:leading-[25px] md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
+                        className='md:leading-[55px] font-medium text-2xl lg:text-[38px]'>
                         At Tripp in Trucking, we are committed to building a diverse and inclusive community that fosters equal opportunities for all individuals. We firmly believe in the value of diversity and recognize that it contributes to a vibrant and innovative workforce. Our commitment to diversity extends across all aspects of our organization, from recruitment and hiring to employee development and advancement.
                     </motion.p>
 
@@ -153,7 +153,7 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
                         variants={textVariant(1)}
                         className='px-4 py-4 bg-black hover:bg-white hover:border-black hover:text-black border-2 transition-colors duration-300 ease-out text-white rounded-2xl'
                     >
-                        <Link href="/Careers">
+                        <Link href="/careers">
                             Join Our Team
                         </Link>
                     </motion.button>
