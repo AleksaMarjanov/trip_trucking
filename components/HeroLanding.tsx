@@ -12,7 +12,6 @@ type HeroTypes = {
     title: string,
     src: string,
     href: string,
-    // callToAction: string,
     callToActionHref: string,
 }
 
@@ -28,7 +27,7 @@ const Hero = ({ title, heading, message, src, href, callToActionHref }: HeroType
         >
             <motion.div
                 variants={zoomIn(0.6, 0.8)}
-                className="w-full relative h-[70vh] md:h-[85vh] flex flex-col items-start justify-start object-cover object-center" >
+                className="w-full relative h-[80vh] md:h-[85vh] flex flex-col items-start justify-start object-cover object-center" >
                 <Image
                     src={src}
                     alt="hero"
@@ -65,27 +64,6 @@ const Hero = ({ title, heading, message, src, href, callToActionHref }: HeroType
 
                         </motion.div>
                     </div>
-
-                    {/* <a href={`${callToActionHref}`} className='max-w-[200px]'> */}
-                    {/*     <motion.button className='bg-white text-black rounded-[5px] px-4 py-4 mt-4 xl:mt-16 hover:bg-stone-600 hover:border hover:text-white transition-colors duration-400 ease-out'> */}
-                    {/*         {callToAction} */}
-                    {/*     </motion.button> */}
-                    {/* </a> */}
-                </motion.div>
-                <motion.div
-                    variants={textVariant(0.5)}
-                    className="absolute bottom-[10%] left-[40%] sm:left-[45%] md:left-[45%] z-[30] mt-64 md:mt-[3rem] flex items-center justify-center"
-
-                >
-                    {/* <a href={`#${href}`}> */}
-                    {/*     <motion.button */}
-                    {/*         className="text-white   */}
-                    {/*         font-bold uppercase text-sm sm:text-md md:text-lg  */}
-                    {/*         cursor-pointer "> */}
-                    {/*         Scroll Down */}
-                    {/*     </motion.button> */}
-                    {/* </a> */}
-
                 </motion.div>
             </motion.div >
 
