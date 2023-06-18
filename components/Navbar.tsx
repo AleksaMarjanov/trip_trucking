@@ -65,6 +65,7 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
     }
 
     const handleToggle = () => {
+        // @ts-expect-error
         setIsOpen(prev => !prev);
         setRotate(prev => !prev);
     }

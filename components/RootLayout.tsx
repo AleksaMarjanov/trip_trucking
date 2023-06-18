@@ -13,7 +13,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <>
             <TransitionEffect />
             <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-            <div className={`${isOpen ? 'opacity-60' : 'opacity-100'}`}>
+            {/* When navigation bar is open, dim the background */}
+            <div className={`${isOpen ? 'opacity-60 drop-shadow-2xl' : 'opacity-100'}`}>
                 {children}
                 <Footer />
             </div>
