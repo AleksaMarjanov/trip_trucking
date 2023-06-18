@@ -50,15 +50,15 @@ const Footer = () => {
                     <h2 className=" text-2xl md:text-4xl text-black mb-2">Socials</h2>
 
                 </div>
-                <div className="mt-6 font-semibold text-black">
-                    <p>@ Copyright {new Date().getFullYear()}</p>
-                    <Link href="https://marjanovdesignsolutions.com" target='_blank'>
-                        <span className='hover:text-black/75 transition-colors ease-out duration-300'>
-                            Developed by Marjanov Design Solutions
-                        </span>
-                    </Link>
-                </div>
             </div >
+            <div className="mt-6 font-semibold text-black">
+                <p>@ Copyright {new Date().getFullYear()}</p>
+                <Link href="https://marjanovdesignsolutions.com" target='_blank'>
+                    <span className='hover:text-black/50  transition-colors ease-out duration-300'>
+                        Developed by Marjanov Design Solutions
+                    </span>
+                </Link>
+            </div>
 
         </footer >
     )
