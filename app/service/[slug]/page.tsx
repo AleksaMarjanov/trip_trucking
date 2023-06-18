@@ -1,5 +1,4 @@
 import { Hero, TrustedBy } from '@/components';
-
 import { client } from '@/lib/sanity.client';
 import { Services } from '@/typings';
 import { urlFor } from '@/lib/urlFor';

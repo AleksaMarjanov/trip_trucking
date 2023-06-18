@@ -1,19 +1,19 @@
 "use client"
 
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import React, { useState, useEffect } from 'react'
 import { fadeIn, staggerContainer, textVariant } from '@/utils/motion'
-import { urlFor } from '@/lib/urlFor'
 import { groq } from 'next-sanity'
 import { client } from '@/lib/sanity.client'
 import { Services } from '@/typings'
 import ClientSideRoute from './ClientSideRoute'
 import ServiceImage from './ServiceImage'
+import { usePathname } from 'next/navigation'
 
 const ServicesList = () => {
     const [services, setServices] = useState([])
+    const pathname = usePathname()
 
     const query = groq`
  *[_type == 'services']
@@ -29,12 +29,25 @@ const ServicesList = () => {
         fetchServices();
     }, [])
 
+    useEffect(() => {
+        setTimeout(() => {
+            document.scrollingElement?.scroll(0, 0)
+        }, 0)
+    }, [pathname])
+
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            })
+        }
+    }, [pathname])
+
     return (
         <motion.div
-            // variants={staggerContainer}
-            // initial="hidden"
-            // whileInView="show"
-            // viewport={{ once: true }}
             id="services" className="max-[475px]:mt-18 lg:mt-48 lg:py-12 md:px-16 z-[90] mb-6"
         >
             <motion.div

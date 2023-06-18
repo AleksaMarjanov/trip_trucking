@@ -4,6 +4,9 @@ import TransitionEffect from '@/components/TransitionEffect'
 import Image from 'next/image'
 import React from 'react'
 
+export const metadata = {
+
+}
 
 const About = () => {
 

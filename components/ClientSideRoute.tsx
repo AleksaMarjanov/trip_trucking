@@ -2,6 +2,8 @@
 
 
 import Link from "next/link"
+import { usePathname } from "next/navigation";
+import { useEffect } from 'react'
 
 export default function ClientSideRoute({
     children,
@@ -14,9 +16,24 @@ export default function ClientSideRoute({
     className: string
 }) {
 
+    // Workaround in next, that solves issue with not scrolling to the top of the page if using Link component
+    // instead of <a> HTML element 
+    //
+    // const pathname = usePathname()
+    //
+    // useEffect(() => {
+    //     if (typeof window !== 'undefined') {
+    //         window.scrollTo({
+    //             top: 0,
+    //             left: 0,
+    //             behavior: "smooth"
+    //         })
+    //     }
+    // }, [pathname])
+
     return (
-        <Link href={route} passHref className={`${className}`}>
+        <a href={route} className={`${className}`}>
             {children}
-        </Link >
+        </a>
     )
 }
