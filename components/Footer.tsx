@@ -28,16 +28,22 @@ const Footer = () => {
     return (
         <footer className="w-full bg-gray-100 border-t-2 border-black shadow-2xl flex flex-col items-start py-6 md:py-12 px-6 md:px-12 justify-between">
             <div className="w-full mt-16 grid grid-rows-3 gap-y-12 md:flex md:flex-row md:items-start md:justify-between">
-                <div className="">
-                    <h2 className="col-span-4 md:col-span-2 text-2xl md:text-4xl text-black mb-2">Services</h2>
+                <div className="flex flex-col items-start justify-center ">
+                    <h2 className="col-span-4 md:col-span-2 text-2xl md:text-4xl text-black ">Solutions</h2>
                     {services.map((service: Services) => (
-                        <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id} >
+                        <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id} className="mt-6">
                             <ol>
                                 <li className="text-lg font-bold text-black" >{service.title}</li>
                             </ol>
                         </ClientSideRoute >
                     ))
                     }
+                </div>
+                <div className="flex flex-col justify-center items-center gap-y-6">
+                    <h2 className="col-span-4 md:col-span-2 text-2xl md:text-4xl text-black ">Company</h2>
+                    <Link href='/about' className="text-xl font-semibold">
+                        About Us
+                    </Link>
                 </div>
 
                 <div className='col-span-4 md:col-span-1'>

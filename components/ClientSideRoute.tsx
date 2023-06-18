@@ -5,14 +5,17 @@ import Link from "next/link"
 
 export default function ClientSideRoute({
     children,
-    route
+    route,
+    className
+
 }: {
     children: React.ReactNode
     route: string
+    className: string
 }) {
 
     return (
-        <Link href={route} passHref >
+        <Link href={route} passHref className={`${className}`}>
             {children}
         </Link >
     )
