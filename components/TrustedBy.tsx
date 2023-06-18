@@ -131,9 +131,9 @@ const TrustedBy = () => {
                     </div>
 
                 </div >
-                <div className='relative items-center justify-center flex w-full h-[250px] lg:h-[300px] px-6 md:py-8 max-[425px]:h-[100px] bg-black'>
+                <div className='relative items-center justify-center flex w-full h-[300px] gap-y-6 px-6 md:py-8 max-[425px]:h-[200px] bg-black'>
                     <Swiper
-                        className="swiper-wrapper flex items-center justify-center"
+                        className="swiper-wrapper flex items-center justify-center mt-6 "
                         observer={true}
                         slidesPerView={2}
                         modules={[Navigation, Pagination, Autoplay]}
@@ -148,7 +148,7 @@ const TrustedBy = () => {
                                 spaceBetween: 50,
                             },
                             499: {
-                                slidesPerView: 4,
+                                slidesPerView: 3,
                                 spaceBetween: 100
                             },
                             999: {
@@ -170,7 +170,8 @@ const TrustedBy = () => {
                         {trusted.map((slide: TrustedBy, index: number) => (
                             <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
                                 <SwiperSlide key={slide._id + index} className='flex items-center justify-center'>
-                                    <div className="relative flex items-center justify-center w-[200px] h-[100px] md:w-[200px] md:h-[200px] ">
+                                    <div className="relative flex items-center justify-center w-[200px] h-[180px] md:w-[240px] lg:w-[250px] md:h-[250px] ">
+
                                         <Image
                                             className="object-contain object-center"
                                             src={urlFor(slide.mainImage).url()}
