@@ -56,7 +56,7 @@ export const mobileVariants = {
         transition: {
             type: 'tween',
             stiffness: 80,
-            delay: 0.2,
+            delay: 1,
         },
     },
 }
