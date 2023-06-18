@@ -142,7 +142,7 @@ const Navbar = () => {
                         variants={mobileVariantsIsOpen}
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="w-full lg:hidden fixed top-[11%] bottom-30 left-0 h-screen flex flex-col text-black bg-white text-4xl font-medium">
+                        className={`${navbar ? 'top-[10%] drop-shadow-2xl' : 'top-[12%]'} w-[80%] lg:hidden rounded-2xl fixed bottom-30 right-5 h-[80vh] flex flex-col text-black bg-white text-4xl font-medium`}>
                         <CustomMobileLink href="/" title='Home' className="mt-48" toggle={handleToggle} />
                         <CustomMobileLink href="/about" title='About' className="" toggle={handleToggle} />
                         <CustomMobileLink href="/careers" title='Careers' className="" toggle={handleToggle} />
@@ -164,8 +164,8 @@ const Navbar = () => {
                     <Link href='/' className="">
                         <motion.div
                             variants={mobileVariants}
-                            className={`${navbar ? 'w-[100px] h-[40px] transition-all duration-300 ease-out left-[38%]' : 'w-[120px] h-[50px]'} 
-                         absolute left-[35%] top-0 md:top-2 md:left-[45%] lg:left-[3%] `}
+                            className={`${navbar ? 'w-[100px] h-[40px] transition-all duration-300 ease-out left-[38%]' : 'w-[120px] h-[50px]'}
+                        absolute left-[35 %] top-0 md:top-2 md:left-[45%] lg:left-[3%] `}
 
                         >
                             <Image
@@ -177,7 +177,7 @@ const Navbar = () => {
                                 priority
                             />
                         </motion.div>
-                    </Link>
+                    </Link >
 
                     : (
                         <Link href='/' className="">
@@ -201,7 +201,7 @@ const Navbar = () => {
                 }
 
 
-            </motion.div>
+            </motion.div >
 
         </header >
     )
