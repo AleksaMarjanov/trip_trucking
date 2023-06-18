@@ -51,7 +51,7 @@ const ServicesList = () => {
             id="services" className="max-[475px]:mt-18 lg:mt-48 lg:py-12 md:px-16 z-[90] mb-6"
         >
             <motion.div
-                className='mt-12 sm:mt-24 lg:mt-6 grid grid-cols-1 md:grid-cols-3 gap-12 px-12 text-center '>
+                className='mt-12 sm:mt-24 lg:mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-12 text-center '>
                 {services?.map((service: Services) => (
                     <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id} className=''>
                         <motion.div
