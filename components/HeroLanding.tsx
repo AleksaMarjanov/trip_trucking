@@ -30,8 +30,8 @@ const Hero = ({ title, heading, message, src, href, callToActionHref }: HeroType
                 className="w-full relative h-[80vh] md:h-[85vh] flex flex-col items-start justify-start object-cover object-center" >
                 <Image
                     src={src}
-                    alt="hero"
                     fill
+                    alt="hero"
                     className={`w-full fixed object-cover object-center
                     ${loading
                             ? "scale-110 blur-2xl grayscale"

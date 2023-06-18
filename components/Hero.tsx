@@ -31,7 +31,7 @@ const Hero = ({ title, heading, message, src, href, callToAction, callToActionHr
         >
             <motion.div
                 variants={zoomIn(0.6, 0.8)}
-                className="w-full relative h-[80vh] md:h-[95vh] flex flex-col items-start justify-start object-cover object-center" >
+                className="w-full relative h-[90vh] md:h-[95vh] flex flex-col items-start justify-start object-cover object-center" >
                 <Image
                     src={src}
                     alt="hero"
