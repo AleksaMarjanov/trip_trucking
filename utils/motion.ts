@@ -40,12 +40,33 @@ export const slideShow = {
     }
 };
 
+export const mobileVariantsIsOpen = {
+    hidden: {
+        opacity: 0,
+        x: 300,
+        type: 'spring',
+        transition: {
+            stiffness: 300,
+            damping: 140,
+        },
+    },
+    show: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: 'tween',
+            stiffness: 80,
+            delay: 0.05,
+        },
+    },
+}
+
 export const mobileVariants = {
     hidden: {
         opacity: 0,
         x: 300,
+        type: 'spring',
         transition: {
-            type: 'spring',
             stiffness: 300,
             damping: 140,
         },

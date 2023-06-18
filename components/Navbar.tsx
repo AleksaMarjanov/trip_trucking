@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image';
 import { useRouter } from 'next/navigation'
-import { fadeIn, mobileVariants, navVariants, staggerContainer } from '@/utils/motion';
+import { fadeIn, mobileVariants, mobileVariantsIsOpen, navVariants, staggerContainer } from '@/utils/motion';
 
 type customLinkProps = {
     href: string,
@@ -139,7 +139,7 @@ const Navbar = () => {
                     <motion.nav
                         ref={btnRef}
                         initial="hidden"
-                        variants={mobileVariants}
+                        variants={mobileVariantsIsOpen}
                         whileInView="show"
                         viewport={{ once: true }}
                         className="w-full lg:hidden fixed top-[11%] bottom-30 left-0 h-screen flex flex-col text-black bg-white text-4xl font-medium">
