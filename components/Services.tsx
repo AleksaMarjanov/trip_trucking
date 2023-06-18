@@ -40,7 +40,7 @@ const Services = () => {
             <motion.div
                 className='mt-6 sm:mt-24 lg:mt-6 grid grid-cols-1 md:grid-cols-3 gap-12 px-12 text-center '>
                 {services?.map((service: Services) => (
-                    <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id}>
+                    <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id} className=''>
                         <motion.div
                             variants={staggerContainer}
                             initial="hidden"
