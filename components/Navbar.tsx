@@ -22,8 +22,7 @@ type MobLinkProps = {
 }
 
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+const Navbar = ({ isOpen, setIsOpen }: any) => {
     const [rotate, setRotate] = useState<boolean>(false)
     const [navbar, setNavbar] = useState(false);
     const btnRef = useRef<HTMLButtonElement>(null)
@@ -112,7 +111,7 @@ const Navbar = () => {
     }, [rotate])
 
     return (
-        <header className={`${navbar ? 'bg-white text-black  shadow-xl py-8' : 'text-white bg-black py-12'} top-0 left-0 fixed w-full items-end justify-end z-[999] flex lg:px-16 font-normal`}>
+        <header className={`${navbar ? 'bg-white text-black  shadow-xl py-8' : 'text-white bg-black py-12'} top-0 fixed w-full items-end justify-end z-[999] flex lg:px-16 font-normal`}>
             <button className='px-3 flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
                 <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
                 <span className={`${navbar ? 'bg-black' : 'bg-white'} dark:bg-black block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
@@ -142,7 +141,7 @@ const Navbar = () => {
                         variants={mobileVariantsIsOpen}
                         whileInView="show"
                         viewport={{ once: true }}
-                        className={`${navbar ? 'top-[10%] drop-shadow-2xl' : 'top-[12%]'} w-[80%] lg:hidden rounded-2xl fixed bottom-30 right-5 h-[80vh] flex flex-col text-black bg-white text-4xl font-medium`}>
+                        className={`${navbar ? 'top-[10%] drop-shadow-2xl ' : 'top-[12%]'} w-[80%] flex-shrink-0 lg:hidden rounded-2xl fixed bottom-30 right-5 h-[80vh] flex flex-col text-black bg-white text-4xl font-medium`}>
                         <CustomMobileLink href="/" title='Home' className="mt-48" toggle={handleToggle} />
                         <CustomMobileLink href="/about" title='About' className="" toggle={handleToggle} />
                         <CustomMobileLink href="/careers" title='Careers' className="" toggle={handleToggle} />

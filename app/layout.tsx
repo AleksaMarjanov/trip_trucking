@@ -1,9 +1,7 @@
 
-import Navbar from '@/components/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Footer from '@/components/Footer'
-import TransitionEffect from '@/components/TransitionEffect'
+import { RootLayout } from '@/components'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,20 +10,13 @@ export const metadata = {
     description: 'Your best Hydro-vac services',
 }
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
 
     return (
         <html lang="en">
             <body className={`${inter.className} bg-white`}>
-                <TransitionEffect />
-                <Navbar />
-                {children}
-                <Footer />
+                <RootLayout children={children} />
             </body>
-        </html>
+        </html >
     )
 }

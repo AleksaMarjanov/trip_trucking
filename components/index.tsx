@@ -11,4 +11,5 @@ export { default as ServicesList } from './ServicesList'
 export { default as IntroText } from './IntroText'
 export { default as HeroAbout } from './HeroAbout'
 export { default as AboutOverlay } from './AboutOverlay'
+export { default as RootLayout } from './RootLayout'
 
