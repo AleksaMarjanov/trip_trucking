@@ -161,7 +161,7 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
                 viewport={{ once: true }}
             >
                 {navbar ?
-                    <Link href='/' className="">
+                    <a href='/' className="">
                         <motion.div
                             variants={mobileVariants}
                             className={`${navbar ? 'w-[100px] h-[40px] transition-all duration-300 ease-out left-[38%]' : 'w-[120px] h-[50px]'}
@@ -177,10 +177,10 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
                                 priority
                             />
                         </motion.div>
-                    </Link >
+                    </a>
 
                     : (
-                        <Link href='/' className="">
+                        <a href='/' className="">
                             <motion.div
                                 variants={mobileVariants}
                                 className={`${navbar ? 'w-[110px] h-[40px] transition-all duration-200 ease-in-out' : 'w-[120px] h-[50px]'} 
@@ -196,7 +196,7 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
                                     priority
                                 />
                             </motion.div>
-                        </Link>
+                        </a>
                     )
                 }
 
