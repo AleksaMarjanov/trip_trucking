@@ -61,7 +61,7 @@ const Apply = () => {
             },
         }));
 
-    const onReCAPTCHAChange = (captchaCode: any) => {
+    const onReCAPTCHAChange = (captchaCode: string) => {
         // If the reCAPTCHA code is null or undefined indicating that
         // the reCAPTCHA was expired then return early
         if (!captchaCode) {
@@ -76,7 +76,7 @@ const Apply = () => {
     const sendEmail = (event: HTMLFormElement) => {
         event?.preventDefault()
 
-        recaptchaRef.current?.execute();
+        // recaptchaRef.current?.execute();
 
         setState((prev) => ({
             ...prev,
@@ -251,18 +251,14 @@ const Apply = () => {
                                             />
                                         </FormControl>
 
+                                        {/* @ts-ignore */}
                                         <ReCAPTCHA
-                                            ref={recaptchaRef}
-                                            size="invisible"
-                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                                            // onChange={sendEmail}
-                                            onChange={onReCAPTCHAChange}
+                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                            onChange={sendEmail}
                                         />
                                         <button
                                             type="submit"
                                             className="mt-6 border border-black rounded-xl px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
-                                            //@ts-ignore 
-                                            isLoading={isLoading}
                                             onClick={() => sendEmail}
                                         >
                                             Send
@@ -274,13 +270,13 @@ const Apply = () => {
                     ) : (
                         <motion.div
                             variants={textVariant(0.5)}
-                            className="flex flex-col items-center justify-center text-black h-screen">
-                            <h2 className="font-poppins text-2xl  px-12 max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
-                                Thank you for applying for Tripp in Trucking
-                                We will review your application and someone will
+                            className="py-6 md:py-16 flex flex-col items-center justify-center text-black min-h-screen">
+                            <span className="font-poppins text-4xl md:text-5xl  px-12 h-screen">
+                                Thank you for applying for Tripp in Trucking.<br />
+                                We will review your application and someone will<br />
                                 reach out in case that your skills match our needs!
                                 <br />
-                            </h2>
+                            </span>
                         </motion.div>
                     )}
                 </motion.div>

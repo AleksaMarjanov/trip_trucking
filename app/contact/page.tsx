@@ -9,6 +9,7 @@ const MapWithNOSSR = dynamic(() => import("../../components/Map"), {
 
 
 const Contact = () => {
+
     return (
         <>
             <TransitionEffect />

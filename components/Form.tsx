@@ -32,8 +32,7 @@ type Props = {
     message?: string;
 }
 
-const Form = () => {
-    const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
+const Form = ({ isFormSubmitted }: any, { setIsFormSubmitted }: any) => {
     const [isSSR, setIsSSR] = useState<boolean>(true)
     const form = useRef<HTMLFormElement>(null)
     const toast = useToast();
@@ -116,136 +115,97 @@ const Form = () => {
                 className="max-w-[1240px] m-auto p-4">
                 <motion.div
                 >
-                    {!isFormSubmitted ? (
-                        <motion.div
-                            className="flex flex-col items-center justify-center">
-                            <div className="w-full">
-                                <form
-                                    encType="multipart/form-data"
-                                    method="post"
-                                    ref={form}
-                                    //@ts-ignore
-                                    onSubmit={sendEmail}
-                                >
-                                    <Container maxW="750px" mt={12} className="text-black">
-                                        {error && (
-                                            <Text color="red.300" my={4} fontSize="xl">
-                                                {error}
-                                            </Text>
-                                        )}
+                    <motion.div
+                        className="flex flex-col items-center justify-center">
+                        <div className="w-full">
+                            <form
+                                encType="multipart/form-data"
+                                method="post"
+                                ref={form}
+                                //@ts-ignore
+                                onSubmit={sendEmail}
+                            >
+                                <Container maxW="750px" mt={12} className="text-black">
+                                    {error && (
+                                        <Text color="red.300" my={4} fontSize="xl">
+                                            {error}
+                                        </Text>
+                                    )}
 
-                                        <FormControl
-                                            isRequired
-                                            // @ts-ignore
-                                            isInvalid={touched.name && !values.name}
-                                            mb={5}
-                                        >
-                                            <Input
-                                                type="text"
-                                                name="name"
-                                                errorBorderColor="red.300"
-                                                placeholder="Name"
-                                                value={values.name}
-                                                onChange={handleChange}
-                                                onBlur={onBlur}
-                                            />
-                                            <FormErrorMessage>Required</FormErrorMessage>
-                                        </FormControl>
-
-                                        <FormControl
-                                            isRequired
-                                            // @ts-ignore
-                                            isInvalid={touched.email && !values.email}
-                                            mb={5}
-                                        >
-                                            <Input
-                                                type="email"
-                                                name="email"
-                                                errorBorderColor="red.300"
-                                                placeholder="Email"
-                                                value={values.email}
-                                                onChange={handleChange}
-                                                onBlur={onBlur}
-                                            />
-                                            <FormErrorMessage>Required</FormErrorMessage>
-                                        </FormControl>
-
-                                        {/* <FormControl */}
-                                        {/*     mb={5} */}
-                                        {/*     isRequired */}
-                                        {/*     // @ts-ignore */}
-                                        {/*     isInvalid={touched.subject && !values.subject} */}
-                                        {/* > */}
-                                        {/* <FormLabel>Subject</FormLabel> */}
-                                        {/* <Input */}
-                                        {/*     type="text" */}
-                                        {/*     name="subject" */}
-                                        {/*     errorBorderColor="red.300" */}
-                                        {/*     value={values.subject} */}
-                                        {/*     onChange={handleChange} */}
-                                        {/*     onBlur={onBlur} */}
-                                        {/* /> */}
-                                        {/* <FormErtrorMessage>Required</FormErrorMessage> */}
-                                        {/* </FormControl> */}
-
-                                        <FormControl
-                                            isRequired
-                                            // @ts-ignore
-                                            isInvalid={touched.message && !values.message}
-                                            mb={5}
-                                        >
-                                            <Textarea
-                                                type="text"
-                                                name="message"
-                                                rows={4}
-                                                placeholder="Your Message"
-                                                errorBorderColor="red.300"
-                                                value={values.message}
-                                                // @ts-ignore
-                                                onChange={handleChange}
-                                                // @ts-ignore
-                                                onBlur={onBlur}
-                                            />
-                                            <FormErrorMessage>Required</FormErrorMessage>
-                                        </FormControl>
-                                        {/* @ts-ignore */}
-                                        <ReCAPTCHA
-                                            ref={recaptchaRef}
-                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                            onChange={sendEmail}
+                                    <FormControl
+                                        isRequired
+                                        // @ts-ignore
+                                        isInvalid={touched.name && !values.name}
+                                        mb={5}
+                                    >
+                                        <Input
+                                            type="text"
+                                            name="name"
+                                            errorBorderColor="red.300"
+                                            placeholder="Name"
+                                            value={values.name}
+                                            onChange={handleChange}
+                                            onBlur={onBlur}
                                         />
+                                        <FormErrorMessage>Required</FormErrorMessage>
+                                    </FormControl>
 
-                                        <Button
-                                            className="mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
-                                            variant="outline"
-                                            colorScheme="white"
-                                            isLoading={isLoading}
-                                            disabled={
-                                                !values.name ||
-                                                !values.email ||
-                                                !values.message
-                                            }
-                                            // @ts-ignore 
-                                            onClick={sendEmail}
-                                        >
-                                            Submit
-                                        </Button>
-                                    </Container>
-                                </form>
-                            </div>
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            variants={textVariant(0.4)}
-                            className="flex flex-col items-center justify-center text-black h-screen">
-                            <h2 className="font-poppins text-[22px] max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
-                                Thank you for getting in touch with us!
-                                <br />
-                                We will get back to you as soon as possible :)
-                                <br />
-                            </h2>
-                        </motion.div>
-                    )}
+                                    <FormControl
+                                        isRequired
+                                        // @ts-ignore
+                                        isInvalid={touched.email && !values.email}
+                                        mb={5}
+                                    >
+                                        <Input
+                                            type="email"
+                                            name="email"
+                                            errorBorderColor="red.300"
+                                            placeholder="Email"
+                                            value={values.email}
+                                            onChange={handleChange}
+                                            onBlur={onBlur}
+                                        />
+                                        <FormErrorMessage>Required</FormErrorMessage>
+                                    </FormControl>
+
+                                    <FormControl
+                                        isRequired
+                                        // @ts-ignore
+                                        isInvalid={touched.message && !values.message}
+                                        mb={5}
+                                    >
+                                        <Textarea
+                                            type="text"
+                                            name="message"
+                                            rows={4}
+                                            placeholder="Your Message"
+                                            errorBorderColor="red.300"
+                                            value={values.message}
+                                            // @ts-ignore
+                                            onChange={handleChange}
+                                            // @ts-ignore
+                                            onBlur={onBlur}
+                                        />
+                                        <FormErrorMessage>Required</FormErrorMessage>
+                                    </FormControl>
+                                    {/* @ts-ignore */}
+                                    <ReCAPTCHA
+                                        ref={recaptchaRef}
+                                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                                        onChange={sendEmail}
+                                    />
+
+                                    <button
+                                        type="submit"
+                                        className="mt-6 border border-black rounded-xl px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
+                                        onClick={() => sendEmail}
+                                    >
+                                        Send
+                                    </button>
+                                </Container>
+                            </form>
+                        </div>
+                    </motion.div>
                 </motion.div>
             </motion.div>
         </ChakraProvider >
