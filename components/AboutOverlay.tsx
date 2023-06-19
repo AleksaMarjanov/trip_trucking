@@ -26,7 +26,7 @@ const AboutOverlay = () => {
     });
 
     return (
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center gap-y-12'>
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
