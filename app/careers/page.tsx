@@ -1,10 +1,11 @@
-import { Hero } from '@/components'
-import Apply from '@/components/Apply'
+import { Hero, Apply } from '@/components'
 import TransitionEffect from '@/components/TransitionEffect'
 import React from 'react'
 
 const Careers = () => {
+
     return (
+
         <div>
             <TransitionEffect />
             <Hero

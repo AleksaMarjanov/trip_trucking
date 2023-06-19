@@ -61,7 +61,7 @@ const Apply = () => {
             },
         }));
 
-    const onReCAPTCHAChange = (captchaCode: string) => {
+    const onReCAPTCHAChange = (captchaCode: any) => {
         // If the reCAPTCHA code is null or undefined indicating that
         // the reCAPTCHA was expired then return early
         if (!captchaCode) {
@@ -76,7 +76,7 @@ const Apply = () => {
     const sendEmail = (event: HTMLFormElement) => {
         event?.preventDefault()
 
-        // recaptchaRef.current?.execute();
+        recaptchaRef.current?.execute();
 
         setState((prev) => ({
             ...prev,
@@ -103,6 +103,7 @@ const Apply = () => {
             }, 1500);
             setTimeout(() => {
                 router.push('/')
+                document.scrollingElement?.scroll(0, 0)
             }, 5500);
 
         } catch (error) {
@@ -237,7 +238,6 @@ const Apply = () => {
                                             isInvalid={touched.cover_letter! && !values.cover_letter}
                                             mb={5}
                                         >
-
                                             <FormLabel>
                                                 Cover Letter: (optional)
                                             </FormLabel>
@@ -247,31 +247,26 @@ const Apply = () => {
                                                 className=""
                                                 value={values.cover_letter}
                                                 onChange={handleChange}
+
                                             />
                                         </FormControl>
 
-                                        {/* @ts-ignore */}
                                         <ReCAPTCHA
-                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                                            onChange={sendEmail}
+                                            ref={recaptchaRef}
+                                            size="invisible"
+                                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                                            // onChange={sendEmail}
+                                            onChange={onReCAPTCHAChange}
                                         />
-                                        <Button
-                                            className="mt-6 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
-                                            variant="outline"
-                                            colorScheme="white"
+                                        <button
+                                            type="submit"
+                                            className="mt-6 border border-black rounded-xl px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
+                                            //@ts-ignore 
                                             isLoading={isLoading}
-                                            disabled={
-                                                !values.name ||
-                                                !values.email ||
-                                                !values.cover_letter ||
-                                                !values.file ||
-                                                !values.message
-                                            }
-                                            //@ts-ignore
-                                            onClick={sendEmail}
+                                            onClick={() => sendEmail}
                                         >
                                             Send
-                                        </Button>
+                                        </button>
                                     </Container>
                                 </form>
                             </div>

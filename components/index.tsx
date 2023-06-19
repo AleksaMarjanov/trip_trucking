@@ -12,4 +12,5 @@ export { default as IntroText } from './IntroText'
 export { default as HeroAbout } from './HeroAbout'
 export { default as AboutOverlay } from './AboutOverlay'
 export { default as RootLayout } from './RootLayout'
+export { default as Apply } from './Apply'
 
