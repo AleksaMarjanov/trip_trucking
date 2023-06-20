@@ -56,7 +56,7 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
             < button href={href} className={`${className} relative text-black group my-2`
             } onClick={handleClick} >
                 {title}
-                <div className={`h-[1px] inline-block bg-black absolute left-[25%] -bottom-0.5
+                <div className={`h-[1px] inline-block bg-black dark:bg-white absolute left-[25%] -bottom-0.5
                 group-hover:w-[50%] transition-[width] ease duration-300
                 ${pathname === href ? 'w-[50%]' : 'w-0'}`}>&nbsp;</div>
 
@@ -114,9 +114,9 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
     return (
         <header className={`${navbar ? 'bg-white text-black  shadow-xl py-8' : 'text-white bg-black py-12'} top-0 fixed w-full items-end justify-end z-[999] flex lg:px-16 font-normal`}>
             <button className='px-3 flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
-                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} dark:bg-white block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} dark:bg-white block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} dark:bg-white block h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
             </button>
 
             <div className="flex items-center justify-center flex-wrap">

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import React from 'react'
 
 export const metadata = {
-
+    title: 'Tripp in Trucking '
 }
 
 const About = () => {
