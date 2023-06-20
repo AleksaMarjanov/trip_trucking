@@ -84,7 +84,6 @@ const Apply = () => {
         }));
         try {
             emailjs.sendForm(
-                // TODO: getting an error here with emailjs
                 process.env.emailJs_service!,
                 process.env.emailJs_template!,
                 form.current!,

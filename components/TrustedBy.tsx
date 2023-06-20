@@ -152,11 +152,11 @@ const TrustedBy = () => {
                                 spaceBetween: 100
                             },
                             999: {
-                                slidesPerView: 5,
+                                slidesPerView: 4,
                                 spaceBetween: 100
                             },
                             1440: {
-                                slidesPerView: 5,
+                                slidesPerView: 4,
                                 spaceBetween: 100
                             }
                         }}

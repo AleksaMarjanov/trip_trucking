@@ -95,14 +95,6 @@ async function Service({ params: { slug } }: Props) {
                             height={400}
                             priority
                         />
-                        {/* <Image */}
-                        {/*     src={urlFor(service.imageFour).url()} */}
-                        {/*     alt={service.title} */}
-                        {/*     width={400} */}
-                        {/*     className="object-cover w-full h-full p-2 row-span-3" */}
-                        {/*     height={400} */}
-                        {/*     priority */}
-                        {/* /> */}
                     </div>
                 </div>
             </article >

@@ -2,6 +2,10 @@ import { Hero, Apply } from '@/components'
 import TransitionEffect from '@/components/TransitionEffect'
 import React from 'react'
 
+export const metadata = {
+
+}
+
 const Careers = () => {
 
     return (
