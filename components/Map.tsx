@@ -25,7 +25,7 @@ const Map = () => {
                 position={[48.18205, - 103.62502]}
                 // @ts-ignore
                 dragabble={true} >
-                <Popup>417 1st Ave E</Popup>
+                <Popup>4082 2nd Ave W, Williston ND</Popup>
 
             </Marker>
         </MapContainer>
