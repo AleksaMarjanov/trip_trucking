@@ -6,7 +6,7 @@ const Careers = () => {
 
     return (
 
-        <div>
+        <div className='dark:bg-white'>
             <TransitionEffect />
             <Hero
                 title="Join Our Team of Trailblazers"

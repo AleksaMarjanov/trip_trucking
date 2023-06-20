@@ -48,7 +48,7 @@ async function Service({ params: { slug } }: Props) {
     const service: Services = await client.fetch(query, { slug });
 
     return (
-        <>
+        <section className='bg-white dark:bg-white'>
             <TransitionEffect />
             <Hero
                 message={service?.heroTagline}
@@ -108,7 +108,7 @@ async function Service({ params: { slug } }: Props) {
             </article >
 
             <TrustedBy />
-        </>
+        </section>
     )
 
 }

@@ -11,7 +11,7 @@ const MapWithNOSSR = dynamic(() => import("../../components/Map"), {
 const Contact = () => {
 
     return (
-        <>
+        <section className='dark:bg-white'>
             <TransitionEffect />
             <Hero
                 title="Contact"
@@ -38,7 +38,7 @@ const Contact = () => {
                     </div>
                 </div>
             </section >
-        </>
+        </section>
     )
 }
 
