@@ -10,7 +10,7 @@ const Home = () => {
 
         <>
             <TransitionEffect />
-            <main className="min-h-screen relative">
+            <main className="min-h-screen relative dark:bg-white">
                 <div className="">
                     <HeroLanding
                         title=""

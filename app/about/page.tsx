@@ -12,7 +12,7 @@ const About = () => {
 
     return (
 
-        <div>
+        <section className='dark:bg-white'>
             <TransitionEffect />
             <div className=''>
                 <HeroAbout
@@ -25,11 +25,8 @@ const About = () => {
                     callToActionHref="/contact"
                 />
             </div>
-
             <AboutOverlay />
-
-
-        </div >
+        </section>
     )
 }
 
