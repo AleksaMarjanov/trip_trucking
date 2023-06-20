@@ -104,7 +104,7 @@ const TrustedBy = () => {
                                                     className="object-contain object-center" />
                                             </div>
 
-                                            <div className="white-space flex items-center font-bold justify-center text-2xl md:text-3xl ">
+                                            <div className="white-space flex items-center dark:text-black font-bold justify-center text-2xl md:text-3xl ">
                                                 &quot;{testimonial?.feedback}&quot;
                                             </div>
                                             <div className="">
