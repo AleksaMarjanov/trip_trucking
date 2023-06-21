@@ -26,7 +26,7 @@ const AboutOverlay = () => {
     });
 
     return (
-        <div className='flex flex-col items-center gap-y-12'>
+        <div className='flex flex-col items-center gap-y-6'>
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -134,7 +134,8 @@ w-full md:translate-x-[15%] lg:translate-x-[5%] xl:translate-x-[25%] md:scale-[1
 
             <motion.div
                 variants={fadeIn('up', 'tween', 0.5, 0.85)}
-                className='px-6 lg:px-40 mt-16 mb-16 md:mt-24 md:px-16 gap-y-12 md:gap-y-0 md:gap-x-24 p-12 rounded-tr-[240px] rounded-bl-[240px] bg-slate-200 w-full relative grid md:grid-cols-2'
+                className='px-6 flex flex-col-reverse lg:px-40 mb-16 mt-6 md:px-16 gap-y-12 md:gap-y-0 md:gap-x-24 p-12 
+                rounded-tr-[240px] rounded-bl-[240px] bg-slate-200 w-full relative md:grid md:grid-cols-2'
             >
 
                 <div className='w-full lg:flex-[0.75] flex items-start justify-center flex-col gap-y-6 lg:gap-y-12 '>
