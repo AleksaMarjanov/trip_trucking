@@ -255,23 +255,13 @@ const Apply = () => {
                                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                                             onChange={sendEmail}
                                         />
-                                        {!isFormSubmitted ?
-                                            <button
-                                                type="submit"
-                                                className="mt-6 border border-black rounded-xl px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
-                                                onClick={() => sendEmail}
-                                            >
-                                                Send
-                                            </button>
-                                            :
-                                            <button
-                                                type="submit"
-                                                className="mt-6 border border-black rounded-xl px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out"
-                                                onClick={() => sendEmail}
-                                            >
-                                                Sending...
-                                            </button>
-                                        }
+                                        <button
+                                            type="submit"
+                                            className={` mt-6 border border-black rounded-xl px-4 py-2 hover:bg-slate-700 hover:text-white transition-all duration-400 ease-out`}
+                                            onClick={() => sendEmail}
+                                        >
+                                            {isFormSubmitted ? 'Sending...' : 'Send'}
+                                        </button>
                                     </Container>
                                 </form>
                             </div>
