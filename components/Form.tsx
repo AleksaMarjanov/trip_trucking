@@ -68,7 +68,7 @@ const Form = () => {
         try {
             emailjs.sendForm(
                 process.env.emailJs_service!,
-                process.env.emailJs_template!,
+                process.env.emailJs_contact!,
                 form.current!,
                 process.env.emailJs_API
             );
