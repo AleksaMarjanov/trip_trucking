@@ -46,9 +46,9 @@ const Footer = () => {
                     </Link>
                 </div>
 
-                <div className='col-span-1  md:col-span-1'>
+                <div className='col-span-1  md:col-span-1 flex flex-col'>
                     <h2 className=" text-2xl md:text-4xl text-black mb-2">Socials</h2>
-
+                    <p>ap@trippintrucking.com</p>
                 </div>
             </div >
             <div className="mt-6 font-semibold text-black">
