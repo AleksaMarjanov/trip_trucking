@@ -54,7 +54,7 @@ const Hero = ({ title, heading, message, src, href, callToActionHref }: HeroType
                             variants={textVariant(0.5)}
                             className='max-[475px]:px-6'
                         >
-                            <h2 className="max-[325px]:text-2xl text-4xl md:text-7xl lg:text-8xl font-semibold">{heading}</h2>
+                            <h2 className="max-[325px]:text-3xl text-4xl md:text-7xl lg:text-8xl font-semibold">{heading}</h2>
                         </motion.div>
                         <div className='absolute z-[33] bg-white opacity-50 top-[50%]' />
                         <motion.div
