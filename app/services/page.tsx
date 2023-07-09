@@ -4,7 +4,7 @@ import React from 'react'
 
 const ServicesPage = () => {
     return (
-        <section className='dark:bg-white'>
+        <section className='dark:bg-white bg-white'>
             <TransitionEffect />
             <Hero
                 title="Services"
@@ -17,11 +17,12 @@ const ServicesPage = () => {
             />
 
 
-            <section id="services">
+            <section id="services" className=''>
+
                 <ServicesList />
             </section>
 
-        </section>
+        </section >
 
     )
 }

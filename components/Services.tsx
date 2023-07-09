@@ -38,7 +38,7 @@ const Services = () => {
             id="services" className="max-[475px]:mt-18 lg:mt-48 lg:py-12 md:px-16 z-[90] mb-6"
         >
             <motion.div
-                className='mt-6 sm:mt-24 lg:mt-6 grid grid-cols-1 md:grid-cols-3 gap-12 px-12 text-center '>
+                className='mt-6 sm:mt-24 lg:mt-6 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-18 px-12 text-center '>
                 {services?.map((service: Services) => (
                     <ClientSideRoute route={`/service/${service.slug.current}`} key={service._id} className=''>
                         <motion.div
@@ -58,12 +58,12 @@ const Services = () => {
                             </motion.div>
                             <motion.h3
                                 variants={textVariant(0.5)}
-                                className='font-semibold text-2xl mt-3'>
+                                className='font-semibold text-3xl md:text-4xl mt-3'>
                                 {service.title}
                             </motion.h3>
                             <motion.span
                                 variants={textVariant(0.7)}
-                                className='font-normal text-black/75 text-lg line-clamp-2'>
+                                className='font-medium text-black/75 text-2xl md:text-xl line-clamp-2'>
                                 {service.description}
                             </motion.span>
                         </motion.div>
