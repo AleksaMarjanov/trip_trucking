@@ -7,7 +7,6 @@ import Image from "next/image";
 const Home = () => {
 
     return (
-
         <>
             <TransitionEffect />
             <main className="min-h-screen relative dark:bg-white">
@@ -24,7 +23,7 @@ const Home = () => {
                     />
                 </div>
                 <IntroText />
-                <section>
+                <section className="">
                     <Services />
                 </section>
                 <section >
