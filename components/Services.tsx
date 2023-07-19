@@ -68,7 +68,7 @@ const Services = () => {
                             </motion.span>
                         </motion.div>
                     </ClientSideRoute>
-                )).slice(0, 3)}
+                )).slice(1, 4)}
             </motion.div>
         </motion.div >
     )
