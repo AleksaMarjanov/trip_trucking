@@ -19,12 +19,15 @@ const ServicesPage = () => {
 
             <section id="services" className=''>
 
+                <h1 className='px-8 md:px-6 font-semibold text-2xl md:text-3xl lg:text-4xl py-6 md:py-12'>
+                    our Partner for Safe & Efficient Transportation Services
+                </h1>
                 <ServicesList />
             </section>
 
         </section >
 
     )
-}
 
+}
 export default ServicesPage

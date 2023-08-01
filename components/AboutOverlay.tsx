@@ -45,11 +45,11 @@ const AboutOverlay = () => {
                 items-start justify-start md:flex-row '>
 
                         <div className='w-full flex items-start justify-center flex-col gap-y-6 lg:gap-y-12 '>
-                            <motion.h3 className='w-full text-3xl text-bold  text-black/75'
+                            <motion.div className='w-full text-3xl text-bold  text-black/75'
                                 variants={textVariant(0.7)}
                             >
-                                Tripp in Trucking
-                            </motion.h3>
+                                <h1>Tripp in Trucking</h1>
+                            </motion.div>
                             <motion.p
                                 variants={textVariant(0.9)}
                                 className='md:leading-[55px] font-medium text-2xl lg:text-[38px]'>

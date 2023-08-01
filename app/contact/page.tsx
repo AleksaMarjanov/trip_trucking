@@ -25,7 +25,7 @@ const Contact = () => {
 
             <section className='my-6 md:my-24 items-center justify-center'>
                 <div className='flex items-center justify-center flex-col px-6 py-6'>
-                    <h2 className='text-3xl md:text-5xl font-bold'>Service inquiry</h2>
+                    <h1 className='text-3xl md:text-5xl font-bold'>Service inquiry</h1>
                     <p className='text-black/60 text-lg py-3 md:py-6 lg:text-xl'> Get in contact with us to see how we can assist with out expert trucking solutions</p>
                 </div>
 
