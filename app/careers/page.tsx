@@ -3,7 +3,8 @@ import TransitionEffect from '@/components/TransitionEffect'
 import React from 'react'
 
 export const metadata = {
-
+    title: 'Tripp in Trucking - Careers',
+    description: 'Join Our Dynamic Team - Explore exciting opportunities and rewarding careers in our trucking company. Be a part of our success story and grow professionally with us.',
 }
 
 const Careers = () => {

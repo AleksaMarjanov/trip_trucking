@@ -2,7 +2,12 @@ import { Hero, ServicesList } from '@/components'
 import TransitionEffect from '@/components/TransitionEffect'
 import React from 'react'
 
+export const metadata = {
+    title: 'Tripp in Trucking - Services',
+    description: 'Efficient Trucking Solutions - Explore our comprehensive range of transportation services tailored to meet your logistical needs. We offer reliable and timely deliveries for a seamless supply chain.',
+}
 const ServicesPage = () => {
+
     return (
         <section className='dark:bg-white bg-white'>
             <TransitionEffect />

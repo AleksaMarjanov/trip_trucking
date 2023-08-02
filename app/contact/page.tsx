@@ -7,6 +7,10 @@ const MapWithNOSSR = dynamic(() => import("../../components/Map"), {
     ssr: false,
 });
 
+export const metadata = {
+    title: 'Tripp in Trucking - Contact',
+    description: 'Reach Out to Us - Have a question or need more information about our trucking services? Get in touch with our friendly team, and we will be delighted to assist you',
+}
 
 const Contact = () => {
 

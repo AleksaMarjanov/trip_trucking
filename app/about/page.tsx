@@ -5,7 +5,24 @@ import Image from 'next/image'
 import React from 'react'
 
 export const metadata = {
-    title: 'Tripp in Trucking '
+    title: 'Tripp in Trucking - About',
+    keywords: [
+        "Tripp in Trucking",
+        "Hydrovac services",
+        "Trucking company",
+        "Excavation",
+        "Vacuum truck services",
+        "Material transport",
+        "Reliable",
+        "Professional",
+        "Safety standards",
+        "Customer-focused",
+        "Environmental sustainability",
+        "Responsible practices",
+        "Contact information"
+    ],
+    description: 'Discover Our Story - Get to know our trucking companys rich history, values, and commitment to excellence.Learn how we have become a trusted partner in the transportation industry'
+
 }
 
 const About = () => {
