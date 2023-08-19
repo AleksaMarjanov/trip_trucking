@@ -129,11 +129,6 @@ const Apply = () => {
     return (
 
         <ChakraProvider>
-            <div className="flex items-center text-balance justify-center px-6 md:px-12 py-6 md:py-12">
-                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl">Join Our Team:
-                    Apply for a Trippin Trucking Adventure!
-                </h1>
-            </div>
 
             <motion.div
                 variants={staggerContainer}

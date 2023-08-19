@@ -23,10 +23,11 @@ const Careers = () => {
                 callToActionHref='#apply'
             />
             <section className='min-h-screen'>
-                {/* <svg className="absolute right-0 top-[45%] hidden md:block" width="466" height="633" viewBox="0 0 466 633" fill="none" xmlns="http://www.w3.org/2000/svg"> */}
-                {/*     <path d="M466 74L317.074 74C182.828 74 73.9999 182.571 73.9999 316.5C73.9999 450.429 182.828 559 317.074 559L466 559" stroke="#F1F1F1" strokeWidth="147" strokeMiterlimit="10"></path> */}
-                {/* </svg> */}
-
+                <div className="flex items-center text-balance justify-center px-6 md:px-12 py-6 md:py-12">
+                    <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl">Join Our Team:
+                        Apply for a Trippin Trucking Adventure!
+                    </h1>
+                </div>
                 <Apply />
             </section>
 
