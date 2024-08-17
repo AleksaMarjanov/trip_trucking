@@ -49,6 +49,8 @@ async function Service({ params: { slug } }: Props) {
 
     const service: Services = await client.fetch(query, { slug });
 
+    console.log("sanity data", { service });
+
     return (
         <section className='bg-white dark:bg-white'>
             <TransitionEffect />

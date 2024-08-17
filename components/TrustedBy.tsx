@@ -104,7 +104,7 @@ const TrustedBy = () => {
                                                     className="object-contain object-center" />
                                             </div>
 
-                                            <div className="white-space flex items-center dark:text-black font-bold justify-center text-2xl md:text-3xl ">
+                                            <div className="white-space flex items-center font-bold justify-center text-2xl md:text-3xl ">
                                                 &quot;{testimonial?.feedback}&quot;
                                             </div>
                                             <div className="">
@@ -133,7 +133,7 @@ const TrustedBy = () => {
                 </div >
                 <div className='relative items-center justify-center flex w-full h-[300px] gap-y-6 px-6 md:py-8 max-[425px]:h-[200px] bg-black'>
                     <Swiper
-                        className="swiper-wrapper flex items-center justify-center mt-6 "
+                        className="swiper-wrapper flex items-center justify-center py-6 mt-6 "
                         observer={true}
                         slidesPerView={2}
                         modules={[Navigation, Pagination, Autoplay]}
@@ -152,11 +152,11 @@ const TrustedBy = () => {
                                 spaceBetween: 100
                             },
                             999: {
-                                slidesPerView: 4,
+                                slidesPerView: 5,
                                 spaceBetween: 100
                             },
                             1440: {
-                                slidesPerView: 4,
+                                slidesPerView: 8,
                                 spaceBetween: 100
                             }
                         }}
