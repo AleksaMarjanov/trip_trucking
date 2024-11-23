@@ -142,7 +142,7 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
                         variants={mobileVariantsIsOpen}
                         whileInView="show"
                         viewport={{ once: true }}
-                        className={`${navbar ? 'top-[10%] drop-shadow-2xl ' : 'top-[12%]'} w-[80%] flex-shrink-0 lg:hidden rounded-2xl fixed bottom-30 right-5 h-[80vh] flex flex-col text-black bg-white text-4xl font-medium`}>
+                        className={`${navbar ? 'top-[10%] drop-shadow-2xl bg-black !opacity-0 ' : 'top-[12%]'} w-[80%] flex-shrink-0 lg:hidden rounded-2xl fixed bottom-30 right-5 h-[80vh] flex flex-col text-black bg-white text-4xl font-medium`}>
                         <CustomMobileLink href="/" title='Home' className="mt-48" toggle={handleToggle} />
                         <CustomMobileLink href="/about" title='About' className="" toggle={handleToggle} />
                         <CustomMobileLink href="/careers" title='Careers' className="" toggle={handleToggle} />
