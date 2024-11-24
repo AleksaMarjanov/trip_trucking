@@ -114,9 +114,9 @@ const Navbar = ({ isOpen, setIsOpen }: any) => {
     return (
         <header className={`${navbar ? 'bg-white text-black  bg-opacity-75 shadow-xl py-8' : 'text-white bg-black opacity-75 py-12'} top-0 fixed w-full items-end justify-end z-[999] flex lg:px-16 font-normal`}>
             <button className='px-3 flex lg:hidden flex-col items-center justify-center' onClick={handleToggle}>
-                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`${navbar ? 'bg-black dark:bg-black' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+                <span className={`${navbar ? 'bg-black dark:bg-white' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`${navbar ? 'bg-black dark:bg-white' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`${navbar ? 'bg-black dark:bg-white' : 'bg-white'} h-0.5 w-6 transition-all duration-300 ease-out rounded-sm  ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
             </button>
 
             <div className="flex items-center justify-center flex-wrap">
