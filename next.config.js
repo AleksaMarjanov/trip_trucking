@@ -31,6 +31,22 @@ const nextConfig = {
             },
         ]
     },
+    async redirects() {
+        return [
+            {
+                source: '/:path*',
+                has: [
+                    {
+                        type: 'host',
+                        value: 'trip-trucking.vercel.app',
+                    },
+                ],
+                destination: 'https://trippintruckingandservices.com/:path*',
+                permanent: true,
+            },
+        ]
+    },
+    
 }
 
 module.exports = nextConfig
