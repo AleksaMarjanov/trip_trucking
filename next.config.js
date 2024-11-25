@@ -23,6 +23,14 @@ const nextConfig = {
         emailJs_API: process.env.REACT_APP_EMAILJS_API_KEY,
         apiKey: process.env.REACT_APP_LEAFLET_API_KEY,
     },
+    async rewrites() {
+        return [
+            {
+                source: '/sitemap.xml',
+                destination: '/api/sitemap',
+            },
+        ]
+    },
 }
 
 module.exports = nextConfig
